@@ -16,6 +16,7 @@
     "dependencies": {
         "tek": "*",
         "html": "*",
+        "request": "*",
         "jquery": "*"
     }
 }

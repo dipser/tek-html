@@ -1,1 +1,5 @@
-console.log('document.loaded!');
+(function ($) {
+    $(function () {
+        console.log('[index.js] loaded!');
+    });
+})(jQuery);

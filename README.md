@@ -3,6 +3,16 @@ tek-html
 
 'tek' library for static html
 
+requirements
+---------
++ node.js
+
+
+install
+----------
+```bash
+    npm install tek-html -g
+```
 
 
 compact

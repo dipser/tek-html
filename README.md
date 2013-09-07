@@ -15,8 +15,10 @@ install
 ```
 
 
-compact
----------
+how to
+----------
+**compact**
+
 compact html,css,js file int a single html file
 ```bash
     tek-h compact src.html out.html

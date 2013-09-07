@@ -1,0 +1,21 @@
+{
+    "name": "tek-html",
+    "version": "0.0.1",
+    "description": "tek library for static html",
+    "bin": {
+        "tek-h": "bin/tek-h.js",
+        "tek-html": "bin/tek-h.js"
+    },
+    "author": {
+        "name": "Taka Okunishi"
+    },
+    "devDependencies": {
+        "should": "*",
+        "nodeunit": "*"
+    },
+    "dependencies": {
+        "tek": "*",
+        "html": "*",
+        "jquery": "*"
+    }
+}

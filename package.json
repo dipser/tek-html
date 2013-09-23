@@ -1,10 +1,10 @@
 {
     "name": "tek-html",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "tek library for static html",
     "bin": {
-        "tek-h": "bin/tek-h.js",
-        "tek-html": "bin/tek-h.js"
+        "tek-h": "bin/tek-html.js",
+        "tek-html": "bin/tek-html.js"
     },
     "author": {
         "name": "Taka Okunishi"
@@ -16,6 +16,7 @@
     "dependencies": {
         "tek": "*",
         "html": "*",
+        "commander": "*",
         "request": "*",
         "jquery": "*"
     }

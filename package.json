@@ -1,6 +1,6 @@
 {
     "name": "tek-html",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "tek library for static html",
     "main":"./lib/index",
     "bin": {
@@ -17,6 +17,7 @@
     "dependencies": {
         "tek": "*",
         "html": "*",
+        "ent":"*",
         "commander": "*",
         "request": "*",
         "cheerio": "*"

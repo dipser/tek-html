@@ -4,7 +4,7 @@
  * Time: 8:16 PM
  */
 var should = require('should'),
-    math = require('../../../../lib/src/javascripts/tek.js/06.math');
+    math = require('../../../../lib/src/javascripts/tek.js/06.math')['math'];
 
 exports.maxTest = function (test) {
     var max = math.max;

@@ -1,0 +1,9 @@
+{{name}} = (function (module) {
+    
+    var exports = module && module.exports || {};
+
+{{modules}}
+    
+    return exports;
+    
+})(typeof(module) === 'undefined' ? null : module);

@@ -4,7 +4,7 @@
  * Time: 8:07 PM
  */
 var should = require('should'),
-    toStorage = require('../../../../lib/src/javascripts/t/04.toStorage')['toStorage'];
+    toStorage = require('../../../../lib/src/javascripts/tek/04.toStorage')['toStorage'];
 
 
 localStorage = null;

@@ -5,7 +5,7 @@
  */
 
 var should = require('should'),
-    Query = require('../../../../lib/src/javascripts/t/03.Query')['Query'];
+    Query = require('../../../../lib/src/javascripts/tek/03.Query')['Query'];
 
 location = {
     search: '?key1=val1&key2=val2'

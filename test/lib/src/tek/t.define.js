@@ -1,5 +1,5 @@
 var should = require('should'),
-    define = require('../../../../lib/src/javascripts/tek/01.define')['define'];
+    define = require('../../../../lib/src/javascripts/tek.js/01.define')['define'];
 
 exports.defineTest = function (test) {
     var F1 = define({});

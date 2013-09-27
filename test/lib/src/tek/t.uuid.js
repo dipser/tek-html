@@ -5,7 +5,7 @@
  */
 
 var should = require('should'),
-    uuid = require('../../../../lib/src/javascripts/tek/02.uuid')['uuid'];
+    uuid = require('../../../../lib/src/javascripts/tek.js/02.uuid')['uuid'];
 
 exports.uuidTest = function (test) {
     for (var i = 0; i < 1000; i++) {

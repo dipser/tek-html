@@ -4,7 +4,7 @@
  * Time: 8:07 PM
  */
 var should = require('should'),
-    fromStorage = require('../../../../lib/src/javascripts/tek/05.fromStorage')['fromStorage'];
+    fromStorage = require('../../../../lib/src/javascripts/tek.js/05.fromStorage')['fromStorage'];
 
 
 localStorage = null;

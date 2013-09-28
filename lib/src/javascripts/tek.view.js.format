@@ -1,10 +1,9 @@
 (function ($, Hbs, tek, undefined) {
     var global = {
-        $:$,
-        Hbs:Hbs,
-        tek:tek
+        $: $,
+        Hbs: Hbs,
+        tek: tek
     };
 
-{{modules}}
 
 })(jQuery, Handlebars, tek, undefined);

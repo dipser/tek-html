@@ -40,5 +40,9 @@ program
         });
     });
 
+program.command("*")
+    .action(function () {
+        console.error("[tek-html] command not found:", argv[2]);
+    });
 
 program.parse(argv);

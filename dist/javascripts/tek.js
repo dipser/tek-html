@@ -192,7 +192,8 @@ exports.math = {};
 	        var s = this,
 	            result = [];
 	        for (var i = 0, len = callables.length; i < len; i++) {
-	            var called = callables[i].apply(s, arguments);
+	            var callable = callables[i];
+	            var called = callable && callable.apply(s, arguments);
 	            result = result.concat(called);
 	        }
 	        return result;

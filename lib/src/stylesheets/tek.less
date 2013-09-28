@@ -1,0 +1,267 @@
+// bakery mixin and variables
+
+// colors
+@white: #FFF;
+@silver: #F0F0F0;
+@black: #333;
+@gray: #666;
+@red: #F33;
+@pink: #F69;
+@yellow: #FF3;
+@orange: #FF6600;
+@brown: #930;
+@green: #3F3;
+@blue: #33F;
+@purple: #90C;
+@cyan: #6FF;
+
+// media size
+@phonePortrait: 420px;
+@phoneLandscape: 600px;
+@tabletPortrait: 780px;
+@tabletLandscape: 1024px;
+
+// mixin
+.linear-gradient(@from, @to) {
+  background-color: @to;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+  background-image: -webkit-linear-gradient(@from, @to);
+  background-image: -moz-linear-gradient(@from, @to);
+  background-image: -o-linear-gradient(@from, @to);
+  background-image: -ms-linear-gradient(@from, @to);
+  background-image: linear-gradient(@from, @to);
+}
+
+.linear-gradient(@deg, @from, @to) {
+  background-color: @to;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+  background-image: -webkit-linear-gradient(@deg, @from, @to);
+  background-image: -moz-linear-gradient(@deg, @from, @to);
+  background-image: -o-linear-gradient(@deg, @from, @to);
+  background-image: -ms-linear-gradient(@deg, @from, @to);
+  background-image: linear-gradient(@deg, @from, @to);
+}
+
+.linear-gradient(@deg, @from, @center, @to) {
+  background-color: @to;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+  background-image: -webkit-linear-gradient(@deg, @from, @center, @to);
+  background-image: -moz-linear-gradient(@deg, @from, @center, @to);
+  background-image: -o-linear-gradient(@deg, @from, @center, @to);
+  background-image: -ms-linear-gradient(@deg, @from, @center, @to);
+  background-image: linear-gradient(@deg, @from, @center, @to);
+}
+
+.linear-gradient(none) {
+  background-image: none;
+}
+
+.radial-gradient(@x, @y, @from, @to) {
+  background-color: @to;
+  background-image: -webkit-radial-gradient(@x @y, circle, @from, @to);
+  background-image: -moz-radial-gradient(@x @y, circle, @from, @to);
+  background-image: -o-radial-gradient(@x @y, circle, @from, @to);
+  background-image: -ms-radial-gradient(@x @y, circle, @from, @to);
+  background-image: radial-gradient(@x @y, circle, @from, @to);
+}
+
+.radial-gradient(none) {
+  background-image: none;
+}
+
+.stripe(@size, @color) {
+  background-size: @size * 2 @size * 2;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, @color), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, @color), color-stop(.75, @color), color-stop(.75, transparent), to(transparent));
+  background-image: -moz-linear-gradient(-45deg, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%);
+  background-image: -webkit-linear-gradient(-45deg, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%);
+  background-image: -ms-linear-gradient(-45deg, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%);
+  background-image: -o-linear-gradient(-45deg, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%);
+  background-image: linear-gradient(-45deg, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%);
+}
+
+.box-shadow(@style, @dense) {
+  .box-shadow(@style rgba(0, 0, 0,@dense));
+}
+
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -o-box-shadow: @shadow;
+  -ms-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.box-shadow(@style, @dense, inset) {
+  @shadow: @style rgba(0, 0, 0,@dense) inset;
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -o-box-shadow: @shadow;
+  -ms-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.box-shadow(none) {
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+
+.text-shadow(@shadow) {
+  -webkit-text-shadow: @shadow;
+  -moz-text-shadow: @shadow;
+  -o-text-shadow: @shadow;
+  -ms-text-shadow: @shadow;
+  text-shadow: @shadow;
+}
+
+.text-shadow(@style, @dense) {
+  .text-shadow(@style rgba(0, 0, 0,@dense));
+}
+
+.text-shadow(none) {
+  -webkit-text-shadow: none;
+  -moz-text-shadow: none;
+  -o-text-shadow: none;
+  -ms-text-shadow: none;
+  text-shadow: none;
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -o-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.border-radius(@UL, @UR, @DR, @DL) {
+  .border-radius(@UL @UR @DR @DL);
+}
+
+.border-radius(@UP, @DOWN) {
+  .border-radius(@UP @UP @DOWN @DOWN);
+}
+
+.box-sizing(@sizing) {
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  -o-box-sizing: @sizing;
+  -ms-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+
+.square(@length) {
+  width: @length;
+  height: @length;
+}
+
+.circle(@radius) {
+  .border-radius(50%);
+  .square(@radius * 2);
+}
+
+.circle(@radius, @color) {
+  .circle(@radius);
+  background-color: @color;
+}
+
+.rotate(@deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+.scale(@scale) {
+  -moz-transform: scale(@scale);
+  -webkit-transform: scale(@scale);
+  -ms-transform: scale(@scale);
+  -o-transform: scale(@scale);
+  transform: scale(@scale);
+}
+
+.skew(@deg) {
+  -webkit-transform: skew(@deg);
+  -moz-transform: skew(@deg);
+  -o-transform: skew(@deg);
+  -ms-transform: skew(@deg);
+  transform: skew(@deg);
+}
+
+.etched(@dense) {
+  .text-shadow(0 1px 0 rgba(255, 255, 255,@dense));
+}
+
+.white-back(@dense) {
+  background-color: rgba(255, 255, 255,@dense);
+}
+
+.black-back(@dense) {
+  background-color: rgba(0, 0, 0,@dense);
+}
+
+.user-select(@userSelect) {
+  -webkit-user-select: @userSelect;
+  -moz-user-select: @userSelect;
+  -o-user-select: @userSelect;
+  -ms-user-select: @userSelect;
+  user-select: @userSelect;
+}
+
+.pointer-events(@event) {
+  -ms-pointer-events: @event;
+  -webkit-pointer-events: @event;
+  -moz-pointer-events: @event;
+  -o-pointer-events: @event;
+  pointer-events: @event;
+}
+
+.grabbable() {
+  cursor: pointer;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -webkit-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+  &:active {
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    cursor: -o-grabbing;
+    cursor: -ms-grabbing;
+    cursor: grabbing;
+  }
+}
+
+.cover(@z) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: @z;
+  content: '';
+  text-align: center;
+}
+
+.stick-left(@px) {
+  position: absolute;
+  left: @px;
+}
+
+.stick-top(@px) {
+  position: absolute;
+  top: @px;
+}
+
+.stick-right(@px) {
+  position: absolute;
+  right: @px;
+}
+
+.stick-bottom(@px) {
+  position: absolute;
+  bottom: @px;
+}

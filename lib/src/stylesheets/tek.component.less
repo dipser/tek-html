@@ -1,0 +1,124 @@
+@import "tek";
+
+.btn(@color) {
+  display: inline-block;
+  .linear-gradient(@color, darken(@color, 10));
+  border: 1px solid darken(@color, 12);
+  .box-shadow(1px 1px 2px, 0.2);
+  .border-radius(5px);
+  padding: 0.5em 1em;
+  cursor: pointer;
+  color: darken(@color, 70);
+  .user-select(none);
+  &:hover {
+    .linear-gradient(lighten(@color, 3), darken(@color, 6));
+    .box-shadow(1px 1px 2px, 0.3);
+    border-color: darken(@color, 8);
+    color: darken(@color, 80);
+    text-decoration: none;
+  }
+  &:active, &.active {
+    .box-shadow(none);
+    background-image: none;
+    color: darken(@color, 50);
+  }
+}
+
+.hoverable-btn(@back) {
+  background-color: @back;
+  border-color: darken(@back, 10);
+  .text-shadow(none);
+  .linear-gradient(none);
+  .box-shadow(1px 1px 2px, 0.3);
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    background-color: @back;
+    .linear-gradient(none);
+    .box-shadow(2px 2px 3px, 0.3);
+  }
+  &:active {
+    .box-shadow(none);
+  }
+}
+
+.table(@back) {
+  border-collapse: collapse;
+  th, td {
+    padding: 5px 10px;
+    background-color: @back;
+    border: 1px solid darken(@back, 4);
+  }
+  th {
+    .linear-gradient(@back, darken(@back, 3));
+  }
+  &.stripe-table {
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: darken(@back, 1);
+        }
+      }
+    }
+  }
+}
+
+.a(@color) {
+  color: @color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.nav-item(@back, @color) {
+  .linear-gradient(@back, darken(@back, 10));
+  color: darken(@color, 10);
+  display: inline-block;
+  padding: 5px 10px;
+  &:hover {
+    text-decoration: none;
+    color: @color;
+  }
+  &:active {
+    .linear-gradient(none);
+  }
+}
+
+.block-list-header(@back) {
+  background-color: @back;
+  .linear-gradient(@back, darken(@back,8));
+  padding: 5px 15px;
+  .box-shadow(1px 1px 2px, 0.4);
+}
+
+.block-list(@back, @highlight) {
+  padding: 0;
+  margin-top: 0;
+  li {
+    list-style: none;
+    padding: 5px 15px;
+    margin-bottom: -1px;
+    border: 1px solid darken(@back, 10);
+    background-color: @back;
+    position: relative;
+    &:hover {
+      @back: fadeout(@highlight, 90);
+      background-color: @back;
+      border-color: darken(@back, 10);
+      z-index: 99;
+
+      .block-list-item-control {
+        opacity: 1;
+      }
+    }
+    &:active {
+      color: @white;
+      background-color: @highlight;
+      border-color: darken(@highlight, 10)
+    }
+    .block-list-item-control {
+      opacity: 0.1;
+    }
+  }
+}

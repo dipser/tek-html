@@ -1,8 +1,6 @@
-/* bakery mixin and variables */
+// bakery mixin and variables
 
-/******************
- * colors
- *****************/
+// colors
 @white: #FFF;
 @silver: #F0F0F0;
 @black: #333;
@@ -17,19 +15,13 @@
 @purple: #90C;
 @cyan: #6FF;
 
-/******************
- * media size
- ******************/
-
+// media size
 @phonePortrait: 420px;
 @phoneLandscape: 600px;
 @tabletPortrait: 780px;
 @tabletLandscape: 1024px;
 
-/******************
- *  mixin
- ******************/
-
+// mixin
 .linear-gradient(@from, @to) {
   background-color: @to;
   background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
@@ -152,12 +144,12 @@
   .border-radius(@UP @UP @DOWN @DOWN);
 }
 
-.border-box {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
+.box-sizing(@sizing) {
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  -o-box-sizing: @sizing;
+  -ms-box-sizing: @sizing;
+  box-sizing: @sizing;
 }
 
 .square(@length) {

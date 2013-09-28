@@ -1,0 +1,52 @@
+@import "./tek";
+@import "./tek.component.less";
+
+//clean theme
+.theme-clean(@base, @main, @accent) {
+  color: @black;
+  background-color: @base;
+  font-family: monospace;
+  header {
+    @back: darken(@white, 5);
+    @color: @gray;
+    nav {
+
+    }
+    .nav-item {
+      color: @color;
+    }
+  }
+  a {
+    .a(@blue);
+  }
+  table {
+    .table(@base);
+  }
+  .btn {
+    .btn(@base);
+  }
+
+  .primary-btn {
+    .btn(@accent);
+  }
+
+  .logo {
+    margin: 2px 10px;
+    opacity: 0.5;
+    a {
+      @color: @main;
+      color: @color;
+      &:hover {
+        color: @color;
+        text-decoration: none;
+      }
+    }
+  }
+  .block-list-header {
+    @back: desaturate(darken(@accent, 30), 20);
+    .block-list-header(@back);
+  }
+  .block-list {
+    .block-list(white, @accent);
+  }
+}

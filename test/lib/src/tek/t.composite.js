@@ -11,8 +11,8 @@ exports.compositeTest = function (test) {
         return 1;
     }, function () {
         return 2;
-    })();
-    composition.should.be.lengthOf(2);
+    }, null, undefined)();
+    composition.should.be.lengthOf(4);
     composition[0].should.equal(1);
     composition[1].should.equal(2);
     test.done();

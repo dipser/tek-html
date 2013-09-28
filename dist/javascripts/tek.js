@@ -54,7 +54,7 @@ tek = (function (module) {
 	    };
 	})();
 	
-	/**
+/**
 	 * generate uuid
 	 */
 	exports.uuid = (function () {
@@ -69,7 +69,7 @@ tek = (function (module) {
 	    }
 	})();
 	
-	exports.Query = function (string) {
+exports.Query = function (string) {
 	    if (!string) return;
 	    var s = this;
 	    string.split('&').forEach(function (query) {
@@ -82,7 +82,7 @@ tek = (function (module) {
 	    var search = location.search;
 	    return search && new exports.Query(search.replace('?', ''));
 	};
-	/**
+/**
 	 * save data to local storage
 	 * @param key
 	 * @param obj
@@ -92,7 +92,7 @@ tek = (function (module) {
 	        string = isString ? obj : JSON.stringify(obj);
 	    localStorage.setItem(key, string);
 	};
-	/**
+/**
 	 * restore data from local storage
 	 * @param key
 	 * @returns {*}
@@ -101,7 +101,7 @@ tek = (function (module) {
 	    var string = localStorage.getItem(key);
 	    return JSON.parse(string);
 	};
-	exports.math = {};
+exports.math = {};
 	/**
 	 * make sure to values to iteratable
 	 * @param values

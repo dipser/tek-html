@@ -3,9 +3,9 @@
  */
 
 var should = require('should'),
-    index = require('../../../lib/src/javascripts/tek.js/index');
+    index = require('../../../lib/src/javascripts/tek.view.js/index');
 
 exports.toStringTest = function (test) {
-    should.exist(index.toString());
+    console.log(index.toString());
     test.done();
 };

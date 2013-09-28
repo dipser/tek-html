@@ -5,6 +5,6 @@ var should = require('should'),
 
 exports.FormValueTest = function (test) {
     var formValue = new $.FormValue({k1: 1, k2: 2, i: {i1: 11, i2: 22}});
-    console.log(formValue.toObj());
+    should.exist(formValue);
     test.done();
 };

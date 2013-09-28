@@ -1,9 +1,18 @@
-(function ($, Hbs, tek, undefined) {
-    var global = {
-        $: $,
-        Hbs: Hbs,
-        tek: tek
-    };
+(function (dependencies, undefined) {
 
+    var valid = true;
+    Object.keys(dependencies).forEach(function (name) {
+        if (!dependencies[name]) {
+            console.error('[tek.view.js] dependency missing: ', name + 'not found.');
+            valid = false;
+        }
+    });
+    if (!valid) return;
 
-})(jQuery, Handlebars, tek, undefined);
+{{modules}}
+
+})({
+    $: this['$'],
+    Handlebars: this['Handlebars'],
+    tek: this['tek']
+}, undefined);

@@ -1,5 +1,10 @@
 (function ($, Hbs, tek, undefined) {
-    $.extend({
+    var global = {
+        $:$,
+        Hbs:Hbs,
+        tek:tek
+    };
 
-    });
+{{modules}}
+
 })(jQuery, Handlebars, tek, undefined);

@@ -1,9 +1,9 @@
 {{name}} = (function (module) {
     
-    var exports = module && module.exports || {};
+    var {{name}} = module && module.exports || {};
 
 {{modules}}
     
-    return exports;
+    return {{name}};
     
 })(typeof(module) === 'undefined' ? null : module);

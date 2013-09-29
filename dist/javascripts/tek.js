@@ -1,12 +1,12 @@
 tek = (function (module) {
     
-    var exports = module && module.exports || {};
+    var tek = module && module.exports || {};
 
 	/**
 	 * define newable function
 	 * @type {Function}
 	 */
-	exports.define = (function () {
+	tek.define = (function () {
 	    function addProperty(F, property) {
 	        Object.keys(property).forEach(function (name) {
 	            F.prototype[name] = property[name];
@@ -54,10 +54,10 @@ tek = (function (module) {
 	    };
 	})();
 	
-/**
+	/**
 	 * generate uuid
 	 */
-	exports.uuid = (function () {
+	tek.uuid = (function () {
 	    function s4() {
 	        return Math.floor((1 + Math.random()) * 0x10000)
 	            .toString(16)
@@ -69,7 +69,8 @@ tek = (function (module) {
 	    }
 	})();
 	
-exports.Query = function (string) {
+	
+	tek.Query = function (string) {
 	    if (!string) return;
 	    var s = this;
 	    string.split('&').forEach(function (query) {
@@ -78,36 +79,39 @@ exports.Query = function (string) {
 	        s[key] = decodeURIComponent(key_val[1].replace(/\+/g, ' '));
 	    });
 	};
-	exports.Query.fromLocation = function () {
+	tek.Query.fromLocation = function () {
 	    var search = location.search;
-	    return search && new exports.Query(search.replace('?', ''));
+	    return search && new tek.Query(search.replace('?', ''));
 	};
-/**
+	
+	/**
 	 * save data to local storage
 	 * @param key
 	 * @param obj
 	 */
-	exports.toStorage = function (key, obj) {
+	tek.toStorage = function (key, obj) {
 	    var isString = typeof (obj) === 'string',
 	        string = isString ? obj : JSON.stringify(obj);
 	    localStorage.setItem(key, string);
 	};
-/**
+	
+	/**
 	 * restore data from local storage
 	 * @param key
 	 * @returns {*}
 	 */
-	exports.fromStorage = function (key) {
+	tek.fromStorage = function (key) {
 	    var string = localStorage.getItem(key);
 	    return JSON.parse(string);
 	};
-exports.math = {};
+	
+	tek.math = {};
 	/**
 	 * make sure to values to iteratable
 	 * @param values
 	 * @returns {*}
 	 */
-	exports.ensureIteratable = function (values) {
+	tek.ensureIteratable = function (values) {
 	    switch (values.length) {
 	        case 0:
 	            return null;
@@ -127,9 +131,9 @@ exports.math = {};
 	 * get largest value
 	 * @returns {null}
 	 */
-	exports.math.max = function () {
+	tek.math.max = function () {
 	    var max = null,
-	        values = exports.ensureIteratable(arguments);
+	        values = tek.ensureIteratable(arguments);
 	    for (var i = 0, len = values.length; i < len; i++) {
 	        var value = values[i];
 	        if (max === null) {
@@ -145,9 +149,9 @@ exports.math = {};
 	 * get smallest value
 	 * @returns {null}
 	 */
-	exports.math.min = function () {
+	tek.math.min = function () {
 	    var min = null,
-	        values = exports.ensureIteratable(arguments);
+	        values = tek.ensureIteratable(arguments);
 	    for (var i = 0, len = values.length; i < len; i++) {
 	        var value = values[i];
 	        if (min === null) {
@@ -163,9 +167,9 @@ exports.math = {};
 	 * get sum of values
 	 * @returns {number}
 	 */
-	exports.math.sum = function () {
+	tek.math.sum = function () {
 	    var sum = 0,
-	        values = exports.ensureIteratable(arguments);
+	        values = tek.ensureIteratable(arguments);
 	    for (var i = 0, len = values.length; i < len; i++) {
 	        sum += values[i];
 	    }
@@ -176,17 +180,18 @@ exports.math = {};
 	 * get average of values
 	 * @returns {number}
 	 */
-	exports.math.average = function () {
-	    var values = exports.ensureIteratable(arguments);
+	tek.math.average = function () {
+	    var values = tek.ensureIteratable(arguments);
 	    var len = values.length;
-	    var sum = exports.math.sum(values);
+	    var sum = tek.math.sum(values);
 	    return  len ? (sum / len) : null;
 	};
-/**
+	
+	/**
 	 * composite functions
 	 * @returns {Function}
 	 */
-	exports.composite = function (/**functions**/) {
+	tek.composite = function (/**functions**/) {
 	    var callables = Array.prototype.slice.call(arguments, 0);
 	    return function () {
 	        var s = this,
@@ -200,7 +205,9 @@ exports.math = {};
 	    };
 	};
 	
-/**
+	
+	
+	/**
 	 * User: okunishitaka
 	 * Date: 9/16/13
 	 * Time: 3:36 PM
@@ -211,7 +218,7 @@ exports.math = {};
 	 * @param src
 	 * @param dst
 	 */
-	exports.copy = function (src, dst) {
+	tek.copy = function (src, dst) {
 	    for (var name in src) {
 	        if (!src.hasOwnProperty(name)) continue;
 	        dst[name] = src[name];
@@ -225,8 +232,8 @@ exports.math = {};
 	 * @param dst
 	 * @returns {*}
 	 */
-	exports.copy.deep = function (src, dst) {
-	    var copy = exports.copy;
+	tek.copy.deep = function (src, dst) {
+	    var copy = tek.copy;
 	    if (!src) return dst;
 	    for (var key in src) {
 	        if (!src.hasOwnProperty(key)) continue;
@@ -248,17 +255,17 @@ exports.math = {};
 	};
 	
 	
-exports.crossBrowser = function (window) {
-	    window = exports.crossBrowser.window(window);
-	    window.navigator = exports.crossBrowser.navigator(window.navigator || {});
+	tek.crossBrowser = function (window) {
+	    window = tek.crossBrowser.window(window);
+	    window.navigator = tek.crossBrowser.navigator(window.navigator || {});
 	    return window;
 	};
-	exports.crossBrowser.window = function (window) {
-	    window.requestAnimationFrame = exports.crossBrowser.window.dectect.requestAnimationFrame(window);
-	    window.URL = exports.crossBrowser.window.dectect.URL(window);
+	tek.crossBrowser.window = function (window) {
+	    window.requestAnimationFrame = tek.crossBrowser.window.dectect.requestAnimationFrame(window);
+	    window.URL = tek.crossBrowser.window.dectect.URL(window);
 	    return window;
 	};
-	exports.crossBrowser.window.dectect = {
+	tek.crossBrowser.window.dectect = {
 	    requestAnimationFrame: function (window) {
 	        return window.requestAnimationFrame ||
 	            window.webkitRequestAnimationFrame ||
@@ -274,11 +281,11 @@ exports.crossBrowser = function (window) {
 	    }
 	};
 	
-	exports.crossBrowser.navigator = function (navigator) {
-	    navigator.getUserMedia = exports.crossBrowser.navigator.detect.getUserMedia(navigator);
+	tek.crossBrowser.navigator = function (navigator) {
+	    navigator.getUserMedia = tek.crossBrowser.navigator.detect.getUserMedia(navigator);
 	    return navigator;
 	};
-	exports.crossBrowser.navigator.detect = {
+	tek.crossBrowser.navigator.detect = {
 	    getUserMedia: function (navigator) {
 	        return navigator.getUserMedia ||
 	            navigator.webkitGetUserMedia ||
@@ -286,7 +293,86 @@ exports.crossBrowser = function (window) {
 	            navigator.msGetUserMedia;
 	    }
 	};
+	
+	
+	tek.Vector = tek.define({
+	    init: function (values) {
+	        var s = this;
+	        for (var key in values) {
+	            if (!values.hasOwnProperty(key)) continue;
+	            s[key] = values[key];
+	        }
+	    },
+	    attrAccessor: "".split(','),
+	    properties: {
+	        add: function (values) {
+	            var s = this;
+	            for (var key in s) {
+	                if (!s.hasOwnProperty(key)) continue;
+	                if (!values.hasOwnProperty(key)) continue;
+	                s[key] += values[key];
+	            }
+	            return s;
+	        },
+	        scale: function (scale) {
+	            var s = this;
+	            for (var key in s) {
+	                if (!s.hasOwnProperty(key)) continue;
+	                s[key] = s[key] * scale;
+	            }
+	            return s;
+	        },
+	        revert: function () {
+	            var s = this;
+	            for (var key in s) {
+	                if (!s.hasOwnProperty(key)) continue;
+	                s[key] *= -1;
+	            }
+	            return s;
+	        },
+	        clone: function () {
+	            var s = this;
+	            return new tek.Vector(s);
+	        }
+	    }
+	});
+	tek.Vector.between = function (from, to) {
+	    var Vector = tek.Vector;
+	    return new Vector(to).clone().add(new Vector(from).clone().revert());
+	};
+	
+	tek.Animation = tek.define({
+	    init: function (from, to) {
+	        var Vector = tek.Vector;
+	        var s = this;
+	        s.from = new Vector(from);
+	        s.to = new Vector(to);
+	        s.scope = Vector.between(from, to);
+	    },
+	    attrAccessor: "cursor,frameCount,done".split(','),
+	    properties: {
+	        _done: function () {
+	            console.log('animaction done!');
+	        },
+	        _frameCount: 100,
+	        _cursor: 0, /** indicates current position. 0 ~ 1**/
+	        value: function () {
+	            var s = this;
+	            return s.from.clone().add(s.scope.clone().scale(s._cursor));
+	        },
+	        next: function () {
+	            var s = this;
+	            s._cursor += (1 / s._frameCount);
+	            if (s._cursor >= 1) {
+	                var done = s.done();
+	                done && done();
+	                s._cursor = 1;
+	            }
+	            return s.value();
+	        }
+	    }
+	});
     
-    return exports;
+    return tek;
     
 })(typeof(module) === 'undefined' ? null : module);

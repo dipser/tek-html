@@ -355,8 +355,9 @@ tek = (function (module) {
 	        _frameCount: 100,
 	        _cursor: 0, /** indicates current position. 0 ~ 1**/
 	        value: function () {
-	            var s = this;
-	            return s.from.clone().add(s.scope.clone().scale(ease(s._cursor)));
+	            var s = this,
+	                scale = s.ease(s._cursor);
+	            return s.from.clone().add(s.scope.clone().scale(scale));
 	        },
 	        ease: function (proceed) {
 	            //TODO
@@ -365,19 +366,30 @@ tek = (function (module) {
 	        next: function () {
 	            var s = this,
 	                value = s.value();
-	            s._cursor += (1 / s._frameCount);
+	            s.move(1 / s._frameCount);
+	            return value;
+	        },
+	        move: function (amount) {
+	            var s = this;
+	            s._cursor += amount;
 	            if (s._cursor >= 1) {
 	                s._done = true;
 	                s._cursor = 1;
 	            }
-	            return value;
 	        },
-	        start: function (requestAnimationFrame, callback) {
+	        start: function (requestAnimationFrame, duration, callback) {
+	            if (typeof(arguments[1]) === 'function') {
+	                callback = arguments[1];
+	                duration = 1500;
+	            }
 	            var s = this;
+	            var startTime = new Date;
 	            s._done = false;
 	            s._cursor = 0;
 	            (function loop() {
-	                callback(s.next(), s._done);
+	                var t = new Date - startTime;
+	                s.move(t / duration - s._cursor);
+	                callback(s.value(), s._done);
 	                if (!s._done) requestAnimationFrame(loop);
 	            })();
 	        }

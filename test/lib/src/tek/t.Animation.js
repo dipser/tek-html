@@ -35,8 +35,10 @@ exports.startTest = function (test) {
     var count = 0;
     animation.start(function (next) {
         setTimeout(next, 50);
-    }, function (values, done) {
-        values.should.have.property('x', 1 + count);
+    }, 100, function (values, done) {
+        if (count == 0) {
+            values.should.have.property('x', 1);
+        }
         count++;
         done && test.done();
     });

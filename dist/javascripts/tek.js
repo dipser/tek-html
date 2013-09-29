@@ -248,7 +248,11 @@ exports.math = {};
 	};
 	
 	
-exports.crossBrowser = {};
+exports.crossBrowser = function (window) {
+	    window = exports.crossBrowser.window(window);
+	    window.navigator = exports.crossBrowser.navigator(window.navigator || {});
+	    return window;
+	};
 	exports.crossBrowser.window = function (window) {
 	    window.requestAnimationFrame = exports.crossBrowser.window.dectect.requestAnimationFrame(window);
 	    window.URL = exports.crossBrowser.window.dectect.URL(window);

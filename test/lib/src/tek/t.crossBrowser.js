@@ -1,4 +1,4 @@
-var crossBrowser = require('../../../../lib/src/javascripts/tek.js/09.crossBrowser'),
+var crossBrowser = require('../../../../lib/src/javascripts/tek.js/09.crossBrowser')['crossBrowser'],
     should = require('should');
 
 

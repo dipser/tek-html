@@ -396,6 +396,7 @@ tek = (function (module) {
 	    }
 	});
 	tek.toSVG = function (html, w, h) {
+	    if (typeof(Blob) === undefined) return null;
 	    var svg = "<svg xmlns='http://www.w3.org/2000/svg' width='" + w + "' height='" + h + "'>" +
 	        "<foreignObject width='100%' height='100%'>" +
 	        "<div xmlns='http://www.w3.org/1999/xhtml' style='font-size:40px'>" +
@@ -404,6 +405,17 @@ tek = (function (module) {
 	        "</foreignObject>" +
 	        "</svg>";
 	    return  new Blob([svg], {type: "image/svg+xml;charset=utf-8"});
+	};
+	/**
+	 * filter to unique values
+	 */
+	tek.unique = function (values) {
+	    var isArray = values instanceof Array;
+	    if (!isArray) values = Array.prototype.splice.call(arguments, 0);
+	    return values.filter(function (entry, i) {
+	        var first = values.indexOf(entry);
+	        return first === i;
+	    });
 	};
     
     return tek;

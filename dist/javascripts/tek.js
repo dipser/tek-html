@@ -356,7 +356,11 @@ tek = (function (module) {
 	        _cursor: 0, /** indicates current position. 0 ~ 1**/
 	        value: function () {
 	            var s = this;
-	            return s.from.clone().add(s.scope.clone().scale(s._cursor));
+	            return s.from.clone().add(s.scope.clone().scale(ease(s._cursor)));
+	        },
+	        ease: function (proceed) {
+	            //TODO
+	            return proceed;
 	        },
 	        next: function () {
 	            var s = this,

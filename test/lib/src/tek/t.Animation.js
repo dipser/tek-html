@@ -20,8 +20,24 @@ exports.AnimationTest = function (test) {
     animation.done(function () {
         true.should.be.true;
     });
+    animation.next().should.have.property('x', 1);
     animation.next().should.have.property('x', 2);
     animation.next().should.have.property('x', 3);
     animation.next().should.have.property('x', 3);
     test.done();
+};
+exports.startTest = function (test) {
+    var animation = new Animation({
+        x: 1, y: 1
+    }, {
+        x: 3, y: 3
+    }).frameCount(2);
+    var count = 0;
+    animation.start(function (next) {
+        setTimeout(next, 50);
+    }, function (values, done) {
+        values.should.have.property('x', 1 + count);
+        count++;
+        done && test.done();
+    });
 };

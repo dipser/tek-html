@@ -53,12 +53,6 @@
 		            for (var key in s) {
 		                if (!s.hasOwnProperty(key)) continue;
 		                var value = s[key];
-		                var isNumeric = (typeof (value) === 'string') && value.match(/^[\d\.]+$/);
-		                if (isNumeric) {
-		                    value = parseFloat(value);
-		                } else {
-		                    if (!value) value = undefined;
-		                }
 		                var dst = findInjectable(result, key);
 		                key = key.split('.').pop();
 		                if (dst[key]) {
@@ -326,7 +320,7 @@
 		                        },
 		                        complete: function () {
 		                            form
-		                                .removeClass('bkr-loading')
+		                                .removeClass('tk-loading')
 		                                .removeSpin();
 		
 		                        }

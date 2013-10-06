@@ -87,7 +87,7 @@
 
 .block-list-header(@back) {
   background-color: @back;
-  .linear-gradient(@back, darken(@back,8));
+  .linear-gradient(@back, darken(@back, 8));
   padding: 5px 15px;
   .box-shadow(1px 1px 2px, 0.4);
 }
@@ -119,6 +119,49 @@
     }
     .block-list-item-control {
       opacity: 0.1;
+    }
+  }
+}
+
+.confirm-dialog() {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 120px;
+  width: 100%;
+  height: 100%;
+  .black-back(0.4);
+  .dialog-title {
+    margin: 2px auto 4px;
+  }
+  .confirm-dialog-inner {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    @back: @white;
+    background-color: @back;
+    .border-radius(4px);
+    .box-shadow(4px 4px 8px, 0.5);
+    padding: 15px 20px;
+  }
+  .disabled {
+    opacity: 0.3;
+    .box-shadow(none);
+    background-image: none;
+    &:hover{
+      background-image: none;
+    }
+  }
+  .remove-btn{
+    padding: 1px 4px;
+    color: gray;
+    font-size: 1.5em;
+    top: 2px;
+    opacity: 0.5;
+    &:hover{
+      opacity:1;
+      text-decoration: none;
     }
   }
 }

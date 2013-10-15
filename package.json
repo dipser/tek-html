@@ -1,8 +1,12 @@
 {
     "name": "tek-html",
-    "version": "0.0.34",
+    "version": "0.0.35",
     "description": "tek library for static html",
     "main": "./lib/index",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/okunishinishi/tek-html.git"
+    },
     "bin": {
         "tek-h": "bin/tek-html.js",
         "tek-html": "bin/tek-html.js"

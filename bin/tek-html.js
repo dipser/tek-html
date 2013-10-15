@@ -16,10 +16,11 @@ program
     .command('compact <src_file> <out_file>')
     .description('compact html,css,js file int a single html file')
     .option('-d, --debug')
+    .option('-p, --pretty')
     .action(function (src, out, options) {
         lib.compact(src, out, function () {
             console.log('[tek-html] compact done!');
-        }, options.debug);
+        }, options);
     });
 
 program

@@ -1,0 +1,8 @@
+.tv-root li {
+  list-style: none;
+}
+.tv-selected {
+  background-color: #0000ff;
+  border-color: #0000cc;
+  color: #ffffff;
+}

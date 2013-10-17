@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../../lib/src/stylesheets/jquery.treeview.css"/>
+    <meta charset="utf-8"/>
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #777;
+            padding: 50px;
+        }
+    </style>
+    <script src="../../../dist/javascripts/lib/jquery.js"></script>
+    <script src="../../../dist/javascripts/lib/jquery-ui.custom.js"></script>
+    <script src="../../../lib/src/javascripts/jquery.treeview.js/01.js"></script>
+    <script>
+        (function ($) {
+            var tv = $['treeview'],
+                    Item = tv.Item;
+            $(function () {
+                var body = $(document.body);
+                $('#demo-ul', body).treeview([
+                    new Item('地球').children([
+                        new Item('海'),
+                        new Item('陸').children([
+                            new Item('山'),
+                            new Item('平地')
+                        ])
+                    ]),
+                    new Item('月')
+                ]);
+            });
+        })(jQuery);
+    </script>
+    <title>jquery treeview</title>
+</head>
+<body>
+<ul id="demo-ul"></ul>
+</body>
+</html>

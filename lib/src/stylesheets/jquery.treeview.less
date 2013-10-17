@@ -1,15 +1,39 @@
 @import 'tek';
 
-@accent: blue;
+@accent: #473aff;
+
+.colored-item(@color){
+  background-color: @color;
+  border-color: darken(@color, 10);
+}
+
 
 .tv-root {
-  li {
-    list-style: none;
+}
+
+.tv-item {
+  list-style: none;
+  .colored-item(@white);
+  margin-bottom:-1px;
+}
+
+.tv-label {
+  padding: 5px 10px;
+  display: block;
+  cursor: pointer;
+  &:hover {
+    .colored-item(lighten(@accent, 30));
+  }
+  &:active{
+    color: @white;
+    .colored-item(@accent);
   }
 }
 
 .tv-selected {
-  background-color: @accent;
-  border-color: darken(@accent, 10);
-  color: @white;
+  > .tv-label {
+    color: @white;
+    .colored-item(@accent);
+    cursor: default;
+  }
 }

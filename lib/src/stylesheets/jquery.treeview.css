@@ -1,8 +1,26 @@
-.tv-root li {
+.tv-item {
   list-style: none;
+  background-color: #ffffff;
+  border-color: #e6e6e6;
+  margin-bottom: -1px;
 }
-.tv-selected {
-  background-color: #0000ff;
-  border-color: #0000cc;
+.tv-label {
+  padding: 5px 10px;
+  display: block;
+  cursor: pointer;
+}
+.tv-label:hover {
+  background-color: #d6d3ff;
+  border-color: #a6a0ff;
+}
+.tv-label:active {
   color: #ffffff;
+  background-color: #473aff;
+  border-color: #1707ff;
+}
+.tv-selected > .tv-label {
+  color: #ffffff;
+  background-color: #473aff;
+  border-color: #1707ff;
+  cursor: default;
 }

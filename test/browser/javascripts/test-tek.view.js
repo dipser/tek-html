@@ -43,5 +43,18 @@
             }, 30);
             text.val('change-text');
         });
+
+        asyncTest("$.fn.spin", function () {
+            var form = $('#section01').findByAttr('name', 'some-form');
+            form.showSpin();
+            setTimeout(function () {
+                strictEqual(form.find('.tk-spin').size(), 1, 'spin');
+                form.removeSpin();
+                setTimeout(function () {
+                    strictEqual(form.find('.tk-spin').size(), 0, 'spin');
+                    start();
+                }, 10);
+            }, 10);
+        });
     });
 })(jQuery);

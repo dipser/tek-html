@@ -1,0 +1,217 @@
+/* <h3>color variables</h3>
+
+  ```
+    <p>
+      <span class="colored-box color-white">@white</span>
+      <span class="colored-box color-silver">@silver</span>
+      <span class="colored-box color-black">@black</span>
+      <span class="colored-box color-gray">@gray</span>
+      <span class="colored-box color-red">@red</span>
+      <span class="colored-box color-pink">@pink</span>
+      <span class="colored-box color-yellow">@yellow</span>
+      <span class="colored-box color-orange">@orange</span>
+      <span class="colored-box color-brown">@brown</span>
+      <span class="colored-box color-green">@green</span>
+      <span class="colored-box color-blue">@blue</span>
+      <span class="colored-box color-purple">@purple</span>
+      <span class="colored-box color-cyan">@cyan</span>
+    </p>
+  ```
+*/
+/* <h3>media size</h3>
+   <p>
+     <dl>
+        <dt><b>@phonePortrait</b></dt>
+        <dd>phone size when put vertical</dd>
+        <dt><b>@phoneLandscape</b></dt>
+        <dd>phone size when put horizontal</dd>
+        <dt><b>@tabletPortrait</b></dt>
+        <dd>tablet size when put vertical</dd>
+        <dt><b>@tabletLandscape</b></dt>
+        <dd>tablet size when put horizontal</dd>
+     </dl>
+   </p>
+*/
+/*
+  <h3>linear gradient</h3>
+  <p>
+    .linear-gradient(@blue, darken(@blue, 30));
+  </p>
+  ```
+    <div class="blue-gradient gradient-box"></div>
+  ```
+*/
+/*
+  <h3>radial gradient</h3>
+  <p>
+    .radial-gradient(20%, 40%, @green, darken(@green, 50));
+  </p>
+  ```
+    <div class="green-radial-gradient radial-gradient-box"></div>
+  ```
+*/
+/*
+  <h3>stripe</h3>
+  <p>
+    .stripe(40px, lighten(@orange, 20));
+  </p>
+
+  ```
+    <div class="stripe-box orange-stripe"></div>
+
+  ```
+*/
+/*
+  <h3>rotate</h3>
+  <p>
+  .rotate(45deg);
+  </p>
+  ```
+    <div class="box rotate45"></div>
+  ```
+*/
+/*
+  <h3>skew</h3>
+  <p>
+    .skew(30deg);
+  </p>
+  ```
+    <div class="box skew30"></div>
+  ```
+ */
+body {
+  padding: 20px;
+}
+.box {
+  width: 80px;
+  height: 80px;
+  background-color: #AAA;
+}
+.rotate45 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.skew30 {
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+  -o-transform: skew(30deg);
+  -ms-transform: skew(30deg);
+  transform: skew(30deg);
+}
+.colored-box {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) inset;
+  -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) inset;
+  -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) inset;
+  display: inline-block;
+  padding: 4px 8px;
+  width: 80px;
+  margin: 5px 5px;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.colored-box.color-white {
+  background-color: #ffffff;
+  color: #cccccc;
+}
+.colored-box.color-silver {
+  background-color: #f0f0f0;
+  color: #bdbdbd;
+}
+.colored-box.color-black {
+  background-color: #333333;
+  color: #000000;
+}
+.colored-box.color-gray {
+  background-color: #666666;
+  color: #333333;
+}
+.colored-box.color-red {
+  background-color: #ff3333;
+  color: #cc0000;
+}
+.colored-box.color-pink {
+  background-color: #ff6699;
+  color: #ff0055;
+}
+.colored-box.color-yellow {
+  background-color: #ffff33;
+  color: #cccc00;
+}
+.colored-box.color-orange {
+  background-color: #ff6600;
+  color: #993d00;
+}
+.colored-box.color-brown {
+  background-color: #993300;
+  color: #331100;
+}
+.colored-box.color-green {
+  background-color: #33ff33;
+  color: #00cc00;
+}
+.colored-box.color-blue {
+  background-color: #3333ff;
+  color: #0000cc;
+}
+.colored-box.color-purple {
+  background-color: #9900cc;
+  color: #4d0066;
+}
+.colored-box.color-cyan {
+  background-color: #66ffff;
+  color: #00ffff;
+}
+p {
+  padding: 10px 20px;
+}
+.gradient-box {
+  height: 80px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+.radial-gradient-box {
+  width: 200px;
+  height: 200px;
+}
+.blue-gradient {
+  background-color: #000099;
+  background-image: -webkit-linear-gradient(#3333ff,#000099);
+  background-image: -moz-linear-gradient(#3333ff,#000099);
+  background-image: -o-linear-gradient(#3333ff,#000099);
+  background-image: -ms-linear-gradient(#3333ff,#000099);
+  background-image: linear-gradient(#3333ff,#000099);
+  border: 1px solid #2e2eff;
+}
+.green-radial-gradient {
+  background-color: #003300;
+  background-image: -webkit-radial-gradient(20% 40%, circle, #33ff33, #003300);
+  background-image: -moz-radial-gradient(20% 40%, circle, #33ff33, #003300);
+  background-image: -o-radial-gradient(20% 40%, circle, #33ff33, #003300);
+  background-image: -ms-radial-gradient(20% 40%, circle, #33ff33, #003300);
+  background-image: radial-gradient(20% 40%, circle, #33ff33, #003300);
+}
+.stripe-box {
+  height: 200px;
+}
+.orange-stripe {
+  background-color: #ff6600;
+  background-size: 80px 80px;
+  background-image: -webkit-linear-gradient(-45deg, #ffa366 25%, transparent 25%, transparent 50%, #ffa366 50%, #ffa366 75%, transparent 75%);
+  background-image: -moz-linear-gradient(-45deg, #ffa366 25%, transparent 25%, transparent 50%, #ffa366 50%, #ffa366 75%, transparent 75%);
+  background-image: -o-linear-gradient(-45deg, #ffa366 25%, transparent 25%, transparent 50%, #ffa366 50%, #ffa366 75%, transparent 75%);
+  background-image: -ms-linear-gradient(-45deg, #ffa366 25%, transparent 25%, transparent 50%, #ffa366 50%, #ffa366 75%, transparent 75%);
+  background-image: linear-gradient(-45deg, #ffa366 25%, transparent 25%, transparent 50%, #ffa366 50%, #ffa366 75%, transparent 75%);
+}

@@ -1,0 +1,264 @@
+/*
+  <h3>linear gradient</h3>
+  <p>
+    .linear-gradient(@blue, darken(@blue, 30));
+  </p>
+  ```
+    <div class="blue-gradient gradient-box"></div>
+  ```
+*/
+
+.linear-gradient(@style) {
+  background-image: -webkit-linear-gradient(@style);
+  background-image: -moz-linear-gradient(@style);
+  background-image: -o-linear-gradient(@style);
+  background-image: -ms-linear-gradient(@style);
+  background-image: linear-gradient(@style);
+}
+
+.linear-gradient(@from; @to) {
+  background-color: @to;
+  .linear-gradient(~`"@{from},@{to}"`);
+}
+
+.linear-gradient(none) {
+  background-image: none;
+}
+
+/*
+  <h3>radial gradient</h3>
+  <p>
+    .radial-gradient(20%, 40%, @green, darken(@green, 50));
+  </p>
+  ```
+    <div class="green-radial-gradient radial-gradient-box"></div>
+  ```
+*/
+
+.radial-gradient(@style) {
+  background-image: -webkit-radial-gradient(@style);
+  background-image: -moz-radial-gradient(@style);
+  background-image: -o-radial-gradient(@style);
+  background-image: -ms-radial-gradient(@style);
+  background-image: radial-gradient(@style);
+}
+
+.radial-gradient(@x; @y; @from; @to) {
+  background-color: @to;
+  @style: ~`"@{x} @{y}, circle, @{from}, @{to}"`;
+  .radial-gradient(@style);
+}
+
+.radial-gradient(none) {
+  background-image: none;
+}
+
+/*
+  <h3>stripe</h3>
+  <p>
+    .stripe(40px, lighten(@orange, 20));
+  </p>
+
+  ```
+    <div class="stripe-box orange-stripe"></div>
+
+  ```
+*/
+.stripe(@size; @color;@deg:-45deg;) {
+  background-size: @size * 2 @size * 2;
+  @style: ~`"@{deg}, @{color} 25%, transparent 25%, transparent 50%, @{color} 50%, @{color} 75%, transparent 75%"`;
+  .linear-gradient(@style);
+}
+
+.box-shadow(@style; @dense) {
+  .box-shadow(@style rgba(0, 0, 0,@dense));
+}
+
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -o-box-shadow: @shadow;
+  -ms-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.box-shadow(@style; @dense; inset) {
+  @shadow: @style rgba(0, 0, 0,@dense) inset;
+  .box-shadow(@shadow);
+}
+
+.text-shadow(@shadow) {
+  -webkit-text-shadow: @shadow;
+  -moz-text-shadow: @shadow;
+  -o-text-shadow: @shadow;
+  -ms-text-shadow: @shadow;
+  text-shadow: @shadow;
+}
+
+.text-shadow(@style, @dense) {
+  .text-shadow(@style rgba(0, 0, 0,@dense));
+}
+
+//noinspection CssOverwrittenProperties
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -o-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.border-radius(@UL, @UR, @DR, @DL) {
+  .border-radius(@UL @UR @DR @DL);
+}
+
+.border-radius(@UP, @DOWN) {
+  .border-radius(@UP @UP @DOWN @DOWN);
+}
+
+.box-sizing(@sizing) {
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  -o-box-sizing: @sizing;
+  -ms-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+
+.square(@length) {
+  width: @length;
+  height: @length;
+}
+
+.circle(@radius) {
+  .border-radius(50%);
+  .square(@radius * 2);
+}
+
+.circle(@radius, @color) {
+  .circle(@radius);
+  background-color: @color;
+}
+
+/*
+  <h3>rotate</h3>
+  <p>
+  .rotate(45deg);
+  </p>
+  ```
+    <div class="box rotate45"></div>
+  ```
+*/
+
+//noinspection CssUnknownProperty
+.rotate(@deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+//noinspection CssUnknownProperty
+.scale(@scale) {
+  -moz-transform: scale(@scale);
+  -webkit-transform: scale(@scale);
+  -ms-transform: scale(@scale);
+  -o-transform: scale(@scale);
+  transform: scale(@scale);
+}
+
+/*
+  <h3>skew</h3>
+  <p>
+    .skew(30deg);
+  </p>
+  ```
+    <div class="box skew30"></div>
+  ```
+ */
+
+//noinspection CssUnknownProperty
+.skew(@deg) {
+  -webkit-transform: skew(@deg);
+  -moz-transform: skew(@deg);
+  -o-transform: skew(@deg);
+  -ms-transform: skew(@deg);
+  transform: skew(@deg);
+}
+
+.etched(@dense) {
+  .text-shadow(0 1px 0 rgba(255, 255, 255,@dense));
+}
+
+.white-back(@dense) {
+  background-color: rgba(255, 255, 255,@dense);
+}
+
+.black-back(@dense) {
+  background-color: rgba(0, 0, 0,@dense);
+}
+
+//noinspection CssUnknownProperty
+.user-select(@userSelect) {
+  -webkit-user-select: @userSelect;
+  -moz-user-select: @userSelect;
+  -o-user-select: @userSelect;
+  -ms-user-select: @userSelect;
+  user-select: @userSelect;
+}
+
+//noinspection CssUnknownProperty
+.pointer-events(@event) {
+  -ms-pointer-events: @event;
+  -webkit-pointer-events: @event;
+  -moz-pointer-events: @event;
+  -o-pointer-events: @event;
+  pointer-events: @event;
+}
+
+.grabbable() {
+  cursor: pointer;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -webkit-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+  &:active {
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    cursor: -o-grabbing;
+    cursor: -ms-grabbing;
+    cursor: grabbing;
+  }
+}
+
+.cover(@z) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: @z;
+  content: '';
+  text-align: center;
+}
+
+.stick-left(@px) {
+  position: absolute;
+  left: @px;
+}
+
+.stick-top(@px) {
+  position: absolute;
+  top: @px;
+}
+
+.stick-right(@px) {
+  position: absolute;
+  right: @px;
+}
+
+.stick-bottom(@px) {
+  position: absolute;
+  bottom: @px;
+}

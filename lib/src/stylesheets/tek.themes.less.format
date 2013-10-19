@@ -1,3 +1,0 @@
-@import "./tek";
-@import "./tek.component.less";
-{{contents}}

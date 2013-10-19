@@ -1,0 +1,5 @@
+//<h1>tek-doc.less-{{version}}</h1>
+//stylesheet for styledocco preview
+@import "tek-mixin";
+
+{{contents}}

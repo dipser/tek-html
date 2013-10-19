@@ -4,6 +4,16 @@
     <meta charset="utf-8"/>
     <title>tek-view</title>
     <link rel="stylesheet" href="../stylesheets/qunit-1.12.0.css"/>
+    <style>
+        section {
+            padding: 50px;
+            background-color: #FAFAFA;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) inset;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+    </style>
     <script src="../../../dist/javascripts/tek.js"></script>
     <script src="../../../dist/javascripts/lib/handlebars.runtime.min.js"></script>
     <script src="../../../dist/javascripts/lib/jquery.js"></script>
@@ -33,7 +43,20 @@
 
 
 <section id="section01">
+    <h1>form</h1>
     <form action="" name="some-form">
+        <input type="text" name="text01" value="text-value01"/>
+        <input type="checkbox" name="checkbox01" value="checkbox-value01" checked/>
+        <input type="checkbox" name="checkbox01" value="checkbox-value02"/>
+        <input type="checkbox" name="checkbox01" value="checkbox-value03" checked/>
+        <input type="radio" name="radio01" value="radio-value01" checked/>
+        <input type="radio" name="radio01" value="radio-value02"/>
+        <select name="select01">
+            <option value="select-value01"></option>
+            <option value="select-value02" selected></option>
+            <option value="select-value03"></option>
+        </select>
+        <textarea name="textarea01" cols="30" rows="10">text-content</textarea>
         <a href="javascript:void(0)" data-role="submit-btn"></a>
     </form>
 </section>

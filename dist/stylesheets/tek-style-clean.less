@@ -117,9 +117,14 @@ body {
 }
 /*
   <h3>header</h3>
+
   ```
     <header>
        <h3 class="inline-logo">logo</h3>
+       <nav>
+          <a class="nav-item" href="">nav-item01</a>
+          <a class="nav-item" href="">nav-item02</a>
+       </nav>
     </header>
   ```
 */
@@ -181,7 +186,10 @@ table {
 /*
   <h3>.btn</h3>
   ```
-    <a class="btn">btn</a>
+    <div>
+      <a class="btn">btn</a>
+      <a class="primary-btn">primary-btn</a>
+    </div>
   ```
 */
 .btn {
@@ -217,6 +225,7 @@ table {
 .block-list-header {
   @back: desaturate(darken(@accent, 30), 20);
   .block-list-header(@back);
+  color:darken(@white,10);
 }
 
 .block-list {

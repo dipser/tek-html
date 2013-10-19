@@ -290,9 +290,14 @@ body {
 }
 /*
   <h3>header</h3>
+
   ```
     <header>
        <h3 class="inline-logo">logo</h3>
+       <nav>
+          <a class="nav-item" href="">nav-item01</a>
+          <a class="nav-item" href="">nav-item02</a>
+       </nav>
     </header>
   ```
 */
@@ -411,7 +416,10 @@ table th {
 /*
   <h3>.btn</h3>
   ```
-    <a class="btn">btn</a>
+    <div>
+      <a class="btn">btn</a>
+      <a class="primary-btn">primary-btn</a>
+    </div>
   ```
 */
 .btn {
@@ -574,14 +582,14 @@ table th {
   background-image: none;
   color: #000000;
 }
-.logo {
+1 .logo {
   margin: 2px 10px;
   opacity: 0.5;
 }
-.logo a {
+1 .logo a {
   color: #666666;
 }
-.logo a:hover {
+1 .logo a:hover {
   color: #666666;
   text-decoration: none;
 }
@@ -609,6 +617,7 @@ table th {
   -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  color: #e6e6e6;
 }
 .block-list {
   padding: 0;

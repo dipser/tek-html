@@ -109,6 +109,7 @@
   color: #ffffff;
   background-color: #8c6dff;
   border-color: #7c58ff;
+  z-index: 99;
 }
 .tv-selected > .tv-label {
   color: #ffffff;
@@ -152,7 +153,7 @@
   -ms-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   z-index: 999;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .ui-draggable-dragging .tv-label {
   background-color: #ffffff;
@@ -163,9 +164,12 @@
   cursor: -ms-grabbing;
   cursor: grabbing;
 }
-.ui-draggable-dragging .tv-label .tv-children {
-  opacity: 0.5;
+.ui-draggable-dragging .tv-children {
+  opacity: 0.1;
 }
 .tv-drag-origin {
   opacity: 0.8;
+}
+.tv-droppable > .tv-label {
+  border-color: #ff3333;
 }

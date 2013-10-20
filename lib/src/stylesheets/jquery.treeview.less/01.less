@@ -43,6 +43,7 @@
     @back: darken(@blue, 2);
     background-color: @back;
     border-color: darken(@back, 4);
+    z-index: 99;
   }
 }
 
@@ -91,19 +92,24 @@
 .ui-draggable-dragging {
   .box-shadow(2px 2px 4px; 0.4);
   z-index: 999;
-  opacity: 0.8;
+  opacity: 0.9;
   .tv-label{
     background-color: @white;
     color:@black;
     .grabbing();
-     .tv-children{
-      opacity: 0.5;
-    }
+  }
+   .tv-children{
+    opacity: 0.1;
   }
 }
 
 .tv-drag-origin{
   opacity: 0.8;
   > .tv-label{
+  }
+}
+.tv-droppable{
+  > .tv-label{
+    border-color: @red;
   }
 }

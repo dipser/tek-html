@@ -13,8 +13,8 @@ $(function () {
         elm.trigger(e);
     }
 
+    var item = $('.tv-item');
     test('select', function () {
-        var item = $('.tv-item');
         item.first().click();
         ok(item.first().hasClass('tv-selected'), 'select item');
         keydown(doc, KEY.RIGHT);
@@ -29,6 +29,12 @@ $(function () {
         ok(item.eq(1).hasClass('tv-selected'), 'select next with down key');
         keydown(doc, KEY.UP);
         ok(item.eq(0).hasClass('tv-selected'), 'select parent with up key');
+    });
 
+    test('enter', function () {
+        keydown(doc, KEY.ENTER);
+        ok(item.eq(0).hasClass('tv-closed'), 'close item');
+        keydown(doc, KEY.ENTER);
+        ok(!item.eq(0).hasClass('tv-closed'), 'reopen item');
     });
 });

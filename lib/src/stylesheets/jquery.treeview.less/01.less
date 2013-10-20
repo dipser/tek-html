@@ -4,6 +4,14 @@
 @black: #333;
 @blue: #9477ff;
 
+.grabbing(){
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+  cursor: -o-grabbing;
+  cursor: -ms-grabbing;
+  cursor: grabbing;
+}
+
 .tv-root {
   .user-select(none);
 }
@@ -13,7 +21,7 @@
 
   margin-bottom: -1px;
   position: relative;
-
+  width: 100%;
 }
 
 .tv-label {
@@ -32,7 +40,7 @@
   }
   &:active {
     color: @white;
-    @back:darken(@blue, 2);
+    @back: darken(@blue, 2);
     background-color: @back;
     border-color: darken(@back, 4);
   }
@@ -40,7 +48,7 @@
 
 .tv-selected > .tv-label {
   color: @white;
-  @back:@blue;
+  @back: @blue;
   background-color: @back;
   border-color: darken(@back, 4);
   cursor: default;
@@ -72,10 +80,30 @@
     z-index: 201;
   }
   &.tv-closed {
-    > .tv-label .tv-openable-icon{
+    > .tv-label .tv-openable-icon {
       .full-border(@arrow-size);
       border-left-color: @black;
-      margin-left:5px;
+      margin-left: 5px;
     }
+  }
+}
+
+.ui-draggable-dragging {
+  .box-shadow(2px 2px 4px; 0.4);
+  z-index: 999;
+  opacity: 0.8;
+  .tv-label{
+    background-color: @white;
+    color:@black;
+    .grabbing();
+     .tv-children{
+      opacity: 0.5;
+    }
+  }
+}
+
+.tv-drag-origin{
+  opacity: 0.8;
+  > .tv-label{
   }
 }

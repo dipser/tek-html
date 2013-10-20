@@ -37,4 +37,13 @@ $(function () {
         keydown(doc, KEY.ENTER);
         ok(!item.eq(0).hasClass('tv-closed'), 'reopen item');
     });
+
+    test('reload', function () {
+        var body = $(document.body);
+        var li = '<li class="tv-item ui-draggable"><label class="tv-label">追加</label></li>';
+        $('#demo-ul', body)
+            .append(li)
+            .treeview('reload');
+        ok(true);
+    });
 });

@@ -1,3 +1,6 @@
+/*
+ * tek.js v0.1.5
+ */
 tek = (function (module) {
     
     var tek = module && module.exports || {};

@@ -1,3 +1,6 @@
+/*
+ * tek.js v{{version}}
+ */
 (function (dependencies, undefined) {
 
     var valid = true;

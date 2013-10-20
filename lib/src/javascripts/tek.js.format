@@ -1,3 +1,6 @@
+/*
+ * tek.js v{{version}}
+ */
 {{name}} = (function (module) {
     
     var {{name}} = module && module.exports || {};

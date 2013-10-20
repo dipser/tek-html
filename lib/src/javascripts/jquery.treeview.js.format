@@ -1,0 +1,9 @@
+/*
+ * jquery.treeview.js v{{version}}
+ */
+(function (dependencies, undefined) {
+{{modules}}
+
+})({
+    $: this['jQuery']
+}, undefined);

@@ -171,5 +171,14 @@
   opacity: 0.8;
 }
 .tv-droppable > .tv-label {
-  border-color: #ff3333;
+  border-color: #ff4747;
+  z-index: 88;
+}
+.tv-insertable:before {
+  width: 100%;
+  height: 4px;
+  display: block;
+  content: "";
+  background-color: #ffff33;
+  top: 0;
 }

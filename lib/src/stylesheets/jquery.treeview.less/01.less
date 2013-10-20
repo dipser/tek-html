@@ -110,6 +110,18 @@
 }
 .tv-droppable{
   > .tv-label{
-    border-color: @red;
+    border-color: lighten(@red,4);
+    z-index: 88;
+  }
+}
+
+.tv-insertable{
+  &:before{
+    width:100%;
+    height: 4px;
+    display: block;
+    content: "";
+    background-color: @yellow;
+    top:0;
   }
 }

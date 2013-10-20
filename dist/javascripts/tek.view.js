@@ -1,5 +1,10 @@
-/*
- * tek.js v0.1.5
+/**
+ * tek.view.js
+ * - javascript library for tek -
+ * @version v0.1.6
+ * @author Taka Okunishi
+ * @date YYY-10-21
+ *
  */
 (function (dependencies, undefined) {
 

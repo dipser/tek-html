@@ -1,5 +1,9 @@
-/*
+/**
  * jquery.treeview.js v{{version}}
+ * - jquery plugin to create treeview -
+ * @version v{{version}}
+ * @author {{author}}
+ * @date {{date}}
  */
 (function (dependencies, undefined) {
 {{modules}}

@@ -1,5 +1,9 @@
-/*
- * tek.js v{{version}}
+/**
+ * tek.js
+ * - javascript library for tek -
+ * @version v{{version}}
+ * @author {{author}}
+ * @date {{date}}
  */
 {{name}} = (function (module) {
     

@@ -1,5 +1,10 @@
-/*
- * tek.js v{{version}}
+/**
+ * tek.view.js
+ * - javascript library for tek -
+ * @version v{{version}}
+ * @author {{author}}
+ * @date {{date}}
+ *
  */
 (function (dependencies, undefined) {
 

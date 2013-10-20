@@ -1,34 +1,78 @@
+@import "../../../../dist/stylesheets/tek-mixin";
+
+@white: #FFFFFF;
+@black: #333;
+@blue: #9477ff;
+
+.tv-root {
+  .user-select(none);
+}
+
 .tv-item {
   list-style: none;
-  background-color: #ffffff;
-  border-color: #e6e6e6;
+
   margin-bottom: -1px;
+  position: relative;
+
 }
 
 .tv-label {
   padding: 5px 10px;
   display: block;
   cursor: pointer;
-}
-
-.tv-label:hover {
-  background-color: #d6d3ff;
-  border-color: #a6a0ff;
-}
-
-.tv-label:active {
-  color: #ffffff;
-  background-color: #473aff;
-  border-color: #1707ff;
+  @back: @white;
+  background-color: @back;
+  border: 1px solid darken(@back, 4);
+  position: relative;
+  &:hover {
+    @back: lighten(@blue, 19);
+    background-color: @back;
+    border-color: darken(@back, 10);
+    z-index: 99;
+  }
+  &:active {
+    color: @white;
+    @back:darken(@blue, 2);
+    background-color: @back;
+    border-color: darken(@back, 4);
+  }
 }
 
 .tv-selected > .tv-label {
-  color: #ffffff;
-  background-color: #473aff;
-  border-color: #1707ff;
+  color: @white;
+  @back:@blue;
+  background-color: @back;
+  border-color: darken(@back, 4);
   cursor: default;
 }
 
-.tv-closed > .tv-children{
+.tv-closed > .tv-children {
   display: none;
+}
+
+.full-border(@size;@color:transparent) {
+  border: @size solid @color;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  content: '';
+}
+
+.tv-openable {
+  @arrow-size: 7px;
+  > .tv-label:before {
+    .full-border(@arrow-size);
+    margin: 2px 5px 2px 0;
+    border-top-color: @black;
+    border-bottom-width: 0;
+    opacity: 0.5;
+  }
+  &.tv-closed {
+    > .tv-label:before {
+      .full-border(@arrow-size);
+      border-left-color: @black;
+    }
+  }
 }

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../../../lib/src/stylesheets/jquery.treeview.css"/>
+    <link rel="stylesheet" href="../../../lib/src/stylesheets/jquery.treeview.less/01.css"/>
+    <link rel="stylesheet" href="../stylesheets/qunit-1.12.0.css"/>
     <meta charset="utf-8"/>
     <style>
         body {
@@ -10,9 +11,20 @@
             padding: 50px;
         }
     </style>
+    <script>
+        global = window;
+    </script>
     <script src="../../../dist/javascripts/lib/jquery.js"></script>
     <script src="../../../dist/javascripts/lib/jquery-ui.custom.js"></script>
-    <script src="../../../lib/src/javascripts/jquery.treeview.js/01.js"></script>
+    <script>
+        exports = $;
+    </script>
+    <script src="../../../lib/src/javascripts/jquery.treeview.js/01.$.js"></script>
+    <script>
+        exports = $.fn;
+    </script>
+    <script src="../../../lib/src/javascripts/jquery.treeview.js/02.$.fn.js"></script>
+
     <script>
         (function ($) {
             var tv = $['treeview'],
@@ -25,7 +37,8 @@
                         new Item('陸').children([
                             new Item('山'),
                             new Item('平地')
-                        ])
+                        ]),
+                        new Item('空')
                     ]),
                     new Item('月')
                 ]);
@@ -33,8 +46,17 @@
         })(jQuery);
     </script>
     <title>jquery treeview</title>
+    <script>
+        exports = undefined;
+    </script>
+    <script src="../javascripts/qunit-1.12.0.js"></script>
+    <script src="../javascripts/test-jquery.treeview.js"></script>
 </head>
 <body>
 <ul id="demo-ul"></ul>
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
 </body>
 </html>

@@ -118,7 +118,7 @@
 .tv-closed > .tv-children {
   display: none;
 }
-.tv-openable > .tv-label:before {
+.tv-openable > .tv-label .tv-openable-icon {
   border: 7px solid transparent;
   width: 0;
   height: 0;
@@ -130,8 +130,10 @@
   border-top-color: #333333;
   border-bottom-width: 0;
   opacity: 0.5;
+  cursor: pointer;
+  z-index: 201;
 }
-.tv-openable.tv-closed > .tv-label:before {
+.tv-openable.tv-closed > .tv-label .tv-openable-icon {
   border: 7px solid transparent;
   width: 0;
   height: 0;
@@ -140,4 +142,5 @@
   display: inline-block;
   content: '';
   border-left-color: #333333;
+  margin-left: 5px;
 }

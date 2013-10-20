@@ -62,17 +62,20 @@
 
 .tv-openable {
   @arrow-size: 7px;
-  > .tv-label:before {
+  > .tv-label .tv-openable-icon {
     .full-border(@arrow-size);
     margin: 2px 5px 2px 0;
     border-top-color: @black;
     border-bottom-width: 0;
     opacity: 0.5;
+    cursor: pointer;
+    z-index: 201;
   }
   &.tv-closed {
-    > .tv-label:before {
+    > .tv-label .tv-openable-icon{
       .full-border(@arrow-size);
       border-left-color: @black;
+      margin-left:5px;
     }
   }
 }

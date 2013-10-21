@@ -32,3 +32,7 @@ publish tek-library client script
     tek-h publish tek.less your_js_dir
 ```
 
+license
+-------
+This software is released under the [MIT License](https://raw.github.com/okunishinishi/tek-html/master/LICENSE).
+

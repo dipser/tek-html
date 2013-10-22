@@ -2,28 +2,27 @@ var crossBrowser = require('../../../../lib/src/javascripts/tek.js/09.crossBrows
     should = require('should');
 
 
-exports.windowTest = function (test) {
-    var window = {};
-    crossBrowser.window(window);
+exports.fallbackWindowTest = function (test) {
+    var window = {msURL: {}};
+    crossBrowser.fallbackWindow(window);
     window.should.have.property('requestAnimationFrame');
+    window.should.have.property('URL');
     test.done();
 };
 
-exports.navigatorTest = function (test) {
+exports.fallbackNavigatorTest = function (test) {
     var navigator = {
         mozGetUserMedia: function () {
         }
     };
-    crossBrowser.navigator(navigator);
+    crossBrowser.fallbackNavigator(navigator);
     navigator.should.have.property('getUserMedia');
     test.done();
 };
 
-exports.ObjectTest ={};
-exports.ObjectTest.keysTest = function(test){
-    var keys = crossBrowser.Object.keys(null)({
-        a:1
-    });
-    keys[0].should.equal('a');
+exports.fallbackObjectTest = function (test) {
+    var Obj = {};
+    crossBrowser.fallbackObject(Obj);
+    Obj.should.have.property('keys');
     test.done();
 };

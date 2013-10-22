@@ -3,6 +3,7 @@
  * - javascript library for tek -
  * @version v{{version}}
  * @author {{author}}
+ * @license MIT
  * @date {{date}}
  */
 {{name}} = (function (module) {

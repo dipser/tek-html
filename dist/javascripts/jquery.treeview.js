@@ -3,8 +3,8 @@
  * - jquery plugin to create treeview -
  * @version v0.1.7
  * @author Taka Okunishi
- * @date YYY-10-21
- * @copyright 2013 Taka Okunishi
+ * @license MIT
+ * @date YYY-10-22
  */
 (function (dependencies, undefined) {
 	

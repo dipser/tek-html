@@ -6,7 +6,7 @@
  * @date {{date}}
  *
  */
-(function (dependencies, undefined) {
+(function (dependencies, window, undefined) {
 
     var valid = true;
     Object.keys(dependencies).forEach(function (name) {
@@ -17,10 +17,13 @@
     });
     if (!valid) return;
 
+
+    tek.crossBrowser(window);
+
 {{modules}}
 
 })({
     $: this['$'],
     Handlebars: this['Handlebars'],
     tek: this['tek']
-}, undefined);
+}, window, undefined);

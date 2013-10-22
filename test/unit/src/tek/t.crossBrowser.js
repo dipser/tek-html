@@ -26,3 +26,13 @@ exports.fallbackObjectTest = function (test) {
     Obj.should.have.property('keys');
     test.done();
 };
+
+exports.fallbackArrayTest = function (test) {
+    var Array = {prototype: {}};
+    crossBrowser.fallbackArray(Array);
+    Array.should.have.property('map');
+    Array.should.have.property('reduce');
+    Array.should.have.property('filter');
+    Array.should.have.property('forEach');
+    test.done();
+};

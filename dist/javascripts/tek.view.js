@@ -3,10 +3,10 @@
  * - javascript library for tek -
  * @version v0.1.7
  * @author Taka Okunishi
- * @date YYY-10-21
+ * @date YYY-10-22
  *
  */
-(function (dependencies, undefined) {
+(function (dependencies, window, undefined) {
 
     var valid = true;
     Object.keys(dependencies).forEach(function (name) {
@@ -16,6 +16,9 @@
         }
     });
     if (!valid) return;
+
+    
+    tek.crossBrowser(window);
 
 	/** tek.view for $ **/
 	(function (global, undefined) {
@@ -493,4 +496,4 @@
     $: this['$'],
     Handlebars: this['Handlebars'],
     tek: this['tek']
-}, undefined);
+}, window, undefined);

@@ -18,3 +18,12 @@ exports.navigatorTest = function (test) {
     navigator.should.have.property('getUserMedia');
     test.done();
 };
+
+exports.ObjectTest ={};
+exports.ObjectTest.keysTest = function(test){
+    var keys = crossBrowser.Object.keys(null)({
+        a:1
+    });
+    keys[0].should.equal('a');
+    test.done();
+};

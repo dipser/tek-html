@@ -194,3 +194,30 @@
 .hidden {
   display: none;
 }
+/******************
+ phone
+*******************/
+@media (width: 420px) {
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+  }
+  section {
+    width: 100%;
+    display: block;
+  }
+  table {
+    width: 100%;
+  }
+  table thead,
+  table tbody,
+  table tfoot,
+  table tr,
+  table th,
+  table td {
+    display: block;
+    width: 100%;
+  }
+}

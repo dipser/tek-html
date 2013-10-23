@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.1.7
+ * @version v0.1.8
  * @author Taka Okunishi
- * @date YYY-10-22
+ * @date YYY-10-23
  *
  */
 (function (dependencies, window, undefined) {
@@ -17,7 +17,7 @@
     });
     if (!valid) return;
 
-    
+
     tek.crossBrowser(window);
 
 	/** tek.view for $ **/

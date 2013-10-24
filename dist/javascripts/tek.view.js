@@ -1,20 +1,21 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.1.8
+ * @version v0.1.9
  * @author Taka Okunishi
- * @date YYY-10-23
+ * @date YYY-10-24
  *
  */
 (function (dependencies, window, undefined) {
 
     var valid = true;
-    Object.keys(dependencies).forEach(function (name) {
+    for(var name in dependencies){
+        if (!dependencies.hasOwnProperty(name)) continue;
         if (!dependencies[name]) {
             console.error('[tek.view.js] dependency missing: ', name + 'not found.');
             valid = false;
         }
-    });
+    };
     if (!valid) return;
 
 

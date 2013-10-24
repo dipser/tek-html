@@ -1,10 +1,10 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.1.8
+ * @version v0.1.9
  * @author Taka Okunishi
  * @license MIT
- * @date YYY-10-23
+ * @date YYY-10-24
  */
 tek = (function (module) {
     
@@ -16,28 +16,35 @@ tek = (function (module) {
 	 */
 	tek.define = (function () {
 	    function addProperty(F, property) {
-	        Object.keys(property).forEach(function (name) {
+	        for (var name in property) {
+	            if (!property.hasOwnProperty(name)) continue;
 	            F.prototype[name] = property[name];
-	        });
+	        }
 	    }
 	
-	    function addAttrAccessor(F, attr) {
-	        if (!(attr instanceof Array)) attr = [attr];
-	        attr.forEach(function (attr) {
-	            var value_key = ('_' + attr);
+	    function addAttrAccessor(F, attrs) {
+	        if (!(attrs instanceof Array)) attrs = [attrs];
+	
+	        function createAccessor(key) {
+	            return function () {
+	                var s = this;
+	                if (arguments.length) {
+	                    s[key] = arguments[0];
+	                    return s;
+	                } else {
+	                    return s[key];
+	                }
+	            }
+	        }
+	
+	        for (var i = 0, len = attrs.length; i < len; i++) {
+	            var attr = attrs[i],
+	                value_key = ('_' + attr);
 	            if (F.prototype[value_key] === undefined) {
 	                F.prototype[value_key] = null;
 	            }
-	            F.prototype[attr] = function () {
-	                var s = this;
-	                if (arguments.length) {
-	                    s[value_key] = arguments[0];
-	                    return s;
-	                } else {
-	                    return s[value_key];
-	                }
-	            };
-	        });
+	            F.prototype[attr] = createAccessor(value_key);
+	        }
 	        return F;
 	    }
 	
@@ -81,11 +88,13 @@ tek = (function (module) {
 	tek.Query = function (string) {
 	    if (!string) return;
 	    var s = this;
-	    string.split('&').forEach(function (query) {
+	    var queries = string.split('&');
+	    for (var i = 0, len = queries.length; i < len; i++) {
+	        var query = queries[i];
 	        var key_val = query.split('=');
 	        var key = decodeURIComponent(key_val[0]);
 	        s[key] = decodeURIComponent(key_val[1].replace(/\+/g, ' '));
-	    });
+	    }
 	};
 	tek.Query.fromLocation = function () {
 	    var search = location.search;

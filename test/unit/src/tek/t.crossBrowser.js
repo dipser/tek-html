@@ -30,9 +30,9 @@ exports.fallbackObjectTest = function (test) {
 exports.fallbackArrayTest = function (test) {
     var Array = {prototype: {}};
     crossBrowser.fallbackArray(Array);
-    Array.should.have.property('map');
-    Array.should.have.property('reduce');
-    Array.should.have.property('filter');
-    Array.should.have.property('forEach');
+    Array.prototype.should.have.property('map');
+    Array.prototype.should.have.property('reduce');
+    Array.prototype.should.have.property('filter');
+    Array.prototype.should.have.property('forEach');
     test.done();
 };

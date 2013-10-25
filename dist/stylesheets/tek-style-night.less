@@ -1,4 +1,4 @@
-//<h1>tek-style-clean.less-0.1.10</h1>
+//<h1>tek-style-night.less-0.1.10</h1>
 
 @import "tek-mixin";
 
@@ -128,10 +128,10 @@ body {
 }
 
 
-@base: @white;
+@base: #222240;
 @main: @gray;
-@accent: @orange;
-@color: lighten(@black, 20);
+@accent: #FFAB43;
+@color: lighten(@black, 40);
 
 body {
   background-color: @base;
@@ -153,12 +153,13 @@ body {
   ```
 */
 header {
-  @back: darken(@white, 5);
+  @back: darken(@base, 5);
   @color: @gray;
   .header(@back);
   .inline-logo {
     font-size: 1.2em;
     margin: 5px 10px;
+    color:darken(@accent, 40);
   }
 }
 
@@ -204,7 +205,7 @@ a {
   </table>
 */
 table {
-  .table(@base);
+  .table(#292929);
 }
 
 /*
@@ -218,6 +219,11 @@ table {
 */
 .btn {
   .btn(@base);
+  @color:darken(@white,30);
+  color:@color;
+  &:hover{
+    color:@color;
+  }
 }
 
 .primary-btn {
@@ -247,13 +253,17 @@ table {
   ```
 */
 .block-list-header {
-  @back: desaturate(darken(@accent, 30), 20);
+  @back: desaturate(darken(@black, 30), 20);
   .block-list-header(@back);
   color:darken(@white,10);
 }
 
 .block-list {
-  .block-list(white, @accent);
+  @back:darken(@white,3);
+  .block-list(@back, @main);
+  li:hover{
+    color:@white;
+  }
 }
 .icon-holder(@img-dir:'') {
 

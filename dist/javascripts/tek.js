@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.1.9
+ * @version v0.1.10
  * @author Taka Okunishi
  * @license MIT
  * @date YYY-10-24

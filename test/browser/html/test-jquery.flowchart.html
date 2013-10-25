@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jquery flowchart</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../../../lib/src/stylesheets/jquery.flowchart.less/01.css"/>
+    <link rel="stylesheet" href="../stylesheets/qunit-1.12.0.css"/>
+
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #777;
+            padding: 50px;
+        }
+
+        #main {
+            height: 500px;
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        global = window;
+    </script>
+    <script src="../../../dist/javascripts/lib/jquery.js"></script>
+    <script src="../../../dist/javascripts/lib/jquery-ui.custom.js"></script>
+    <script>
+        exports = $;
+    </script>
+    <script src="../../../lib/src/javascripts/jquery.flowchart.js/01.$.js"></script>
+    <script>
+        exports = $.fn;
+    </script>
+    <script src="../../../lib/src/javascripts/jquery.flowchart.js/02.$.fn.js"></script>
+    <script>
+        (function ($) {
+            var fc = $['flowchart'],
+                    Item = fc.Item;
+            $(function () {
+                var body = $(document.body);
+
+                $('#demo-section', body).flowchart([
+                    new Item("画面１").id(1).to([2, 3]),
+                    new Item("画面２").id(2).from(3),
+                    new Item("画面３").id(3)
+                ]);
+            });
+        })(jQuery);
+    </script>
+
+    <script>
+        exports = undefined;
+    </script>
+    <script src="../javascripts/qunit-1.12.0.js"></script>
+    <script src="../javascripts/test-jquery.flowchart.js"></script>
+
+</head>
+<body>
+<article id="main">
+    <section id="demo-section"></section>
+</article>
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+</body>
+</html>

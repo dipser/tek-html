@@ -41,9 +41,15 @@ $(function () {
     test('reload', function () {
         var body = $(document.body);
         var li = '<li class="tv-item ui-draggable"><label class="tv-label">追加</label></li>';
-        $('#demo-ul', body)
+        var ul = $('#demo-ul', body)
             .append(li)
             .treeview('reload');
-        ok(true);
+        ok(ul.size() > 0);
     });
+
+    test('call', function(){
+        var ul = $('#__not_exist__').treeview();
+        ok(!!ul);
+    });
+
 });

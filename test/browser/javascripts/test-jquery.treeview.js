@@ -51,5 +51,4 @@ $(function () {
         var ul = $('#__not_exist__').treeview();
         ok(!!ul);
     });
-
 });

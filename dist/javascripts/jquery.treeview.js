@@ -1,10 +1,10 @@
 /**
- * jquery.treeview.js v0.1.14
+ * jquery.treeview.js v0.1.16
  * - jquery plugin to create treeview -
- * @version v0.1.14
+ * @version v0.1.16
  * @author Taka Okunishi
  * @license MIT
- * @date YYY-10-27
+ * @date 2013-10-27
  */
 (function (dependencies, undefined) {
 	
@@ -282,6 +282,8 @@
 		                droppable
 		                    .removeClass(p('droppable'));
 		            }
+		
+		            item.trigger(p('drop'));
 		        }
 		    });
 		    return root;
@@ -300,7 +302,7 @@
 		                    if (tv.root) {
 		                        tv.root = createRoot(this, tv.root.html());
 		                        console.debug && console.debug("[jquery.treeview.js] treeview did reload.");
-		                        return;
+		                        return tv.root;
 		                    }
 		            }
 		            break;

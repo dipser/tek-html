@@ -1,10 +1,10 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.1.14
+ * @version v0.1.16
  * @author Taka Okunishi
  * @license MIT
- * @date YYY-10-27
+ * @date 2013-10-27
  */
 tek = (function (module) {
     

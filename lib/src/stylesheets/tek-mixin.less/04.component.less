@@ -1,3 +1,4 @@
+@import "01.colors.less";
 @import "03.style.less";
 
 .header(@back) {
@@ -187,5 +188,26 @@
   tr,th,td{
     display: block;
     width:100%;
+  }
+}
+
+.add-btn(@color:@gray;@back:@white;){
+  .box-shadow(1px 1px 2px, 0.4);
+  .border-radius(2px);
+  opacity: 0.5;
+  padding: 2px 4px;
+  text-align: center;
+  color: @color;
+  background-color: @back;
+  border: 1px solid darken(@white, 1);
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    border-color: darken(@white, 10);
+  }
+  &:active {
+    color: @back;
+    background-color: lighten(@color, 30);
+    .box-shadow(none);
   }
 }

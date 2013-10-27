@@ -359,7 +359,8 @@
 		    var KEY_CODE = $.ui.keyCode;
 		    return $(this).each(function () {
 		        var input = $(this);
-		        if (input.hasClass('tk-editable-text')) return;
+		        if (input.data('tk-editable-text')) return;
+		        input.data('tk-editable-text', true);
 		        input.addClass('tk-editable-text');
 		        var label = $('<label class="tk-editable-label"/>')
 		            .insertAfter(input)

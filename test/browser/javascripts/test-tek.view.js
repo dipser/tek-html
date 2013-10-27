@@ -4,6 +4,7 @@
 
 (function ($) {
     $(function () {
+        var body = $(document.body);
         test("$.fn.findByAttr", function () {
             var form = $('#section01').findByAttr('name', 'some-form');
             strictEqual(form.size(), 1, "findByAttr");
@@ -36,7 +37,8 @@
 
         asyncTest("$.fn.textchange", function () {
             var form = $('#section01').findByAttr('name', 'some-form'),
-                text = form.find(':text');
+                text = form.find(':text').eq(0);
+            expect(1);
             text.textchange(function (text) {
                 equal(text, "change-text", 'text changed');
                 start();
@@ -46,6 +48,7 @@
 
         asyncTest("$.fn.spin", function () {
             var form = $('#section01').findByAttr('name', 'some-form');
+            expect(2);
             form.showSpin();
             setTimeout(function () {
                 strictEqual(form.find('.tk-spin').size(), 1, 'spin');
@@ -55,6 +58,13 @@
                     start();
                 }, 10);
             }, 10);
+        });
+
+        test("editableText", function () {
+            var editableText = body.findByRole('editable-text');
+            ok(!editableText.data('tk-editable-text'));
+            editableText.editableText();
+            ok(editableText.data('tk-editable-text'));
         });
     });
 })(jQuery);

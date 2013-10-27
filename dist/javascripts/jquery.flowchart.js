@@ -54,11 +54,31 @@
 		 * returns the nearest number within range
 		 * @param val
 		 */
-		Range.nearest = function (val) {
+		Range.prototype.nearest = function (val) {
 		    var s = this;
 		    if (val < s.min) return s.min;
 		    if (s.max < val) return s.max;
 		    return val;
+		};
+		
+		var Rect = flowchart.Rect = function (data) {
+		    var s = this;
+		    s.x = data.x;
+		    s.y = data.y;
+		    s.w = data.w;
+		    s.h = data.h;
+		};
+		
+		Rect.prototype.nearestPoint = function (point) {
+		    var rect = this,
+		        x = rect.x,
+		        y = rect.y,
+		        w2 = rect.w / 2 ,
+		        h2 = rect.h / 2;
+		    return {
+		        x: x - new Range(-w2, w2).nearest(x - point.x),
+		        y: y - new Range(-h2, h2).nearest(y - point.y)
+		    }
 		};
 		
 		var Item = flowchart.Item = function (content) {
@@ -142,8 +162,11 @@
 		    ctx.lineWidth = width;
 		    ctx.strokeStyle = color;
 		    ctx.beginPath();
+		
+		
 		    ctx.moveTo(from.x, from.y);
 		    ctx.lineTo(to.x, to.y);
+		
 		    ctx.stroke();
 		};
 		flowchart.createHTML = function (tagName, body, attrs) {
@@ -168,7 +191,7 @@
 		    settings = fc.settings,
 		    p = fc.p,
 		    Item = fc.Item,
-		    Range = fc.Range,
+		    Rect = fc.Rect,
 		    Arrow = fc.Arrow;
 		
 		function createRoot(element, html) {
@@ -193,55 +216,41 @@
 		            arrow.draw(ctx);
 		        });
 		    };
-		    function nearestPoint(point) {
-		        var item = $(this),
-		            center = item.data('center'),
-		            size = item.data('size'),
-		            w2 = size.w / 2,
-		            h2 = size.h / 2;
-		        return {
-		            x: center.x - new Range(-w2, w2).nearest(point.x),
-		            y: center.y - new Range(-h2, h2).nearest(point.y),
-		        }
-		    };
+		
 		    root.getArrows = function () {
-		        var arrows = [],
-		            itemMap = {};
+		        var rectMap = {},
+		            arrows = [];
 		        items = root.get();
 		        items.each(function () {
 		            var item = $(this),
-		                id = item.data('id');
-		            var p = item.position(),
-		                w = item.width(),
-		                h = item.height();
-		            item.data({
-		                center: {
-		                    x: p.left + w / 2,
-		                    y: p.top + h / 2
-		                },
-		                size: {
-		                    w: w,
-		                    h: h
-		                }
+		                _id = item.data('id');
+		            var p = item.position();
+		            rectMap[_id] = new Rect({
+		                x: p.left + item.width() / 2,
+		                y: p.top + item.height() / 2,
+		                w: item.outerWidth(),
+		                h: item.outerHeight()
 		            });
-		            itemMap[id] = item;
 		        });
+		
 		        items.each(function () {
 		            var item = $(this),
 		                id = item.data('id'),
-		                point = itemMap[id].data('center'),
+		                rect = rectMap[id],
 		                from = String(item.data('from') || ''),
 		                to = String(item.data('to') || '');
 		            from && from.split(',').forEach(function (fromId) {
+		                var fromRect = rectMap[fromId];
 		                var arrow = new Arrow()
-		                    .from(itemMap[fromId].data('center'))
-		                    .to(point);
+		                    .from(fromRect)
+		                    .to(rect.nearestPoint(fromRect));
 		                arrows.push(arrow);
 		            });
 		            to && to.split(',').forEach(function (toId) {
+		                var toRect = rectMap[toId];
 		                var arrow = new Arrow()
-		                    .from(point)
-		                    .to(itemMap[toId].data('center'));
+		                    .from(rect)
+		                    .to(toRect.nearestPoint(rect));
 		                arrows.push(arrow);
 		            });
 		        });

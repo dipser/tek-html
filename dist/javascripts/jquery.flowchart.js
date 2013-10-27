@@ -125,8 +125,8 @@
 		    ctx.lineWidth = width;
 		    ctx.strokeStyle = color;
 		    ctx.beginPath();
-		    ctx.moveTo(from.x, from.y);
 		    console.log(from, to);
+		    ctx.moveTo(from.x, from.y);
 		    ctx.lineTo(to.x, to.y);
 		    ctx.stroke();
 		};
@@ -183,12 +183,13 @@
 		        items.each(function () {
 		            var item = $(this),
 		                id = item.data('id');
-		            var o = item.offset(),
+		            var p = item.position(),
 		                w = item.outerWidth(true),
 		                h = item.outerHeight(true);
+		            console.log(p);
 		            pointMap[id] = {
-		                x: o.top + w / 2,
-		                y: o.left + h / 2
+		                x: p.left + w / 2
+		                y: p.top + h / 2
 		            };
 		
 		        });

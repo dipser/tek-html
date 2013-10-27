@@ -116,6 +116,8 @@
 		            var droppable = droppables.eq(i);
 		            var parent = root.get.parent(item);
 		            if (parent.is(droppable)) continue;
+		            if (item.is(droppable)) continue;
+		            if (item.has(droppable).length) continue;
 		            var o = droppable.offset(),
 		                height = droppable.find(p('.label')).height();
 		            var hit = o.top < y && y < (o.top + height);
@@ -129,6 +131,7 @@
 		        for (var i = 0, len = insertables.length; i < len; i++) {
 		            var insertable = insertables.eq(i),
 		                o = insertable.offset();
+		            if (item.has(insertable).length) continue;
 		            var hit = y < o.top + h / 2;
 		            if (hit) return insertable;
 		        }

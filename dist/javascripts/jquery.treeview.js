@@ -1,7 +1,7 @@
 /**
- * jquery.treeview.js v0.1.16
+ * jquery.treeview.js v0.1.18
  * - jquery plugin to create treeview -
- * @version v0.1.16
+ * @version v0.1.18
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-10-27
@@ -295,7 +295,7 @@
 		
 		$.fn.treeview = function (items, options) {
 		    var doc = $(document),
-		        o = $.extend(options, settings);
+		        o = $.extend({}, settings, options);
 		
 		    switch (arguments.length) {
 		        case 1:

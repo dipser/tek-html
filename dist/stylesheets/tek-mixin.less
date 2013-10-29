@@ -1,4 +1,4 @@
-//<h1>tek-mixin.less-0.1.18</h1>
+//<h1>tek-mixin.less-0.1.19</h1>
 
 /* <h3>color variables</h3>
 
@@ -499,17 +499,16 @@
   }
 }
 
-
-.block-table(){
-  width:100%;
-  thead,tbody,tfoot,
-  tr,th,td{
+.block-table() {
+  width: 100%;
+  thead, tbody, tfoot,
+  tr, th, td {
     display: block;
-    width:100%;
+    width: 100%;
   }
 }
 
-.add-btn(@color:@gray;@back:@white;){
+.add-btn(@color:@gray;@back:@white;) {
   .box-shadow(1px 1px 2px, 0.4);
   .border-radius(2px);
   opacity: 0.5;
@@ -527,6 +526,30 @@
     color: @back;
     background-color: lighten(@color, 30);
     .box-shadow(none);
+  }
+}
+
+.tab(@back:@white;@highlight:lighten(@blue,5)) {
+  .border-radius(12px; 0;);
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: @back;
+  border: 1px solid darken(@back, 10);
+  color:@gray;
+  float: left;
+  margin:4px 0 -1px;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+    @back:lighten(@highlight,10);
+    background-color: @back;
+    border-color:@back;
+    color:@white;
+  }
+  &:active{
+    @back:lighten(@highlight,1);
+    background-color: @back;
+    border-color:@back;
   }
 }
 

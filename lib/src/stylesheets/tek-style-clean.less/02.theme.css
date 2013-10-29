@@ -249,13 +249,13 @@ table th {
 }
 .primary-btn {
   display: inline-block;
-  background-color: #cc5200;
-  background-image: -webkit-linear-gradient(#ff6600,#cc5200);
-  background-image: -moz-linear-gradient(#ff6600,#cc5200);
-  background-image: -o-linear-gradient(#ff6600,#cc5200);
-  background-image: -ms-linear-gradient(#ff6600,#cc5200);
-  background-image: linear-gradient(#ff6600,#cc5200);
-  border: 1px solid #c24e00;
+  background-color: #0000eb;
+  background-image: -webkit-linear-gradient(#1f1fff,#0000eb);
+  background-image: -moz-linear-gradient(#1f1fff,#0000eb);
+  background-image: -o-linear-gradient(#1f1fff,#0000eb);
+  background-image: -ms-linear-gradient(#1f1fff,#0000eb);
+  background-image: linear-gradient(#1f1fff,#0000eb);
+  border: 1px solid #0000e0;
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -274,20 +274,21 @@ table th {
   -o-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: #ffffff;
 }
 .primary-btn:hover {
-  background-color: #e05a00;
-  background-image: -webkit-linear-gradient(#ff6f0f,#e05a00);
-  background-image: -moz-linear-gradient(#ff6f0f,#e05a00);
-  background-image: -o-linear-gradient(#ff6f0f,#e05a00);
-  background-image: -ms-linear-gradient(#ff6f0f,#e05a00);
-  background-image: linear-gradient(#ff6f0f,#e05a00);
+  background-color: #0000ff;
+  background-image: -webkit-linear-gradient(#2e2eff,#0000ff);
+  background-image: -moz-linear-gradient(#2e2eff,#0000ff);
+  background-image: -o-linear-gradient(#2e2eff,#0000ff);
+  background-image: -ms-linear-gradient(#2e2eff,#0000ff);
+  background-image: linear-gradient(#2e2eff,#0000ff);
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  border-color: #d65600;
+  border-color: #0000f5;
   color: #000000;
   text-decoration: none;
 }
@@ -299,7 +300,7 @@ table th {
   -ms-box-shadow: none;
   box-shadow: none;
   background-image: none;
-  color: #000000;
+  color: #00001f;
 }
 1 .logo {
   margin: 2px 10px;
@@ -323,13 +324,13 @@ table th {
   ```
 */
 .block-list-header {
-  background-color: #5c2b0a;
-  background-color: #371a06;
-  background-image: -webkit-linear-gradient(#5c2b0a,#371a06);
-  background-image: -moz-linear-gradient(#5c2b0a,#371a06);
-  background-image: -o-linear-gradient(#5c2b0a,#371a06);
-  background-image: -ms-linear-gradient(#5c2b0a,#371a06);
-  background-image: linear-gradient(#5c2b0a,#371a06);
+  background-color: #0d0d77;
+  background-color: #090953;
+  background-image: -webkit-linear-gradient(#0d0d77,#090953);
+  background-image: -moz-linear-gradient(#0d0d77,#090953);
+  background-image: -o-linear-gradient(#0d0d77,#090953);
+  background-image: -ms-linear-gradient(#0d0d77,#090953);
+  background-image: linear-gradient(#0d0d77,#090953);
   padding: 5px 15px;
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
@@ -351,8 +352,8 @@ table th {
   position: relative;
 }
 .block-list li:hover {
-  background-color: rgba(255, 102, 0, 0.09999999999999998);
-  border-color: rgba(204, 82, 0, 0.09999999999999998);
+  background-color: rgba(31, 31, 255, 0.09999999999999998);
+  border-color: rgba(0, 0, 235, 0.09999999999999998);
   z-index: 99;
 }
 .block-list li:hover .block-list-item-control {
@@ -360,9 +361,61 @@ table th {
 }
 .block-list li:active {
   color: #ffffff;
-  background-color: #ff6600;
-  border-color: #cc5200;
+  background-color: #1f1fff;
+  border-color: #0000eb;
 }
 .block-list li .block-list-item-control {
   opacity: 0.1;
+}
+/*
+  <h3>.tab</h3>
+  ```
+  <div>
+    <a class="tab">tab00</a>
+    <a class="tab">tab01</a>
+    <a class="tab tab-selected">tab02</a>
+    <a class="tab tab-disabled">tab03</a>
+  </div>
+  ```
+*/
+.tab {
+  -webkit-border-radius: 12px 12px 0 0;
+  -moz-border-radius: 12px 12px 0 0;
+  -o-border-radius: 12px 12px 0 0;
+  -ms-border-radius: 12px 12px 0 0;
+  border-radius: 12px 12px 0 0;
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  color: #666666;
+  float: left;
+  margin: 4px 0 -1px;
+  text-align: center;
+}
+.tab:hover {
+  text-decoration: none;
+  background-color: #8080ff;
+  border-color: #8080ff;
+  color: #ffffff;
+}
+.tab:active {
+  background-color: #5252ff;
+  border-color: #5252ff;
+}
+.tab.tab-selected,
+.tab.tab-selected:hover,
+.tab.tab-selected:active {
+  cursor: default;
+  background-color: #2323c7;
+  border-color: #2323c7;
+  color: #ffffff;
+}
+.tab.tab-disabled,
+.tab.tab-disabled:hover,
+.tab.tab-disabled:active {
+  cursor: default;
+  background-color: #999999;
+  border-color: #999999;
+  color: #cccccc;
 }

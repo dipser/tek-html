@@ -1,4 +1,4 @@
-//<h1>tek-style-clean.less-0.1.19</h1>
+//<h1>tek-style-clean.less-0.1.20</h1>
 
 @import "tek-mixin";
 
@@ -224,6 +224,9 @@ table {
 .primary-btn {
   .btn(@accent);
   color: @white;
+  &:hover {
+    color: @white;
+  }
 }
 
 1
@@ -273,23 +276,15 @@ table {
 */
 .tab {
   .tab();
-  &.tab-selected,
-  &.tab-selected:hover,
-  &.tab-selected:active {
+  &.tab-selected{
     @back: darken(desaturate(@accent, 30), 10);
-    cursor: default;
-    background-color: @back;
-    border-color: @back;
-    color: @white;
+    @color:@white;
+    .fixed-tab(@back, @color);
   }
-  &.tab-disabled,
-  &.tab-disabled:hover,
-  &.tab-disabled:active {
-    cursor: default;
+  &.tab-disabled{
     @back: lighten(@gray, 20);
-    background-color: @back;
-    border-color: @back;
-    color: lighten(@back, 20);
+    @color: lighten(@back, 20);
+    .fixed-tab(@back, @color);
   }
 }
 

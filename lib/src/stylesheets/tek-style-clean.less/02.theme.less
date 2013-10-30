@@ -100,7 +100,7 @@ table {
 .primary-btn {
   .btn(@accent);
   color: @white;
-  &:hover{
+  &:hover {
     color: @white;
   }
 }
@@ -152,22 +152,14 @@ table {
 */
 .tab {
   .tab();
-  &.tab-selected,
-  &.tab-selected:hover,
-  &.tab-selected:active {
+  &.tab-selected{
     @back: darken(desaturate(@accent, 30), 10);
-    cursor: default;
-    background-color: @back;
-    border-color: @back;
-    color: @white;
+    @color:@white;
+    .fixed-tab(@back, @color);
   }
-  &.tab-disabled,
-  &.tab-disabled:hover,
-  &.tab-disabled:active {
-    cursor: default;
+  &.tab-disabled{
     @back: lighten(@gray, 20);
-    background-color: @back;
-    border-color: @back;
-    color: lighten(@back, 20);
+    @color: lighten(@back, 20);
+    .fixed-tab(@back, @color);
   }
 }

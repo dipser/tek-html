@@ -757,7 +757,11 @@ table th {
   background-color: #5252ff;
   border-color: #5252ff;
 }
-.tab.tab-selected,
+.tab.tab-selected {
+  background-color: #2323c7;
+  border-color: #2323c7;
+  color: #ffffff;
+}
 .tab.tab-selected:hover,
 .tab.tab-selected:active {
   cursor: default;
@@ -765,7 +769,25 @@ table th {
   border-color: #2323c7;
   color: #ffffff;
 }
-.tab.tab-disabled,
+.tab.tab-selected:hover,
+.tab.tab-selected:active {
+  cursor: default;
+  background-color: #2323c7;
+  border-color: #2323c7;
+  color: #ffffff;
+}
+.tab.tab-disabled {
+  background-color: #999999;
+  border-color: #999999;
+  color: #cccccc;
+}
+.tab.tab-disabled:hover,
+.tab.tab-disabled:active {
+  cursor: default;
+  background-color: #999999;
+  border-color: #999999;
+  color: #cccccc;
+}
 .tab.tab-disabled:hover,
 .tab.tab-disabled:active {
   cursor: default;

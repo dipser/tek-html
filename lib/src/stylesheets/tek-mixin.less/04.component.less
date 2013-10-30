@@ -234,3 +234,15 @@
     border-color:@back;
   }
 }
+.fixed-tab(@back:@gray;@color:@white){
+  background-color: @back;
+  border-color: @back;
+  color: @color;
+  &:hover,
+  &:active{
+    cursor: default;
+    background-color: @back;
+    border-color: @back;
+    color: @color;
+  }
+}

@@ -1,6 +1,6 @@
 {
     "name": "tek-html",
-    "version": "0.1.28",
+    "version": "0.1.29",
     "description": "tek library for static html",
     "main": "./lib/index",
     "repository": {

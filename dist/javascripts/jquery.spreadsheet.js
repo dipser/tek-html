@@ -205,6 +205,9 @@
 		    var leftFixedTh = leftFixed.find(p('.body-th'));
 		
 		    root
+		        .on('mouseleave', function(){
+		            root.find(p('.th-hover')).removeClass(p('th-hover'));
+		        })
 		        .on(p('resize'), function () {
 		            leftFixedTh.width(tbodyTh.width());
 		            leftFixed.children('thead').eq(0)

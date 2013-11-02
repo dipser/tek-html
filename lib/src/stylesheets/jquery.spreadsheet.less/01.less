@@ -4,6 +4,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .ss-scrollable {
@@ -52,4 +53,18 @@
   height: 100%;
   z-index: 999;
   .box-shadow(1px 1px 1px rgba(100, 100, 100, .1));
+}
+
+.top-fixed-thead {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  z-index: 1001;
+  th:first-child {
+    display: block;
+    padding: 0;
+    position: relative;
+    z-index: 1001;
+  }
 }

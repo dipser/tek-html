@@ -1,7 +1,7 @@
 /**
- * jquery.treeview.js v0.1.24
+ * jquery.treeview.js v0.1.25
  * - jquery plugin to create treeview -
- * @version v0.1.24
+ * @version v0.1.25
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-02
@@ -144,7 +144,7 @@
 		        if (!item.is(':visible')) return null;
 		        var selectedClass = p('selected');
 		        if (item.hasClass(selectedClass)) return null;
-		        $('.' + selectedClass, root)
+		        $('.' + selectedClass)
 		            .removeClass(selectedClass);
 		        item.addClass(selectedClass);
 		        root.selected = item;
@@ -153,7 +153,7 @@
 		
 		    root.unselect = function () {
 		        var selectedClass = p('selected');
-		        $('.' + selectedClass, root)
+		        $('.' + selectedClass)
 		            .removeClass(selectedClass);
 		        root.selected = $();
 		        return root.selected;
@@ -330,6 +330,7 @@
 		        });
 		        doc.on('click', p('.openable-icon'), function (e) {
 		            var root = tv.root;
+		            root.active = true;
 		            var item = $(this).parent(p('.label')).parent(p('.item')).first();
 		            if (item.length) {
 		                root.open(item) || root.close(item) || o.action(item);
@@ -338,12 +339,20 @@
 		        });
 		        doc.on('dblclick', p('.item'), function (e) {
 		            var root = tv.root;
+		            root.active = true;
+		
 		            var item = $(this);
 		            root.open(item) || root.close(item);
 		            e.stopPropagation();
 		        });
+		        doc.on('click', function () {
+		            var root = tv.root;
+		            root.active = false;
+		            root.unselect();
+		        });
 		        doc.on('keydown', function (e) {
 		            var root = tv.root;
+		            if (!root.active) return;
 		            var KEY = $.ui.keyCode,
 		                select = root.select;
 		            switch (e.keyCode) {

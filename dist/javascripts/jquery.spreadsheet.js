@@ -1,7 +1,7 @@
 /**
- * jquery.spreadsheet.js v0.1.25
+ * jquery.spreadsheet.js v0.1.26
  * - jquery plugin to create spreadsheet -
- * @version v0.1.25
+ * @version v0.1.26
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-02
@@ -205,8 +205,14 @@
 		
 		    var cellSelector = [p('.root'), p('.cell')].join(' ');
 		
-		    var leftFixedTh = leftFixed
-		        .find(p('.body-th'));
+		    var leftFixedTh = leftFixed.find(p('.body-th'));
+		
+		    win
+		        .on('resize', function(){
+		            leftFixedTh.width(tbodyTh.width());
+		            leftFixed.children('thead').eq(0)
+		                .find('th').eq(0).height(theadTh.height() + 1);
+		        });
 		
 		    doc
 		        .on('mouseenter', cellSelector, function () {

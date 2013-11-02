@@ -158,7 +158,7 @@
 		        '<thead><tr><th style="height:' + theadHeight + 'px;">&nbsp;</th></tr></thead><tbody></tr>';
 		    th.each(function () {
 		        var th = $(this);
-		        var attrString = spreadsheet.toAttrStrings({
+		        var attrString = ss.toAttrStrings({
 		            "class": th.attr('class'),
 		            'width': th.width()
 		        }).join(' ');

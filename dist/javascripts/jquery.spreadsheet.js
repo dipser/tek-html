@@ -1,7 +1,7 @@
 /**
- * jquery.spreadsheet.js v0.1.26
+ * jquery.spreadsheet.js v0.1.28
  * - jquery plugin to create spreadsheet -
- * @version v0.1.26
+ * @version v0.1.28
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-02
@@ -126,11 +126,9 @@
 		
 		    return root;
 		}
-		function createTopFixed(thead, leftFixedWidth, scrollable) {
+		function createTopFixed(thead, scrollable) {
 		    var fixedThead = thead.clone().addClass('top-fixed-thead');
-		    var th = fixedThead.find('th');
 		    var left = scrollable.offset().left;
-		    th.first().width(leftFixedWidth);
 		    fixedThead.free = function () {
 		        fixedThead.hide();
 		        thead
@@ -153,9 +151,9 @@
 		
 		    return fixedThead;
 		}
-		function createLeftFixed(th, theadHeight) {
+		function createLeftFixed(th) {
 		    var html = '<table class="' + p('left-fixed-table') + '"><caption>&nbsp;</caption>' +
-		        '<thead><tr><th style="height:' + theadHeight + 'px;">&nbsp;</th></tr></thead><tbody></tr>';
+		        '<thead><tr><th >&nbsp;</th></tr></thead><tbody></tr>';
 		    th.each(function () {
 		        var th = $(this);
 		        var attrString = ss.toAttrStrings({
@@ -183,10 +181,9 @@
 		    var theadTh = thead.find(p('.head-th')),
 		        tbodyTh = tbody.find(p('.body-th'));
 		
-		    var leftFixed = $(createLeftFixed(tbodyTh, theadTh.height() + 1))
-		        .appendTo(root);
+		    var leftFixed = $(createLeftFixed(tbodyTh)).appendTo(root);
 		
-		    var topFixed = createTopFixed(thead, leftFixed.width(), scrollable);
+		    var topFixed = createTopFixed(thead, scrollable);
 		    table.append(topFixed);
 		
 		
@@ -207,11 +204,34 @@
 		
 		    var leftFixedTh = leftFixed.find(p('.body-th'));
 		
-		    win
-		        .on('resize', function(){
+		    root
+		        .on(p('resize'), function () {
 		            leftFixedTh.width(tbodyTh.width());
 		            leftFixed.children('thead').eq(0)
 		                .find('th').eq(0).height(theadTh.height() + 1);
+		
+		
+		            tbodyTh.each(function (i) {
+		                var th = $(this);
+		                leftFixedTh.eq(i)
+		                    .width(th.width())
+		                    .height(th.height());
+		            });
+		
+		            theadTh.each(function (i) {
+		                var th = $(this);
+		                topFixed.find('.ss-head-th').eq(i)
+		                    .height(th.height())
+		                    .width(th.width());
+		            });
+		
+		            topFixed.children('tr').children('th').first().width(leftFixed.width());
+		        })
+		        .trigger(p('resize'));
+		
+		    win
+		        .on('resize', function () {
+		            root.trigger(p('resize'));
 		        });
 		
 		    doc

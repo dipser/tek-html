@@ -305,14 +305,14 @@ table th {
 .primary-btn:hover {
   color: #ffffff;
 }
-1 .logo {
+.logo {
   margin: 2px 10px;
   opacity: 0.5;
 }
-1 .logo a {
+.logo a {
   color: #666666;
 }
-1 .logo a:hover {
+.logo a:hover {
   color: #666666;
   text-decoration: none;
 }

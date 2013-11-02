@@ -5,19 +5,9 @@
 
     <link rel="stylesheet" href="../../../lib/src/stylesheets/jquery.spreadsheet.less/01.css"/>
     <link rel="stylesheet" href="../stylesheets/qunit-1.12.0.css"/>
+    <link rel="stylesheet" href="../stylesheets/test-style-clean.css"/>
 
     <style>
-        body {
-            background-color: #FAFAFA;
-            color: #777;
-            padding: 50px;
-        }
-
-        #main {
-            height: 500px;
-            width: 960px;
-            margin: 0 auto;
-        }
     </style>
 
     <script>
@@ -41,7 +31,7 @@
     <script>
         (function ($) {
             var ss = $.spreadsheet;
-            var rows = 100, cols = 200;
+            var rows = 50, cols = 40;
 
             var headData = new ss.HeadData((function (cols) {
                 var headData = [];
@@ -66,7 +56,7 @@
                 }
                 return rowData;
             })(rows);
-            var sheetData = new ss.SheetData(headData, bodyData);
+            var sheetData = new ss.SheetData("my-spreadsheet", headData, bodyData);
 
             $(function () {
                 $('#demo-section').spreadsheet(sheetData);

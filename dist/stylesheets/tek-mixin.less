@@ -1,4 +1,4 @@
-//<h1>tek-mixin.less-0.1.20</h1>
+//<h1>tek-mixin.less-0.1.21</h1>
 
 /* <h3>color variables</h3>
 
@@ -265,7 +265,6 @@
 //noinspection CssUnknownProperty
 .pointer-events(@event) {
   -ms-pointer-events: @event;
-  -webkit-pointer-events: @event;
   -moz-pointer-events: @event;
   -o-pointer-events: @event;
   pointer-events: @event;
@@ -277,13 +276,11 @@
   cursor: -o-grab;
   cursor: -webkit-grab;
   cursor: -ms-grab;
-  cursor: grab;
   &:active {
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
     cursor: -o-grabbing;
     cursor: -ms-grabbing;
-    cursor: grabbing;
   }
 }
 

@@ -112,7 +112,6 @@
 }
 .unpointable {
   -ms-pointer-events: none;
-  -webkit-pointer-events: none;
   -moz-pointer-events: none;
   -o-pointer-events: none;
   pointer-events: none;
@@ -123,21 +122,18 @@
   cursor: -o-grab;
   cursor: -webkit-grab;
   cursor: -ms-grab;
-  cursor: grab;
 }
 .grabbable:active {
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
-  cursor: grabbing;
 }
 .grabbable:active {
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
-  cursor: grabbing;
 }
 /*******************
  *  positioning

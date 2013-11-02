@@ -131,14 +131,12 @@
   cursor: -o-grab;
   cursor: -webkit-grab;
   cursor: -ms-grab;
-  cursor: grab;
 }
 .fc-item:active {
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
-  cursor: grabbing;
 }
 .fc-item.ui-draggable-dragging {
   -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);

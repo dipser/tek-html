@@ -1,0 +1,14 @@
+/**
+ * jquery.spreadsheet.js v{{version}}
+ * - jquery plugin to create spreadsheet -
+ * @version v{{version}}
+ * @author {{author}}
+ * @license MIT
+ * @date {{date}}
+ */
+(function (dependencies, undefined) {
+{{modules}}
+
+})({
+    $: this['jQuery']
+}, undefined);

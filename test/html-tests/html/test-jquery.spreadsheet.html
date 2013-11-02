@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jquery spreadsheet</title>
+
+    <link rel="stylesheet" href="../../../lib/src/stylesheets/jquery.spreadsheet.less/01.css"/>
+    <link rel="stylesheet" href="../stylesheets/qunit-1.12.0.css"/>
+
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #777;
+            padding: 50px;
+        }
+
+        #main {
+            height: 500px;
+            width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <script>
+        global = window;
+    </script>
+    <script src="../../../dist/javascripts/lib/jquery.js"></script>
+    <script>
+        exports = $;
+    </script>
+
+    <script>
+        exports = $.fn;
+    </script>
+
+    <script src="../javascripts/qunit-1.12.0.js"></script>
+
+    <script src="../javascripts/test-jquery.spreadsheet.js"></script>
+</head>
+<body>
+
+<article id="main">
+    <section id="demo-section"></section>
+</article>
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+</body>
+</html>

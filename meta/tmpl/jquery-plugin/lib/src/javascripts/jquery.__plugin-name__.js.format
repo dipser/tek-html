@@ -1,0 +1,14 @@
+/**
+ * jquery.__plugin-name__.js v{{version}}
+ * - jquery plugin to create __plugin-name__ -
+ * @version v{{version}}
+ * @author {{author}}
+ * @license MIT
+ * @date {{date}}
+ */
+(function (dependencies, undefined) {
+{{modules}}
+
+})({
+    $: this['jQuery']
+}, undefined);

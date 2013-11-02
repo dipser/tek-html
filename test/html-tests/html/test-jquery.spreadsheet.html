@@ -38,6 +38,41 @@
     <script>
         exports = undefined;
     </script>
+    <script>
+        (function ($) {
+            var ss = $.spreadsheet;
+            var rows = 100, cols = 200;
+
+            var headData = new ss.HeadData((function (cols) {
+                var headData = [];
+                for (var i = 0; i < cols; i++) {
+                    headData.push('head-th-' + i);
+                }
+                return headData;
+            })(cols));
+
+            var bodyData = (function (rows) {
+                var rowData = [];
+                for (var i = 0; i < rows; i++) {
+                    rowData.push(
+                            new ss.RowData('body-th-' + i, (function (cols) {
+                                var cellData = [];
+                                for (var i = 0; i < cols; i++) {
+                                    cellData.push('td-' + i);
+                                }
+                                return cellData;
+                            })(cols))
+                    )
+                }
+                return rowData;
+            })(rows);
+            var sheetData = new ss.SheetData(headData, bodyData);
+
+            $(function () {
+                $('#demo-section').spreadsheet(sheetData);
+            });
+        })(jQuery);
+    </script>
     <script src="../javascripts/qunit-1.12.0.js"></script>
     <script src="../javascripts/test-jquery.spreadsheet.js"></script>
 </head>

@@ -17,7 +17,6 @@ exports.ItemTest = function (test) {
 
     var item = new Item().content('<span>flow01</span>');
     var html = item.toHTML();
-    console.log('\nflowchart html:', html, '\n');
     should.exist(html);
     test.done();
 };

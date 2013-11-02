@@ -27,6 +27,7 @@
   @highlight: lighten(@yellow, 30);
   .ss-cell {
     .ss-cell(darken(@back, 0), @highlight);
+    cursor: default;
   }
   &:nth-child(even) {
     .ss-cell {
@@ -66,5 +67,13 @@
     padding: 0;
     position: relative;
     z-index: 1001;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .top-fixed-thead {
+    th{
+      padding-right:10px;
+    }
   }
 }

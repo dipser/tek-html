@@ -100,6 +100,7 @@
 .ss-tbody-row .ss-cell {
   background-color: #ffffff;
   position: relative;
+  cursor: default;
 }
 .ss-tbody-row .ss-cell:hover {
   background-color: #ffffcc;
@@ -141,4 +142,9 @@
   padding: 0;
   position: relative;
   z-index: 1001;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .top-fixed-thead th {
+    padding-right: 10px;
+  }
 }

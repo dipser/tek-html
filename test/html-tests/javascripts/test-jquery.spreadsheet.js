@@ -1,3 +1,9 @@
-/**
- * Created by okunishitaka on 11/2/13.
- */
+var $ = jQuery;
+$(function () {
+    var doc = $(document);
+
+
+    test('ok', function () {
+        ok(true);
+    });
+});

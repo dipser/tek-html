@@ -1,0 +1,99 @@
+/* <h3>color variables</h3>
+
+  ```
+    <p>
+      <span class="colored-box color-white">@white</span>
+      <span class="colored-box color-silver">@silver</span>
+      <span class="colored-box color-black">@black</span>
+      <span class="colored-box color-gray">@gray</span>
+      <span class="colored-box color-red">@red</span>
+      <span class="colored-box color-pink">@pink</span>
+      <span class="colored-box color-yellow">@yellow</span>
+      <span class="colored-box color-orange">@orange</span>
+      <span class="colored-box color-brown">@brown</span>
+      <span class="colored-box color-green">@green</span>
+      <span class="colored-box color-blue">@blue</span>
+      <span class="colored-box color-purple">@purple</span>
+      <span class="colored-box color-cyan">@cyan</span>
+    </p>
+  ```
+*/
+/*
+  <h3>linear gradient</h3>
+  <p>
+    .linear-gradient(@blue, darken(@blue, 30));
+  </p>
+  ```
+    <div class="blue-gradient gradient-box"></div>
+  ```
+*/
+/*
+  <h3>radial gradient</h3>
+  <p>
+    .radial-gradient(20%, 40%, @green, darken(@green, 50));
+  </p>
+  ```
+    <div class="green-radial-gradient radial-gradient-box"></div>
+  ```
+*/
+/*
+  <h3>stripe</h3>
+  <p>
+    .stripe(40px, lighten(@orange, 20));
+  </p>
+
+  ```
+    <div class="stripe-box orange-stripe"></div>
+
+  ```
+*/
+/*
+  <h3>rotate</h3>
+  <p>
+  .rotate(45deg);
+  </p>
+  ```
+    <div class="box rotate45"></div>
+  ```
+*/
+/*
+  <h3>skew</h3>
+  <p>
+    .skew(30deg);
+  </p>
+  ```
+    <div class="box skew30"></div>
+  ```
+ */
+section {
+  background-color: #AAA;
+}
+.block-table {
+  background-color: #FAFAFA;
+  color: #333;
+  border-collapse: collapse;
+  width: 100%;
+}
+.block-table th,
+.block-table td {
+  padding: 5px 10px;
+  background-color: #fefefe;
+  border: 1px solid #f4f4f4;
+}
+.block-table th {
+  background-color: #f6f6f6;
+  background-image: -webkit-linear-gradient(#fefefe,#f6f6f6);
+  background-image: -moz-linear-gradient(#fefefe,#f6f6f6);
+  background-image: -o-linear-gradient(#fefefe,#f6f6f6);
+  background-image: -ms-linear-gradient(#fefefe,#f6f6f6);
+  background-image: linear-gradient(#fefefe,#f6f6f6);
+}
+.block-table thead,
+.block-table tbody,
+.block-table tfoot,
+.block-table tr,
+.block-table th,
+.block-table td {
+  display: block;
+  width: 100%;
+}

@@ -759,13 +759,13 @@
 		                            }
 		                            break;
 		                    }
+		                })
+		                .textchange(function () {
+		                    clearTimeout(input.hideTimer);
+		                    ul.show();
+		                    ul.filterItem(input.val());
 		                });
 		        })
-		        .textchange(function () {
-		            clearTimeout(input.hideTimer);
-		            ul.show();
-		            ul.filterItem(input.val());
-		        });
 		};
 	})(dependencies, undefined);
 

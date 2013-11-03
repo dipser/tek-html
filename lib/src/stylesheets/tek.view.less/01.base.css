@@ -211,3 +211,37 @@
   display: block;
   text-align: center;
 }
+.tk-selectable-text-list {
+  position: absolute;
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  margin: 0;
+  z-index: 2000;
+}
+.tk-selectable-text-list li {
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+.tk-selectable-text-list li.tk-selected a {
+  background-color: #4d4dff;
+  color: #ffffff;
+}
+.tk-selectable-text-list li a {
+  display: block;
+  padding: 4px 8px;
+  color: #666666;
+  border-top: 1px solid #f7f7f7;
+  text-decoration: none;
+}
+.tk-selectable-text-list li a:hover {
+  background-color: #4d4dff;
+  color: #ffffff;
+  text-decoration: none;
+}

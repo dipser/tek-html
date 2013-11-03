@@ -92,5 +92,30 @@
             ok(dialog.is(':hidden'));
         });
 
+
+        asyncTest("$.fn.selectableText", function () {
+            var selectableText = body.findByRole('selectable-text').val('').selectableText(
+                'りんご,ばなな,みかん'.split(',')
+            ).first();
+            var ul = $('.tk-selectable-text-list', body);
+            strictEqual(ul.size(), 1, 'create list');
+            var li = ul.find('li');
+            strictEqual(li.size(), 3, 'create list content');
+
+            selectableText.focus();
+            ok(ul.is(':visible'), 'show list on focus');
+
+            selectableText.blur();
+            setTimeout(function () {
+                ok(ul.is(':hidden'), 'hide when blur');
+                selectableText.focus();
+                selectableText.val('ん');
+                strictEqual(li.filter(':visible').size(), 2);
+                li.filter(':visible').find('a').first().click();
+                strictEqual(selectableText.val(), 'りんご');
+            }, 500);
+
+
+        });
     });
 })(jQuery);

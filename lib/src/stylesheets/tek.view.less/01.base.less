@@ -1,6 +1,7 @@
 @import "../../../../dist/stylesheets/tek-mixin";
 
 @danger: #FF99AC;
+@highlight:lighten(@blue, 5);
 @color:#666666;
 .tk-confirm-dialog {
   .black-cover();
@@ -47,4 +48,37 @@
   .box-sizing(border-box);
   display: block;
   text-align: center;
+}
+.tk-selectable-text-list{
+  position: absolute;
+  background-color: @white;
+  .box-shadow(2px 2px 4px;.5);
+  padding: 0;
+  margin: 0;
+  z-index: 2000;
+  li{
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    &.tk-selected{
+      a{
+        background-color: @highlight;
+        color:@white;
+      }
+    }
+    a{
+      display: block;
+      padding: 4px 8px;
+      color: @gray;
+      border-top:1px solid darken(@white, 3);
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+        background-color: @highlight;
+        color:@white;
+        text-decoration: none;
+      }
+    }
+  }
 }

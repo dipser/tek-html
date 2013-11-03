@@ -259,6 +259,9 @@
 		        callback && callback();
 		    });
 		};
+		
+		
+		
 	})(dependencies, undefined);
 	/** tek.view for $.fn **/
 	(function (global, undefined) {
@@ -657,6 +660,113 @@
 		    });
 		};
 		
+		/**
+		 * text box with selection
+		 * @param data
+		 */
+		$.fn.selectableText = function (candidates) {
+		    var ambiguousMatch = tek.string.ambiguousMatch;
+		    var tml = {
+		        ul: hbs.templates['tk-selectable-text-list']
+		    };
+		    var input = $(this);
+		    var ul = input.first().after(tml.ul({candidates: candidates})).next('.tk-selectable-text-list').hide();
+		    ul.childItems = function () {
+		        return ul.children('.tk-selectable-list-item');
+		    };
+		    ul.filterItem = function (searchWord) {
+		        ul.childItems().each(function () {
+		            var li = $(this),
+		                text = li.children('a').text();
+		            var hit = (text !== searchWord) && ((!searchWord) || ambiguousMatch(searchWord, text));
+		            hit ? li.show() : li.hide();
+		        });
+		        return ul;
+		    };
+		    ul.hideList = function () {
+		        ul.find('.tk-selected').removeClass('tk-selected');
+		        return ul.hide();
+		    };
+		    ul.showList = function (style) {
+		        return ul.show()
+		            .css(style)
+		            .children('li')
+		            .show();
+		    };
+		    ul.find('a').click(function () {
+		        var input = ul.data('tk-selectable-text-active');
+		        clearTimeout(input.hideTimer);
+		        var a = $(this);
+		        input.val(a.text());
+		        ul.hide();
+		    });
+		
+		    return input
+		        .attr({
+		            autocomplete: 'off'
+		        })
+		        .each(function () {
+		            var input = $(this);
+		            input
+		                .focus(function () {
+		                    clearTimeout(input.hideTimer);
+		                    ul.data('tk-selectable-text-active', input);
+		                    input.after(ul);
+		                    var position = input.position();
+		                    ul
+		                        .showList({
+		                            left: position.left,
+		                            top: position.top + input.outerHeight(true),
+		                            width: input.outerWidth()
+		                        });
+		                    ul.filterItem(input.val());
+		                })
+		                .blur(function () {
+		                    input.hideTimer = setTimeout(function () {
+		                        ul.hideList();
+		                    }, 500);
+		                })
+		                .keydown(function (e) {
+		                    clearTimeout(input.hideTimer);
+		                    var KEY = $.ui.keyCode;
+		                    var li = ul.children('li'),
+		                        selected = li.filter('.tk-selected:visible');
+		                    switch (e.which) {
+		                        case KEY.ENTER:
+		                            selected.find('a').click();
+		                            e.preventDefault();
+		                            break;
+		                        case KEY.UP:
+		                            var prev = selected.prevAll(':visible').not('.tk-selected').first();
+		                            if (prev.size()) {
+		                                li.not(prev).removeClass('tk-selected');
+		                                prev.addClass('tk-selected');
+		                            } else {
+		                                ul.hideList();
+		                            }
+		                            break;
+		                        case KEY.DOWN:
+		                            if (selected.size()) {
+		                                var next = selected.nextAll(':visible').not('.tk-selected').first();
+		                                if (next.size()) {
+		                                    li.not(next).removeClass('tk-selected');
+		                                    next.addClass('tk-selected');
+		                                }
+		                            } else {
+		                                ul.show();
+		                                li.filter('tk-selected').removeClass('tk-selected');
+		                                li.filter(':visible').first().addClass('tk-selected');
+		                            }
+		                            break;
+		                    }
+		                });
+		        })
+		        .textchange(function () {
+		            clearTimeout(input.hideTimer);
+		            ul.show();
+		            ul.filterItem(input.val());
+		        });
+		};
 	})(dependencies, undefined);
 
 })({

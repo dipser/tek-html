@@ -1,10 +1,10 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.1.28
+ * @version v0.1.29
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-02
+ * @date 2013-11-03
  */
 tek = (function (module) {
     
@@ -631,6 +631,78 @@ tek = (function (module) {
 	        var first = values.indexOf(entry);
 	        return first === i;
 	    });
+	};
+	/**
+	 * User: okunishitaka
+	 * Date: 9/16/13
+	 * Time: 12:14 AM
+	 */
+	
+	var PATTERNS = {
+	    ZENKAKU: /[！-～]/g,
+	    HANKAKU: /[\!-\~]/g,
+	    HIRAGANA: /[ぁ-ん]/g,
+	    KATAKANA: /[ァ-ン]/g
+	};
+	tek.string = {};
+	/**
+	 * ひらがなへ変換
+	 * @param str
+	 * @returns {*}
+	 */
+	tek.string.toHiragana = function (str) {
+	    return str && str.replace(PATTERNS.KATAKANA, function (s) {
+	        return String.fromCharCode(s.charCodeAt(0) - 0x60);
+	    });
+	};
+	
+	/**
+	 * カタカナへ変換
+	 * @param str
+	 * @returns {*}
+	 */
+	tek.string.toKatakana = function (str) {
+	    return str && str.replace(PATTERNS.HIRAGANA, function (s) {
+	        return String.fromCharCode(s.charCodeAt(0) + 0x60);
+	    });
+	};
+	
+	/**
+	 * 半角へ変換
+	 * @param str
+	 * @returns {*}
+	 */
+	tek.string.toHankaku = function (str) {
+	    return str && str.replace(PATTERNS.ZENKAKU, function (s) {
+	        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+	    });
+	};
+	
+	/**
+	 * 全角へ変換
+	 * @param str
+	 * @returns {*}
+	 */
+	tek.string.toZenkaku = function (str) {
+	    return str && str.replace(PATTERNS.HANKAKU, function (s) {
+	        return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);
+	    });
+	};
+	
+	/**
+	 * 曖昧一致
+	 */
+	tek.string.ambiguousMatch = function (string1, string2) {
+	    if (!string1) string1 = '';
+	    if (!string2) string2 = '';
+	    var toHankaku = tek.string.toHankaku,
+	        toHiragana = tek.string.toHiragana;
+	
+	    function format(string) {
+	        return toHankaku(toHiragana(string.trim()));
+	    }
+	
+	    return format(string1) === format(string2);
 	};
     
     return tek;

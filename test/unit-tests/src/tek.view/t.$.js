@@ -14,3 +14,14 @@ exports.FormValueTest = function (test) {
     obj.namespace.should.have.property('name', "234");
     test.done();
 };
+
+exports.parseJSONSafelyTest = function (test) {
+    var warn = console.warn;
+    console.warn = function (msg) {
+        should.exist(msg);
+    };
+    $.parseJSONSafely('[1,2,3]').should.be.lengthOf(3);
+    should.not.exist($.parseJSONSafely('[1,'));
+    console.warn = warn;
+    test.done();
+};

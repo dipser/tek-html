@@ -15,9 +15,8 @@
             console.error('[tek.view.js] dependency missing: ', name + 'not found.');
             valid = false;
         }
-    };
+    }
     if (!valid) return;
-
 
     tek.crossBrowser(window);
 
@@ -25,6 +24,6 @@
 
 })({
     $: this['$'],
-    Handlebars: this['Handlebars'],
+    hbs: this['Handlebars'],
     tek: this['tek']
 }, window, undefined);

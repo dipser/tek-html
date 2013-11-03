@@ -60,11 +60,23 @@
             }, 10);
         });
 
-        test("editableText", function () {
+        test("$.fn.editableText", function () {
             var editableText = body.findByRole('editable-text');
-            ok(!editableText.data('tk-editable-text'));
+            ok(!editableText.data('tk-editable-text'),'binding');
             editableText.editableText();
-            ok(editableText.data('tk-editable-text'));
+            editableText.editableText();
+            ok(editableText.data('tk-editable-text'), 'binding');
         });
+
+        test("$.fn.selectableLabel", function () {
+            var selectableLabel = body.findByRole('selectable-label');
+            ok(!selectableLabel.data('tk-selectable-label'));
+            selectableLabel.selectableLabel();
+            selectableLabel.selectableLabel();
+            ok(selectableLabel.data('tk-selectable-label'));
+            selectableLabel.next('.tk-selectable-label').click();
+            selectableLabel.change();
+        });
+
     });
 })(jQuery);

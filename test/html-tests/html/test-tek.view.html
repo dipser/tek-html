@@ -22,7 +22,11 @@
     <script src="../../../dist/javascripts/lib/one-color.js"></script>
     <script>
         global = window;
+        global.hbs = Handlebars;
     </script>
+    <script>
+    </script>
+    <script src="../../../lib/src/javascripts/tek.view.js/00.hbs.templates.js"></script>
     <script>
         exports = $;
     </script>
@@ -44,6 +48,7 @@
 
 <section id="section01">
     <h1>form</h1>
+
     <form action="" name="some-form">
         <input type="text" name="text01" value="text-value01"/>
         <input type="text" name="text02" value="text-value02" data-role="editable-text"/>
@@ -53,9 +58,15 @@
         <input type="radio" name="radio01" value="radio-value01" checked/>
         <input type="radio" name="radio01" value="radio-value02"/>
         <select name="select01">
-            <option value="select-value01"></option>
-            <option value="select-value02" selected></option>
-            <option value="select-value03"></option>
+            <option value="select-value01">v01</option>
+            <option value="select-value02" selected>v02</option>
+            <option value="select-value03">v03</option>
+        </select>
+        <select name="select02" data-role="selectable-label">
+            <option value="select-value11">v01</option>
+            <option value="select-value12">v02</option>
+            <option value="select-value13" selected>v03</option>
+            <option value="select-value14">v04</option>
         </select>
         <textarea name="textarea01" cols="30" rows="10">text-content</textarea>
         <a href="javascript:void(0)" data-role="submit-btn"></a>

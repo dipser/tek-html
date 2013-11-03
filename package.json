@@ -16,7 +16,8 @@
     },
     "devDependencies": {
         "should": "*",
-        "nodeunit": "*"
+        "nodeunit": "*",
+        "handlebars": "*"
     },
     "dependencies": {
         "tek": "*",

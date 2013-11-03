@@ -1,7 +1,7 @@
 /**
- * jquery.treeview.js v0.1.29
+ * jquery.treeview.js v0.1.30
  * - jquery plugin to create treeview -
- * @version v0.1.29
+ * @version v0.1.30
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-03
@@ -355,7 +355,7 @@
 		            if (!root.active) return;
 		            var KEY = $.ui.keyCode,
 		                select = root.select;
-		            switch (e.keyCode) {
+		            switch (e.keyCode || e.which) {
 		                case KEY.UP:
 		                    select.prev(true) || select.parent();
 		                    break;

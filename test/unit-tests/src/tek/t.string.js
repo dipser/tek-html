@@ -25,8 +25,9 @@ exports.toZenkaku = function (test) {
 };
 
 exports.ambiguousMatch = function (test) {
-    string.ambiguousMatch('１２３4567Ａ', '１２３４５６７Ａ').should.be.true;
-    string.ambiguousMatch("あいうえおカキクケコ", 'アイウエオカキクケコ').should.be.true;
-    string.ambiguousMatch("あいうえおカキクケコ", 'アイウエオカキクケk').should.be.false;
+    string.ambiguousMatch('１２３', '１２３４５６７Ａ').should.be.true;
+    string.ambiguousMatch('1', '１２３４５６７Ａ').should.be.true;
+    string.ambiguousMatch("ア", 'あいうえおカキクケコ').should.be.true;
+    string.ambiguousMatch("ぬ", 'あいうえおカキクケコ').should.be.false;
     test.done();
 };

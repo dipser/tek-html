@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.1.29
+ * @version v0.1.30
  * @author Taka Okunishi
  * @date 2013-11-03
  *
@@ -369,7 +369,7 @@
 		            });
 		        input
 		            .keypress(function (e) {
-		                switch (e.keyCode) {
+		                switch (e.keyCode || e.which) {
 		                    case KEY_CODE.ENTER:
 		                    case KEY_CODE.TAB:
 		                        if (input.is('textarea')) {

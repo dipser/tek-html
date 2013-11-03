@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.1.29
+ * @version v0.1.30
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-03
@@ -692,17 +692,18 @@ tek = (function (module) {
 	/**
 	 * 曖昧一致
 	 */
-	tek.string.ambiguousMatch = function (string1, string2) {
-	    if (!string1) string1 = '';
-	    if (!string2) string2 = '';
-	    var toHankaku = tek.string.toHankaku,
-	        toHiragana = tek.string.toHiragana;
+	tek.string.ambiguousMatch = function (searchWord, pattern) {
+	    if (!pattern) return false;
+	    if (!searchWord) return false;
+	    searchWord = searchWord.trim();
 	
-	    function format(string) {
-	        return toHankaku(toHiragana(string.trim()));
-	    }
-	
-	    return format(string1) === format(string2);
+	    var string = tek.string;
+	    return !!pattern.match(searchWord) ||
+	        !!string.toHankaku(pattern).match(searchWord) ||
+	        !!string.toZenkaku(pattern).match(searchWord) ||
+	        !!string.toHiragana(pattern).match(searchWord) ||
+	        !!string.toKatakana(pattern).match(searchWord)
+	        ;
 	};
     
     return tek;

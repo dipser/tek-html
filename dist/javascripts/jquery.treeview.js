@@ -1,7 +1,7 @@
 /**
- * jquery.treeview.js v0.2.0
+ * jquery.treeview.js v0.2.1
  * - jquery plugin to create treeview -
- * @version v0.2.0
+ * @version v0.2.1
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-03
@@ -380,25 +380,6 @@
 		    return tv.root;
 		};
 		
-	})(dependencies, undefined);
-	
-	/** jquery.treeview for  **/
-	(function (global, undefined) {
-	
-		/**
-		 * jquery.treeview.js v{{version}}
-		 * - jquery plugin to create treeview -
-		 * @version v{{version}}
-		 * @author {{author}}
-		 * @license MIT
-		 * @date {{date}}
-		 */
-		(function (dependencies, undefined) {
-		{{modules}}
-		
-		})({
-		    $: this['jQuery']
-		}, undefined);
 	})(dependencies, undefined);
 
 })({

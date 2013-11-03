@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.0
+ * @version v0.2.1
  * @author Taka Okunishi
  * @date 2013-11-03
  *
@@ -767,39 +767,6 @@
 		            ul.filterItem(input.val());
 		        });
 		};
-	})(dependencies, undefined);
-	/** tek.view for  **/
-	(function (global, undefined) {
-	
-		/**
-		 * tek.view.js
-		 * - javascript library for tek -
-		 * @version v{{version}}
-		 * @author {{author}}
-		 * @date {{date}}
-		 *
-		 */
-		(function (dependencies, window, undefined) {
-		
-		    var valid = true;
-		    for(var name in dependencies){
-		        if (!dependencies.hasOwnProperty(name)) continue;
-		        if (!dependencies[name]) {
-		            console.error('[tek.view.js] dependency missing: ', name + 'not found.');
-		            valid = false;
-		        }
-		    }
-		    if (!valid) return;
-		
-		    tek.crossBrowser(window);
-		
-		{{modules}}
-		
-		})({
-		    $: this['$'],
-		    hbs: this['Handlebars'],
-		    tek: this['tek']
-		}, window, undefined);
 	})(dependencies, undefined);
 
 })({

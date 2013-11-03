@@ -1,7 +1,7 @@
 /**
- * jquery.spreadsheet.js v0.2.0
+ * jquery.spreadsheet.js v0.2.1
  * - jquery plugin to create spreadsheet -
- * @version v0.2.0
+ * @version v0.2.1
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-03
@@ -277,25 +277,6 @@
 		        });
 		    return    root;
 		};
-	})(dependencies, undefined);
-	
-	/** jquery.spreadsheet for  **/
-	(function (global, undefined) {
-	
-		/**
-		 * jquery.spreadsheet.js v{{version}}
-		 * - jquery plugin to create spreadsheet -
-		 * @version v{{version}}
-		 * @author {{author}}
-		 * @license MIT
-		 * @date {{date}}
-		 */
-		(function (dependencies, undefined) {
-		{{modules}}
-		
-		})({
-		    $: this['jQuery']
-		}, undefined);
 	})(dependencies, undefined);
 
 })({

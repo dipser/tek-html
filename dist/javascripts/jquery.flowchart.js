@@ -1,7 +1,7 @@
 /**
- * jquery.flowchart.js v0.2.1
+ * jquery.flowchart.js v0.2.2
  * - jquery plugin to create flowchart -
- * @version v0.2.1
+ * @version v0.2.2
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-03

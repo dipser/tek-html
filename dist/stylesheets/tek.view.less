@@ -1,0 +1,87 @@
+//<h1>tek.view.less-0.2.0</h1>
+//stylesheet for tek.view
+@import "tek-mixin";
+
+
+@danger: #FF99AC;
+@highlight:lighten(@blue, 5);
+@color:#666666;
+.tk-confirm-dialog {
+  .black-cover();
+  color:@color;
+  padding-top: 120px;
+  z-index: 2000;
+  .disabled {
+    opacity: 0.3;
+    .box-shadow(none);
+    background-image: none;
+    &:hover {
+      background-image: none;
+    }
+  }
+}
+.tk-confirm-dialog-inner{
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  @back: @white;
+  background-color: @back;
+  .border-radius(4px);
+  .box-shadow(4px 4px 8px, 0.5);
+  padding: 15px 20px;
+}
+.tk-confirm-dialog-title{
+  margin: 2px auto 4px;
+}
+.tk-danger-btn{
+  .btn(@danger);
+  &[disabled="disabled"],
+  &[disabled="disabled"]:hover,
+  &[disabled="disabled"]:active{
+    opacity: 0.3;
+    .text-shadow(none);
+    background-image:none;
+  }
+}
+.tk-confirm-dialog-close-btn{
+  .remove-btn();
+}
+.tk-wide-btn{
+  width:100%;
+  .box-sizing(border-box);
+  display: block;
+  text-align: center;
+}
+.tk-selectable-text-list{
+  position: absolute;
+  background-color: @white;
+  .box-shadow(2px 2px 4px;.5);
+  padding: 0;
+  margin: 0;
+  z-index: 2000;
+  li{
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    &.tk-selected{
+      a{
+        background-color: @highlight;
+        color:@white;
+      }
+    }
+    a{
+      display: block;
+      padding: 4px 8px;
+      color: @gray;
+      border-top:1px solid darken(@white, 3);
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+        background-color: @highlight;
+        color:@white;
+        text-decoration: none;
+      }
+    }
+  }
+}

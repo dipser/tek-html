@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.1.32
+ * @version v0.2.0
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-03
@@ -705,6 +705,23 @@ tek = (function (module) {
 	        !!string.toKatakana(pattern).match(searchWord)
 	        ;
 	};
+	/**
+	 * tek.js
+	 * - javascript library for tek -
+	 * @version v{{version}}
+	 * @author {{author}}
+	 * @license MIT
+	 * @date {{date}}
+	 */
+	{{name}} = (function (module) {
+	    
+	    var {{name}} = module && module.exports || {};
+	
+	{{modules}}
+	    
+	    return {{name}};
+	    
+	})(typeof(module) === 'undefined' ? null : module);
     
     return tek;
     

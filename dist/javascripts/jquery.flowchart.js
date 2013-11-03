@@ -1,7 +1,7 @@
 /**
- * jquery.flowchart.js v0.1.32
+ * jquery.flowchart.js v0.2.0
  * - jquery plugin to create flowchart -
- * @version v0.1.32
+ * @version v0.2.0
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-03
@@ -290,6 +290,25 @@
 		
 		    return fc.root;
 		};
+	})(dependencies, undefined);
+	
+	/** jquery.flowchart for  **/
+	(function (global, undefined) {
+	
+		/**
+		 * jquery.flowchart.js v{{version}}
+		 * - jquery plugin to create flowchart -
+		 * @version v{{version}}
+		 * @author {{author}}
+		 * @license MIT
+		 * @date {{date}}
+		 */
+		(function (dependencies, undefined) {
+		{{modules}}
+		
+		})({
+		    $: this['jQuery']
+		}, undefined);
 	})(dependencies, undefined);
 
 })({

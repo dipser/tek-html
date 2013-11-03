@@ -1,7 +1,7 @@
 /**
- * jquery.spreadsheet.js v0.1.30
+ * jquery.spreadsheet.js v0.1.32
  * - jquery plugin to create spreadsheet -
- * @version v0.1.30
+ * @version v0.1.32
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-03
@@ -209,6 +209,11 @@
 		            root.find(p('.th-hover')).removeClass(p('th-hover'));
 		        })
 		        .on(p('resize'), function () {
+		
+		            topFixed.width(thead.width());
+		            topFixed.css('left', thead.position().left);
+		
+		
 		            leftFixedTh.width(tbodyTh.width());
 		            leftFixed.children('thead').eq(0)
 		                .find('th').eq(0).height(theadTh.height() + 1);

@@ -162,7 +162,6 @@
   cursor: -webkit-grabbing;
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
-  cursor: grabbing;
 }
 .ui-draggable-dragging .tv-children {
   opacity: 0.1;

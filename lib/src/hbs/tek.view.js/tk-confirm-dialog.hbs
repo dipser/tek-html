@@ -1,0 +1,18 @@
+<div class="tk-confirm-dialog" id="tk-confirm-dialog">
+    <div class="tk-confirm-dialog-inner">
+        <h2 class="tk-confirm-dialog-title">{{title}}</h2>
+        {{sub_title}}
+        <form>
+            <a href="javascript:void(0)" class="tk-confirm-dialog-close-btn"
+                    >&times;</a>
+
+            <p>
+
+                <input type="checkbox" id="tk-confirm-dialog-check"/>
+                <label for="tk-confirm-dialog-check"><b>{{check_label}}</b></label>
+            </p>
+            <input type="submit" class="tk-danger-btn tk-wide-btn"
+                   disabled="disabled" value="{{btn_label}}"/>
+        </form>
+    </div>
+</div>

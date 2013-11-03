@@ -26,6 +26,31 @@
 		var Handlebars = global['hbs'];
 		(function() {
 		  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+		templates['tk-confirm-dialog'] = template(function (Handlebars,depth0,helpers,partials,data) {
+		  this.compilerInfo = [4,'>= 1.0.0'];
+		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+		
+		
+		  buffer += "<div class=\"tk-confirm-dialog\" id=\"tk-confirm-dialog\">\n    <div class=\"tk-confirm-dialog-inner\">\n        <h2 class=\"tk-confirm-dialog-title\">";
+		  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+		  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+		  buffer += escapeExpression(stack1)
+		    + "</h2>\n        ";
+		  if (stack1 = helpers.sub_title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+		  else { stack1 = depth0.sub_title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+		  buffer += escapeExpression(stack1)
+		    + "\n        <form>\n            <a href=\"javascript:void(0)\" class=\"tk-confirm-dialog-close-btn\"\n                    >&times;</a>\n\n            <p>\n\n                <input type=\"checkbox\" id=\"tk-confirm-dialog-check\"/>\n                <label for=\"tk-confirm-dialog-check\"><b>";
+		  if (stack1 = helpers.check_label) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+		  else { stack1 = depth0.check_label; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+		  buffer += escapeExpression(stack1)
+		    + "</b></label>\n            </p>\n            <input type=\"submit\" class=\"tk-danger-btn tk-wide-btn\"\n                   disabled=\"disabled\" value=\"";
+		  if (stack1 = helpers.btn_label) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+		  else { stack1 = depth0.btn_label; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+		  buffer += escapeExpression(stack1)
+		    + "\"/>\n        </form>\n    </div>\n</div>\n";
+		  return buffer;
+		  });
 		templates['tk-editable-label'] = template(function (Handlebars,depth0,helpers,partials,data) {
 		  this.compilerInfo = [4,'>= 1.0.0'];
 		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -41,6 +66,26 @@
 		
 		
 		  return "<label class=\"tk-selectable-label\">\n</label>";
+		  });
+		templates['tk-selectable-text-list'] = template(function (Handlebars,depth0,helpers,partials,data) {
+		  this.compilerInfo = [4,'>= 1.0.0'];
+		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+		
+		function program1(depth0,data) {
+		  
+		  var buffer = "";
+		  buffer += "\n        <li class=\"tk-selectable-list-item\">\n            <a href=\"javascript:void(0)\">"
+		    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+		    + "</a>\n        </li>\n    ";
+		  return buffer;
+		  }
+		
+		  buffer += "<ul class=\"tk-selectable-text-list\">\n    ";
+		  stack1 = helpers.each.call(depth0, depth0.candidates, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+		  if(stack1 || stack1 === 0) { buffer += stack1; }
+		  buffer += "\n</ul>\n";
+		  return buffer;
 		  });
 		templates['tk-spin'] = template(function (Handlebars,depth0,helpers,partials,data) {
 		  this.compilerInfo = [4,'>= 1.0.0'];
@@ -163,6 +208,56 @@
 		        console.warn && console.warn('[tek.view.js] failed to parse string: "' + string + '"');
 		        return null;
 		    }
+		};
+		
+		/**
+		 * show confirm dialog to remove something
+		 * @param data
+		 * @param callback
+		 */
+		$.confirmRemove = function (data, callback) {
+		    $('#tk-confirm-dialog').remove();
+		
+		    var tmpl = hbs.templates['tk-confirm-dialog'];
+		    data = $.extend({
+		        title: 'Are you ABSOLUTELY sure?',
+		        sub_title: 'One this done, there will be no way to go back.',
+		        check_label: 'I understand consequences.',
+		        btn_label: 'do it!'
+		    }, data);
+		    var html = tmpl(data);
+		
+		    var dialog = $(html).appendTo(document.body),
+		        inner = $('.tk-confirm-dialog-inner', dialog),
+		        form = dialog.find('form'),
+		        cancelBtn = form.find('.tk-confirm-dialog-close-btn'),
+		        submit = form.find(':submit');
+		
+		    cancelBtn.click(function () {
+		        dialog.fadeOut(100, function () {
+		            dialog.remove();
+		        });
+		    });
+		    dialog.click(function () {
+		        cancelBtn.click();
+		    });
+		    inner.click(function (e) {
+		        e.stopPropagation();
+		    });
+		    var check = $('#tk-confirm-dialog-check', form).change(function () {
+		        if (check[0].checked) {
+		            submit.removeAttr('disabled');
+		        } else {
+		            submit.attr('disabled', 'disabled');
+		        }
+		    });
+		    form.submit(function (e) {
+		        e.preventDefault();
+		        e.stopPropagation();
+		        if (submit.attr('disabled')) return;
+		        dialog.remove();
+		        callback && callback();
+		    });
 		};
 	})(dependencies, undefined);
 	/** tek.view for $.fn **/
@@ -483,17 +578,19 @@
 		        select.data('tk-selectable-label', true);
 		        var
 		            label = $(tmpl({}))
-		                .insertAfter(select)
-		                .on(trigger, function () {
-		                    select.show();
-		                    label.hide();
-		                });
+		                .insertAfter(select);
+		        label
+		            .on(trigger, function () {
+		                select.show();
+		                label.hide();
+		            });
 		        select.change(function () {
 		            var selected = $('option:selected', select),
 		                text = selected.text();
 		            if (!text) return;
 		            label.text(text)
-		                .attr('data-tk-color-index', selected.prevAll('option').length);
+		                .attr('data-tk-color-index', selected.prevAll('option').length)
+		                .show();
 		            select.hide();
 		        }).change();
 		    });
@@ -559,6 +656,7 @@
 		        $(this).append(html);
 		    });
 		};
+		
 	})(dependencies, undefined);
 
 })({

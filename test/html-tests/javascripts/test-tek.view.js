@@ -62,7 +62,7 @@
 
         test("$.fn.editableText", function () {
             var editableText = body.findByRole('editable-text');
-            ok(!editableText.data('tk-editable-text'),'binding');
+            ok(!editableText.data('tk-editable-text'), 'binding');
             editableText.editableText();
             editableText.editableText();
             ok(editableText.data('tk-editable-text'), 'binding');
@@ -76,6 +76,20 @@
             ok(selectableLabel.data('tk-selectable-label'));
             selectableLabel.next('.tk-selectable-label').click();
             selectableLabel.change();
+        });
+
+        test("$.confirmRemove", function () {
+            $.confirmRemove();
+            var dialog = $('#tk-confirm-dialog'),
+                submit = dialog.find(':submit');
+            strictEqual(submit.attr('disabled'), 'disabled', 'btn disabled at first');
+            dialog.find('label').click();
+            ok(!submit.attr('disabled'));
+            dialog.find('label').click();
+            strictEqual(submit.attr('disabled'), 'disabled', 'btn disabled at first');
+            dialog.find('label').click();
+            submit.click();
+            ok(dialog.is(':hidden'));
         });
 
     });

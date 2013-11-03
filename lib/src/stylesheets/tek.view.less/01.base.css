@@ -1,0 +1,213 @@
+/* <h3>color variables</h3>
+
+  ```
+    <p>
+      <span class="colored-box color-white">@white</span>
+      <span class="colored-box color-silver">@silver</span>
+      <span class="colored-box color-black">@black</span>
+      <span class="colored-box color-gray">@gray</span>
+      <span class="colored-box color-red">@red</span>
+      <span class="colored-box color-pink">@pink</span>
+      <span class="colored-box color-yellow">@yellow</span>
+      <span class="colored-box color-orange">@orange</span>
+      <span class="colored-box color-brown">@brown</span>
+      <span class="colored-box color-green">@green</span>
+      <span class="colored-box color-blue">@blue</span>
+      <span class="colored-box color-purple">@purple</span>
+      <span class="colored-box color-cyan">@cyan</span>
+    </p>
+  ```
+*/
+/* <h3>media size</h3>
+   <p>
+     <dl>
+        <dt><b>@phonePortrait</b></dt>
+        <dd>phone size when put vertical</dd>
+        <dt><b>@phoneLandscape</b></dt>
+        <dd>phone size when put horizontal</dd>
+        <dt><b>@tabletPortrait</b></dt>
+        <dd>tablet size when put vertical</dd>
+        <dt><b>@tabletLandscape</b></dt>
+        <dd>tablet size when put horizontal</dd>
+     </dl>
+   </p>
+*/
+/*
+  <h3>linear gradient</h3>
+  <p>
+    .linear-gradient(@blue, darken(@blue, 30));
+  </p>
+  ```
+    <div class="blue-gradient gradient-box"></div>
+  ```
+*/
+/*
+  <h3>radial gradient</h3>
+  <p>
+    .radial-gradient(20%, 40%, @green, darken(@green, 50));
+  </p>
+  ```
+    <div class="green-radial-gradient radial-gradient-box"></div>
+  ```
+*/
+/*
+  <h3>stripe</h3>
+  <p>
+    .stripe(40px, lighten(@orange, 20));
+  </p>
+
+  ```
+    <div class="stripe-box orange-stripe"></div>
+
+  ```
+*/
+/*
+  <h3>rotate</h3>
+  <p>
+  .rotate(45deg);
+  </p>
+  ```
+    <div class="box rotate45"></div>
+  ```
+*/
+/*
+  <h3>skew</h3>
+  <p>
+    .skew(30deg);
+  </p>
+  ```
+    <div class="box skew30"></div>
+  ```
+ */
+.tk-confirm-dialog {
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #666666;
+  padding-top: 120px;
+  z-index: 2000;
+}
+.tk-confirm-dialog .disabled {
+  opacity: 0.3;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  background-image: none;
+}
+.tk-confirm-dialog .disabled:hover {
+  background-image: none;
+}
+.tk-confirm-dialog-inner {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 15px 20px;
+}
+.tk-confirm-dialog-title {
+  margin: 2px auto 4px;
+}
+.tk-danger-btn {
+  display: inline-block;
+  background-color: #ff6683;
+  background-image: -webkit-linear-gradient(#ff99ac,#ff6683);
+  background-image: -moz-linear-gradient(#ff99ac,#ff6683);
+  background-image: -o-linear-gradient(#ff99ac,#ff6683);
+  background-image: -ms-linear-gradient(#ff99ac,#ff6683);
+  background-image: linear-gradient(#ff99ac,#ff6683);
+  border: 1px solid #ff5c7a;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  color: #33000a;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tk-danger-btn:hover {
+  background-color: #ff7a93;
+  background-image: -webkit-linear-gradient(#ffa8b8,#ff7a93);
+  background-image: -moz-linear-gradient(#ffa8b8,#ff7a93);
+  background-image: -o-linear-gradient(#ffa8b8,#ff7a93);
+  background-image: -ms-linear-gradient(#ffa8b8,#ff7a93);
+  background-image: linear-gradient(#ffa8b8,#ff7a93);
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border-color: #ff708b;
+  color: #000000;
+  text-decoration: none;
+}
+.tk-danger-btn:active,
+.tk-danger-btn.active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  background-image: none;
+  color: #99001d;
+}
+.tk-danger-btn[disabled="disabled"],
+.tk-danger-btn[disabled="disabled"]:hover,
+.tk-danger-btn[disabled="disabled"]:active {
+  opacity: 0.3;
+  -moz-text-shadow: none;
+  -o-text-shadow: none;
+  -ms-text-shadow: none;
+  text-shadow: none;
+  background-image: none;
+}
+.tk-confirm-dialog-close-btn {
+  padding: 1px 4px;
+  color: gray;
+  font-size: 1.5em;
+  top: 2px;
+  opacity: 0.5;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+}
+.tk-confirm-dialog-close-btn:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+.tk-wide-btn {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+}

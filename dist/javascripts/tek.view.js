@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.2
+ * @version v0.2.3
  * @author Taka Okunishi
- * @date 2013-11-03
+ * @date 2013-11-04
  *
  */
 (function (dependencies, window, undefined) {
@@ -549,7 +549,10 @@
 		            .on('tk-editable-text-edit', function () {
 		                input.show();
 		                setTimeout(function () {
-		                    input.focus().select();
+		                    var focused = $('.tk-editable-text').filter(':focus').size();
+		                    if (!focused) {
+		                        input.last().focus().select();
+		                    }
 		                }, 20);
 		                label.hide();
 		            })

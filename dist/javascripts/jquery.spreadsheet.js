@@ -1,10 +1,10 @@
 /**
- * jquery.spreadsheet.js v0.2.2
+ * jquery.spreadsheet.js v0.2.3
  * - jquery plugin to create spreadsheet -
- * @version v0.2.2
+ * @version v0.2.3
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-03
+ * @date 2013-11-04
  */
 (function (dependencies, undefined) {
 	
@@ -187,13 +187,10 @@
 		    table.append(topFixed);
 		
 		
-		    var theadOffset = thead.offset();
-		
-		
 		    win.scroll(function () {
 		        var scrollTop = win.scrollTop(),
 		            fixed = thead.data(p('fixed'));
-		        if (theadOffset.top < scrollTop) {
+		        if (thead.offset().top < scrollTop) {
 		            !fixed && topFixed.fix();
 		        } else {
 		            fixed && topFixed.free();

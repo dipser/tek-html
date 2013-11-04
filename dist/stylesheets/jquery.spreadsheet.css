@@ -84,11 +84,13 @@
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: visible;
 }
 .ss-scrollable {
   width: 100%;
   height: 100%;
   overflow-x: auto;
+  overflow-y: visible;
 }
 .ss-th-hover {
   background-color: #ffffff;

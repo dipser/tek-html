@@ -1,10 +1,10 @@
 /**
- * jquery.flowchart.js v0.2.2
+ * jquery.flowchart.js v0.2.3
  * - jquery plugin to create flowchart -
- * @version v0.2.2
+ * @version v0.2.3
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-03
+ * @date 2013-11-04
  */
 (function (dependencies, undefined) {
 	

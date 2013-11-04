@@ -101,7 +101,7 @@ tek = (function (module) {
 	    }
 	};
 	
-	tek.Query.fromLocation = function () {
+	tek.Query.fromLocation = function (location) {
 	    var search = location.search;
 	    return search && new tek.Query(search.replace('?', ''));
 	};

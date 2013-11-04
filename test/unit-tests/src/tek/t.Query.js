@@ -27,7 +27,7 @@ exports.QueryTest = function (test) {
 };
 
 exports.fromLocationTest = function (test) {
-    var query = Query.fromLocation();
+    var query = Query.fromLocation(location);
     query.should.have.property('key1', 'val1');
     query.should.have.property('key2', 'val2');
     test.done();

@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.5
+ * @version v0.2.6
  * @author Taka Okunishi
  * @date 2013-11-05
  *
@@ -265,11 +265,22 @@
 		 * @returns {tek.Query}
 		 */
 		$.getQuery = function () {
-		    var href = location.href;
-		    if(!href.match(/\?/)) return {};
-		    var query_string = href.split('?').pop() || '';
-		    if (!query_string) return {};
-		    return new tek.Query(query_string);
+		    return tek.Query.fromLocation(location) || {};
+		};
+		
+		$.pushQueryToState = function (values) {
+		    var hst = history,
+		        loc = location;
+		    if (!hst.pushState) return;
+		    if (!values) return;
+		    if (!$.param) return;
+		    var query = new tek.Query(loc.search.replace('?', ''));
+		    for (var key in values) {
+		        if (!values.hasOwnProperty(key)) continue;
+		        query[key] = values[key];
+		    }
+		    var new_url = [loc.path, $.param(query)].join('?');
+		    hst.pushState(null, null, new_url);
 		};
 		
 	})(dependencies, undefined);

@@ -18,7 +18,6 @@ exports.QueryTest = function (test) {
     var query2 = new Query('?key1=val1&key2=val2');
     query2.should.have.property('key1', 'val1');
     query2.should.have.property('key2', 'val2');
-    test.done();
 
     var query3 = Query('?key1=val1&key2=val2');
     query3.should.have.property('key1', 'val1');

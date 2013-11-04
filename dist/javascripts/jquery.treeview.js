@@ -1,7 +1,7 @@
 /**
- * jquery.treeview.js v0.2.4
+ * jquery.treeview.js v0.2.5
  * - jquery plugin to create treeview -
- * @version v0.2.4
+ * @version v0.2.5
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-05

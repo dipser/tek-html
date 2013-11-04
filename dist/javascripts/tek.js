@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.4
+ * @version v0.2.5
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-05
@@ -87,7 +87,11 @@ tek = (function (module) {
 	
 	tek.Query = function (string) {
 	    if (!string) return;
+	    string = string.replace(/^\?/, '');
 	    var s = this;
+	    if (s instanceof tek.Query) {
+	        return new tek.Query(string);
+	    }
 	    var queries = string.split('&');
 	    for (var i = 0, len = queries.length; i < len; i++) {
 	        var query = queries[i];
@@ -96,6 +100,7 @@ tek = (function (module) {
 	        s[key] = decodeURIComponent(key_val[1].replace(/\+/g, ' '));
 	    }
 	};
+	
 	tek.Query.fromLocation = function () {
 	    var search = location.search;
 	    return search && new tek.Query(search.replace('?', ''));

@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.3
+ * @version v0.2.4
  * @author Taka Okunishi
- * @date 2013-11-04
+ * @date 2013-11-05
  *
  */
 (function (dependencies, window, undefined) {
@@ -260,7 +260,17 @@
 		    });
 		};
 		
-		
+		/**
+		 * get query for current page
+		 * @returns {tek.Query}
+		 */
+		$.getQuery = function () {
+		    var href = location.href;
+		    if(!href.match(/\?/)) return {};
+		    var query_string = href.split('?').pop() || '';
+		    if (!query_string) return {};
+		    return new tek.Query(query_string);
+		};
 		
 	})(dependencies, undefined);
 	/** tek.view for $.fn **/

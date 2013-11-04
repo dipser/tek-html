@@ -1,10 +1,10 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.3
+ * @version v0.2.4
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-04
+ * @date 2013-11-05
  */
 tek = (function (module) {
     
@@ -704,6 +704,26 @@ tek = (function (module) {
 	        !!string.toHiragana(pattern).match(searchWord) ||
 	        !!string.toKatakana(pattern).match(searchWord)
 	        ;
+	};
+	/**
+	 * Created by okunishitaka on 11/5/13.
+	 */
+	
+	tek.date = {};
+	
+	/**
+	 * convert date to utc
+	 * @param date
+	 */
+	tek.date.toUTC = function (date) {
+	    return Date.UTC(
+	        date.getFullYear(),
+	        date.getMonth(),
+	        date.getDate(),
+	        date.getHours(),
+	        date.getMinutes(),
+	        date.getSeconds(),
+	        date.getMilliseconds());
 	};
     
     return tek;

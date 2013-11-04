@@ -110,12 +110,16 @@
                 ok(ul.is(':hidden'), 'hide when blur');
                 selectableText.focus();
                 selectableText.val('ん');
-                strictEqual(li.filter(':visible').size(), 2);
+                strictEqual(li.filter(':visible').size(), 3);
                 li.filter(':visible').find('a').first().click();
                 strictEqual(selectableText.val(), 'りんご');
+                start();
             }, 500);
-
-
         });
+
+        test('$.getQuery', function(){
+            var q = $.getQuery();
+            ok(!!q);
+        })
     });
 })(jQuery);

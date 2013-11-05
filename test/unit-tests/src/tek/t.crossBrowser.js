@@ -25,8 +25,7 @@ exports.fallbackObjectTest = function (test) {
     crossBrowser.fallbackObject(Obj);
     Obj.should.have.property('keys');
 
-    Obj.keys({a:1,b:2}).should.be.lengthOf(2);
-
+    Obj.keys({a: 1, b: 2}).should.be.lengthOf(2);
 
 
     test.done();
@@ -39,5 +38,15 @@ exports.fallbackArrayTest = function (test) {
     Array.prototype.should.have.property('reduce');
     Array.prototype.should.have.property('filter');
     Array.prototype.should.have.property('forEach');
+    test.done();
+};
+
+exports.fallbackStringTest = function (test) {
+    var String = {prototype: {}};
+    crossBrowser.fallbackString(String);
+    String.prototype.should.have.property('trim');
+
+    crossBrowser.fallbackString.fallbacks.trim.call(" abc ").should.equal('abc');
+
     test.done();
 };

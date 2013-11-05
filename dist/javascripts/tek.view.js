@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.8
+ * @version v0.2.9
  * @author Taka Okunishi
  * @date 2013-11-05
  *

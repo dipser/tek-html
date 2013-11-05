@@ -24,6 +24,11 @@ exports.fallbackObjectTest = function (test) {
     var Obj = {};
     crossBrowser.fallbackObject(Obj);
     Obj.should.have.property('keys');
+
+    Obj.keys({a:1,b:2}).should.be.lengthOf(2);
+
+
+
     test.done();
 };
 

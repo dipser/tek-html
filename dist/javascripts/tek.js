@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.8
+ * @version v0.2.9
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-05
@@ -327,7 +327,7 @@ tek = (function (module) {
 	    Object.keys = Object.keys || fallbacks.keysFallback;
 	};
 	crossBrowser.fallbackObject.fallbacks = {
-	    keysFallback: function () {
+	    keysFallback: (function () {
 	        'use strict';
 	        var hasOwnProperty = Object.prototype.hasOwnProperty,
 	            hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
@@ -364,7 +364,7 @@ tek = (function (module) {
 	            }
 	            return result;
 	        };
-	    }
+	    })()
 	};
 	
 	

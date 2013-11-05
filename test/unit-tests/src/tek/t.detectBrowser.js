@@ -11,4 +11,9 @@ exports.getIEVersionTest = function (test) {
         userAgent: 'MSIE 10.4'
     }).should.equal(10.4);
     test.done();
-}
+};
+
+exports.isFirefoxTest = function (test) {
+    detectBrowser.isFirefox({}).should.be.false;
+    test.done();
+};

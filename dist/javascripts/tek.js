@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.13
+ * @version v0.2.14
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-06
@@ -763,12 +763,12 @@ tek = (function (module) {
 	    return null;
 	};
 	detectBrowser.isChrome = function (window) {
-	    return window && window.chrome;
+	    return !!(window && window.chrome);
 	};
 	
 	detectBrowser.isFirefox = function (navigator) {
 	    var ua = navigator && navigator.userAgent;
-	    return ua.toLowerCase().indexOf('firefox') > -1;
+	    return !!(ua && ua.toLowerCase().indexOf('firefox') > -1);
 	};
 	
 	

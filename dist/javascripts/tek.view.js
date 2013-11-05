@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.13
+ * @version v0.2.14
  * @author Taka Okunishi
  * @date 2013-11-06
  *
@@ -313,7 +313,7 @@
 		    var tmpl = hbs.templates['tk-no-support-dialog'];
 		    data = $.extend({
 		        title: 'Sorry!Your browser is not supported.',
-		        msg: "Why don't you try these?"
+		        msg: "Why don't you try one of these?"
 		    }, data || {});
 		
 		    var html = tmpl(data);

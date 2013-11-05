@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.7
+ * @version v0.2.8
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-05
@@ -327,45 +327,43 @@ tek = (function (module) {
 	    Object.keys = Object.keys || fallbacks.keysFallback;
 	};
 	crossBrowser.fallbackObject.fallbacks = {
-	    keysFallback: function (keys) {
-	        return keys || (function () {
-	            'use strict';
-	            var hasOwnProperty = Object.prototype.hasOwnProperty,
-	                hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
-	                dontEnums = [
-	                    'toString',
-	                    'toLocaleString',
-	                    'valueOf',
-	                    'hasOwnProperty',
-	                    'isPrototypeOf',
-	                    'propertyIsEnumerable',
-	                    'constructor'
-	                ],
-	                dontEnumsLength = dontEnums.length;
+	    keysFallback: function () {
+	        'use strict';
+	        var hasOwnProperty = Object.prototype.hasOwnProperty,
+	            hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+	            dontEnums = [
+	                'toString',
+	                'toLocaleString',
+	                'valueOf',
+	                'hasOwnProperty',
+	                'isPrototypeOf',
+	                'propertyIsEnumerable',
+	                'constructor'
+	            ],
+	            dontEnumsLength = dontEnums.length;
 	
-	            return function (obj) {
-	                if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
-	                    throw new TypeError('Object.keys called on non-object');
+	        return function (obj) {
+	            if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+	                throw new TypeError('Object.keys called on non-object');
+	            }
+	
+	            var result = [], prop, i;
+	
+	            for (prop in obj) {
+	                if (hasOwnProperty.call(obj, prop)) {
+	                    result.push(prop);
 	                }
+	            }
 	
-	                var result = [], prop, i;
-	
-	                for (prop in obj) {
-	                    if (hasOwnProperty.call(obj, prop)) {
-	                        result.push(prop);
+	            if (hasDontEnumBug) {
+	                for (i = 0; i < dontEnumsLength; i++) {
+	                    if (hasOwnProperty.call(obj, dontEnums[i])) {
+	                        result.push(dontEnums[i]);
 	                    }
 	                }
-	
-	                if (hasDontEnumBug) {
-	                    for (i = 0; i < dontEnumsLength; i++) {
-	                        if (hasOwnProperty.call(obj, dontEnums[i])) {
-	                            result.push(dontEnums[i]);
-	                        }
-	                    }
-	                }
-	                return result;
-	            };
-	        }())
+	            }
+	            return result;
+	        };
 	    }
 	};
 	

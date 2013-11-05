@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.10
+ * @version v0.2.12
  * @author Taka Okunishi
  * @date 2013-11-05
  *
@@ -58,6 +58,27 @@
 		
 		
 		  return "<label class=\"tk-editable-label\">\n\n</label>";
+		  });
+		templates['tk-no-support-dialog'] = template(function (Handlebars,depth0,helpers,partials,data) {
+		  this.compilerInfo = [4,'>= 1.0.0'];
+		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+		
+		
+		  buffer += "<div class=\"tk-no-support-dialog\" id=\"tk-no-support-dialog\">\n    <div class=\"tk-no-support-dialog-inner\">\n        <h1 class=\"tk-no-support-dialog-title\">";
+		  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+		  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+		  buffer += escapeExpression(stack1)
+		    + "</h1>\n        <span>";
+		  if (stack1 = helpers.sub_title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+		  else { stack1 = depth0.sub_title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+		  buffer += escapeExpression(stack1)
+		    + "</span>\n\n        <p>\n            ";
+		  if (stack1 = helpers.msg) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+		  else { stack1 = depth0.msg; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+		  buffer += escapeExpression(stack1)
+		    + "\n        <ul>\n            <li><a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">\n                <img class=\"tk-icon\" src=\"https://www.google.com/images/icons/product/chrome-32.png\" alt=\"\"/>\n                Chrome\n            </a>\n            </li>\n            <li><a href=\"http://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\">\n                <img class=\"tk-icon\" src=\"http://mozorg.cdn.mozilla.net/media/img/firefox/favicon.ico?2013-08\" alt=\"\"/>\n                Firefox\n            </a></li>\n            <li><a href=\"http://support.apple.com/downloads/#safari\" target=\"_blank\">\n                <img class=\"tk-icon\"\n                     src=\"http://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM26/en_US/safari-72.png\"\n                     alt=\"\"/>\n                Safari</a></li>\n        </ul>\n        </p>\n\n    </div>\n</div>";
+		  return buffer;
 		  });
 		templates['tk-selectable-label'] = template(function (Handlebars,depth0,helpers,partials,data) {
 		  this.compilerInfo = [4,'>= 1.0.0'];
@@ -216,7 +237,8 @@
 		 * @param callback
 		 */
 		$.confirmRemove = function (data, callback) {
-		    $('#tk-confirm-dialog').remove();
+		    var body = document.body;
+		    $('#tk-confirm-dialog', body).remove();
 		
 		    var tmpl = hbs.templates['tk-confirm-dialog'];
 		    data = $.extend({
@@ -227,7 +249,7 @@
 		    }, data);
 		    var html = tmpl(data);
 		
-		    var dialog = $(html).appendTo(document.body),
+		    var dialog = $(html).appendTo(body),
 		        inner = $('.tk-confirm-dialog-inner', dialog),
 		        form = dialog.find('form'),
 		        cancelBtn = form.find('.tk-confirm-dialog-close-btn'),
@@ -283,6 +305,21 @@
 		    hst.pushState(null, null, new_url);
 		};
 		
+		
+		$.sorryNoSupport = function (data) {
+		    var body = document.body;
+		    $('#tk-no-support-dialog', body).remove();
+		
+		    var tmpl = hbs.templates['tk-no-support-dialog'];
+		    data = $.extend({
+		        title: 'Sorry!Your browser is not supported.',
+		        msg: "Why don't you try these?"
+		    }, data || {});
+		
+		    var html = tmpl(data);
+		
+		    $(html).appendTo(body);
+		};
 	})(dependencies, undefined);
 	/** tek.view for $.fn **/
 	(function (global, undefined) {

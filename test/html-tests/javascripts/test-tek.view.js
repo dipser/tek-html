@@ -117,9 +117,17 @@
             }, 500);
         });
 
-        test('$.getQuery', function(){
+        test('$.getQuery', function () {
             var q = $.getQuery();
             ok(!!q);
-        })
+        });
+
+        test('$.sorryNoSupport', function () {
+            $.sorryNoSupport();
+            equal($('#tk-no-support-dialog').size(), 1);
+            $.sorryNoSupport();
+            equal($('.tk-no-support-dialog').size(), 1);
+            $('.tk-no-support-dialog').remove();
+        });
     });
 })(jQuery);

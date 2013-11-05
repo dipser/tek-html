@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.6
+ * @version v0.2.7
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-05
@@ -280,6 +280,8 @@ tek = (function (module) {
 	
 	
 	var crossBrowser = tek.crossBrowser = function (window) {
+	    crossBrowser.fallbackObject(window.Object);
+	    crossBrowser.fallbackArray(window.Array);
 	    window = crossBrowser.fallbackWindow(window);
 	    window.navigator = crossBrowser.fallbackNavigator(window.navigator || {});
 	    return window;

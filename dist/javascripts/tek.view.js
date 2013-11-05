@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.12
+ * @version v0.2.13
  * @author Taka Okunishi
- * @date 2013-11-05
+ * @date 2013-11-06
  *
  */
 (function (dependencies, window, undefined) {
@@ -77,7 +77,7 @@
 		  if (stack1 = helpers.msg) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
 		  else { stack1 = depth0.msg; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
 		  buffer += escapeExpression(stack1)
-		    + "\n        <ul>\n            <li><a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">\n                <img class=\"tk-icon\" src=\"https://www.google.com/images/icons/product/chrome-32.png\" alt=\"\"/>\n                Chrome\n            </a>\n            </li>\n            <li><a href=\"http://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\">\n                <img class=\"tk-icon\" src=\"http://mozorg.cdn.mozilla.net/media/img/firefox/favicon.ico?2013-08\" alt=\"\"/>\n                Firefox\n            </a></li>\n            <li><a href=\"http://support.apple.com/downloads/#safari\" target=\"_blank\">\n                <img class=\"tk-icon\"\n                     src=\"http://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM26/en_US/safari-72.png\"\n                     alt=\"\"/>\n                Safari</a></li>\n        </ul>\n        </p>\n\n    </div>\n</div>";
+		    + "\n        <ul>\n            <li><a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">\n                <img class=\"tk-icon\" src=\"https://www.google.com/images/icons/product/chrome-32.png\" alt=\"\"/>\n                Chrome\n            </a>\n            </li>\n            <li><a href=\"http://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\">\n                <img class=\"tk-icon\" src=\"http://mozorg.cdn.mozilla.net/media/img/firefox/favicon.ico?2013-08\" alt=\"\"/>\n                Firefox\n            </a></li>\n            <li><a href=\"http://support.apple.com/downloads/#safari\" target=\"_blank\">\n                <img class=\"tk-icon\"\n                     src=\"http://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM26/en_US/safari-72.png\"\n                     alt=\"\"/>\n                Safari</a></li>\n            <li><a href=\"http://www.opera.com/\">\n                <img class=\"tk-icon\" src=\"http://d2jc9zwbrclgz3.cloudfront.net/static-heap/da/dafd15591b35d4f81ca96cf7de6582d705850ff0/apple-touch-icon-57x57.png\" alt=\"\"/>\n                Opera</a></li>\n        </ul>\n        </p>\n\n    </div>\n</div>";
 		  return buffer;
 		  });
 		templates['tk-selectable-label'] = template(function (Handlebars,depth0,helpers,partials,data) {

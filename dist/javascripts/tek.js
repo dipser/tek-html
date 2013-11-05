@@ -1,7 +1,7 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.9
+ * @version v0.2.10
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-05
@@ -282,15 +282,14 @@ tek = (function (module) {
 	var crossBrowser = tek.crossBrowser = function (window) {
 	    crossBrowser.fallbackObject(window.Object);
 	    crossBrowser.fallbackArray(window.Array);
-	    window = crossBrowser.fallbackWindow(window);
-	    window.navigator = crossBrowser.fallbackNavigator(window.navigator || {});
+	    crossBrowser.fallbackWindow(window);
+	    crossBrowser.fallbackNavigator(window.navigator || {});
 	    return window;
 	};
 	crossBrowser.fallbackWindow = function (window) {
 	    var fallbacks = crossBrowser.fallbackWindow.fallbacks;
 	    window.requestAnimationFrame = window.requestAnimationFrame || fallbacks.requestAnimationFrameFallback(window);
-	    window.URL = window.URL || fallbacks.URLFallback(window);
-	    return window;
+	    if (!window.URL) window.URL = fallbacks.URLFallback(window);
 	};
 	crossBrowser.fallbackWindow.fallbacks = {
 	    requestAnimationFrameFallback: function (window) {
@@ -310,8 +309,7 @@ tek = (function (module) {
 	
 	crossBrowser.fallbackNavigator = function (navigator) {
 	    var fallbacks = crossBrowser.fallbackNavigator.fallbacks;
-	    navigator.getUserMedia = navigator.getUserMedia || fallbacks.getUserMediaFallback(navigator);
-	    return navigator;
+	    if(!navigator.getUserMedia) navigator.getUserMedia = fallbacks.getUserMediaFallback(navigator);
 	};
 	crossBrowser.fallbackNavigator.fallbacks = {
 	    getUserMediaFallback: function (navigator) {

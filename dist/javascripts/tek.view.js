@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.14
+ * @version v0.2.15
  * @author Taka Okunishi
- * @date 2013-11-06
+ * @date 2013-11-08
  *
  */
 (function (dependencies, window, undefined) {
@@ -723,7 +723,7 @@
 		
 		/**
 		 * text box with selection
-		 * @param data
+		 * @param candidates
 		 */
 		$.fn.selectableText = function (candidates) {
 		    var ambiguousMatch = tek.string.ambiguousMatch;
@@ -827,6 +827,41 @@
 		                    ul.filterItem(input.val());
 		                });
 		        })
+		};
+		
+		/**
+		 * show fixed element as spy
+		 */
+		$.fn.spyFor = function (elm) {
+		    if (typeof(elm) === 'string') {
+		        elm = $(elm);
+		    }
+		    var spy = $(this),
+		        win = $(window);
+		    if (spy.data('tk-spy')) return spy;
+		    spy
+		        .addClass('tk-spy')
+		        .hide();
+		    spy.on = function () {
+		        spy
+		            .show()
+		            .data('tk-spy-active', true);
+		    };
+		    spy.off = function () {
+		        spy
+		            .hide()
+		            .data('tk-spy-active', false);
+		    };
+		    win.scroll(function () {
+		        var showSpy = elm.height() + elm.offset().top < win.scrollTop();
+		        var active = spy.data('tk-spy-active');
+		        if (active) {
+		            (!showSpy) && spy.off();
+		        } else {
+		            showSpy && spy.on();
+		        }
+		    });
+		    return spy;
 		};
 	})(dependencies, undefined);
 

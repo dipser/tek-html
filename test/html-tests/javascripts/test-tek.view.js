@@ -4,7 +4,9 @@
 
 (function ($) {
     $(function () {
-        var body = $(document.body);
+        var body = $(document.body),
+            win = $(window);
+
         test("$.fn.findByAttr", function () {
             var form = $('#section01').findByAttr('name', 'some-form');
             strictEqual(form.size(), 1, "findByAttr");
@@ -33,6 +35,14 @@
             });
             var values = form.getFormValue();
             strictEqual(values['checkbox01'], 'checkbox-value02', 'checkbox');
+        });
+
+        test('$.fn.spyFor', function () {
+            var spy = $('#spy');
+            spy.spyFor('#spy-for');
+            ok(spy.is(':hidden'));
+            win.scrollTop(500).scroll();
+            ok(!spy.is(':hidden'));
         });
 
         asyncTest("$.fn.textchange", function () {

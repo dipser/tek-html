@@ -299,3 +299,7 @@
 .tk-icon {
   width: 16px;
 }
+.tk-spy {
+  position: fixed;
+  top: 0;
+}

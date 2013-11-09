@@ -27,6 +27,13 @@
             strictEqual(values['radio01'], 'radio-value01', 'radio');
             strictEqual(values['select01'], 'select-value02', 'select');
             strictEqual(values['textarea01'], 'text-content', 'textarea');
+            strictEqual(values['text03'], undefined);
+            strictEqual(values['text04'], "0");
+
+            var obj = values.toObj();
+            console.log(obj);
+
+            ok(!values['undefined']);
         });
         test("$.fn.setFormValue", function () {
             var form = $('#section01').findByAttr('name', 'some-form');

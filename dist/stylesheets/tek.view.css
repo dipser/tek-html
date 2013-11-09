@@ -320,6 +320,11 @@
   z-index: 99;
   content: '';
   text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
   text-align: left;
   height: auto;
   color: #552525;

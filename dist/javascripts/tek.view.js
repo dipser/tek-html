@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.15
+ * @version v0.2.16
  * @author Taka Okunishi
- * @date 2013-11-08
+ * @date 2013-11-09
  *
  */
 (function (dependencies, window, undefined) {
@@ -319,6 +319,16 @@
 		    var html = tmpl(data);
 		
 		    $(html).appendTo(body);
+		};
+		
+		$.confirmLeave = function (msg) {
+		    if (!$.confirmLeave.initialized) {
+		        $.confirmLeave.initialized = true;
+		        $(window).on('beforeunload', function () {
+		            return $.confirmLeave.msg || undefined;
+		        });
+		    }
+		    $.confirmLeave.msg = msg;
 		};
 	})(dependencies, undefined);
 	/** tek.view for $.fn **/

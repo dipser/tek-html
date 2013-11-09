@@ -139,5 +139,12 @@
             equal($('.tk-no-support-dialog').size(), 1);
             $('.tk-no-support-dialog').remove();
         });
+
+        test('$.confirmLeave', function () {
+            ok(!!$.confirmLeave);
+            $.confirmLeave("sure to leave?");
+            $.confirmLeave(false);
+            ok(!!$.confirmLeave);
+        });
     });
 })(jQuery);

@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.16
+ * @version v0.2.18
  * @author Taka Okunishi
  * @date 2013-11-09
  *
@@ -396,6 +396,8 @@
 		        }
 		        var name = input.attr('name'),
 		            val = input.val();
+		        if(!name) return;
+		        if(val==='') return;
 		        result.addValue(name, val);
 		    });
 		    return result;

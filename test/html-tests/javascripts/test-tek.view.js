@@ -153,5 +153,18 @@
             $.confirmLeave(false);
             ok(!!$.confirmLeave);
         });
+
+        test('$.showErrBalloon', function () {
+            var form = $('form').first();
+            form.css({
+                position: 'relative'
+            });
+            form.showErrBalloon([
+                'username is required',
+                'password is required'
+            ]);
+            var balloon = $('.tk-err-balloon', form);
+            equal(balloon.size(), 1);
+        });
     });
 })(jQuery);

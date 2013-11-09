@@ -303,3 +303,34 @@
   position: fixed;
   top: 0;
 }
+.tk-err-balloon {
+  background-color: #ffc4c4;
+  border: 4px solid #fe9191;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  content: '';
+  text-align: center;
+  text-align: left;
+  height: auto;
+  color: #552525;
+}
+.tk-err-balloon .tk-close-btn {
+  color: #fe9191;
+  text-decoration: none;
+}
+.tk-err-balloon .tk-close-btn:hover {
+  color: #ff9090;
+}
+.tek-text-center {
+  text-align: center;
+}

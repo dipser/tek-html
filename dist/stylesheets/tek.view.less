@@ -1,4 +1,4 @@
-//<h1>tek.view.less-0.2.18</h1>
+//<h1>tek.view.less-0.2.19</h1>
 //stylesheet for tek.view
 @import "tek-mixin";
 
@@ -6,6 +6,7 @@
 @danger: #FF99AC;
 @highlight:lighten(@blue, 5);
 @color:#666666;
+@err:#FE5454;
 .tk-confirm-dialog {
   .black-cover();
   color:@color;
@@ -125,4 +126,28 @@
 .tk-spy{
   position: fixed;
   top:0;
+}
+
+.tk-err-balloon{
+  @back:lighten(@err, 22);
+  background-color: @back;
+  border:4px solid darken(@back, 10);
+  .border-radius(4px);
+  padding: 5px 10px;
+  .cover(99);
+  text-align: left;
+  height:auto;
+  @color:#552525;
+  color:@color;
+  .tk-close-btn{
+    @color:darken(@back, 10);
+    color:@color;
+    text-decoration: none;
+    &:hover{
+      color:saturate(@color, 10);
+    }
+  }
+}
+.tek-text-center{
+  text-align: center;
 }

@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.18
+ * @version v0.2.19
  * @author Taka Okunishi
  * @date 2013-11-09
  *
@@ -58,6 +58,30 @@
 		
 		
 		  return "<label class=\"tk-editable-label\">\n\n</label>";
+		  });
+		templates['tk-err-balloon'] = template(function (Handlebars,depth0,helpers,partials,data) {
+		  this.compilerInfo = [4,'>= 1.0.0'];
+		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+		
+		function program1(depth0,data) {
+		  
+		  var buffer = "";
+		  buffer += "\n            <li>"
+		    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+		    + "</li>\n        ";
+		  return buffer;
+		  }
+		
+		  buffer += "<div class=\"tk-err-balloon\">\n    <ul>\n        ";
+		  stack1 = helpers.each.call(depth0, depth0.msg, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+		  if(stack1 || stack1 === 0) { buffer += stack1; }
+		  buffer += "\n    </ul>\n    <div class=\"tek-text-center\">\n        <a href=\"javascript:void(0)\" class=\"tk-close-btn\">";
+		  if (stack1 = helpers.close_label) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+		  else { stack1 = depth0.close_label; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+		  buffer += escapeExpression(stack1)
+		    + "</a>\n    </div>\n</div>";
+		  return buffer;
 		  });
 		templates['tk-no-support-dialog'] = template(function (Handlebars,depth0,helpers,partials,data) {
 		  this.compilerInfo = [4,'>= 1.0.0'];
@@ -396,8 +420,8 @@
 		        }
 		        var name = input.attr('name'),
 		            val = input.val();
-		        if(!name) return;
-		        if(val==='') return;
+		        if (!name) return;
+		        if (val === '') return;
 		        result.addValue(name, val);
 		    });
 		    return result;
@@ -874,6 +898,25 @@
 		        }
 		    });
 		    return spy;
+		};
+		
+		$.fn.showErrBalloon = function (msg, close_label) {
+		    var elm = $(this);
+		    elm.find('.tk-err-balloon').remove();
+		    var tmpl = {
+		        balloon: hbs.templates['tk-err-balloon']
+		    };
+		    var balloonHTML = tmpl.balloon({
+		            msg: [].concat(msg),
+		            close_label: close_label || '[close]'
+		        }),
+		        balloon = elm.append(balloonHTML).find('.tk-err-balloon');
+		    balloon.click(function () {
+		        balloon.fadeOut(200, function(){
+		            balloon.remove();
+		        });
+		    });
+		    return elm;
 		};
 	})(dependencies, undefined);
 

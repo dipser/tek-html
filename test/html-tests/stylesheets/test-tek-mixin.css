@@ -65,6 +65,31 @@
     <div class="box skew30"></div>
   ```
  */
+/*
+   <h3>baloon</h3>
+   <p>
+      .red-balloon{
+        .balloon(@red);
+      }
+      .green-balloon{
+        .balloon(@green);
+      }
+      .blue-balloon{
+        .balloon(@blue);
+      }
+      .yellow-balloon{
+        .balloon(@yellow);
+      }
+   </p>
+   ```
+      <div>
+        <div class="red-balloon"> red baloon </div>
+        <div class="green-balloon"> green baloon </div>
+        <div class="blue-balloon"> blue baloon </div>
+        <div class="yellow-balloon"> yellow baloon </div>
+      </div>
+   ```
+*/
 section {
   background-color: #AAA;
 }

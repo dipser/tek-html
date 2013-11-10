@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.20
+ * @version v0.2.22
  * @author Taka Okunishi
- * @date 2013-11-09
+ * @date 2013-11-10
  *
  */
 (function (dependencies, window, undefined) {
@@ -142,19 +142,19 @@
 		  if (stack1 = helpers.width) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
 		  else { stack1 = depth0.width; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
 		  buffer += escapeExpression(stack1)
-		    + ";height:";
+		    + "px;height:";
 		  if (stack1 = helpers.height) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
 		  else { stack1 = depth0.height; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
 		  buffer += escapeExpression(stack1)
-		    + ";\n        position: absolute;left:";
+		    + "px;\n        position: absolute;left:";
 		  if (stack1 = helpers.left) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
 		  else { stack1 = depth0.left; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
 		  buffer += escapeExpression(stack1)
-		    + ";top:";
+		    + "px;top:";
 		  if (stack1 = helpers.top) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
 		  else { stack1 = depth0.top; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
 		  buffer += escapeExpression(stack1)
-		    + "\"></div>";
+		    + "px\"></div>";
 		  return buffer;
 		  });
 		})();

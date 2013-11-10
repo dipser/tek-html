@@ -157,6 +157,13 @@
   -ms-box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.1);
   box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.1);
 }
+.ss-left-fixed-table thead,
+.ss-left-fixed-table tbody,
+.ss-left-fixed-table tr,
+.ss-left-fixed-table th,
+.ss-left-fixed-table td {
+  display: block;
+}
 .top-fixed-thead {
   position: fixed;
   top: 0px;

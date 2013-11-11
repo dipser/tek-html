@@ -166,5 +166,24 @@
             var balloon = $('.tk-err-balloon', form);
             equal(balloon.size(), 1);
         });
+
+        test('$.autoformatInput', function () {
+            var form = $('form').first();
+            var hiragana = form.findByAttr('data-autoformat', 'hiragana').autoformatInput('hiragana');
+            hiragana.val('あイう１２３').change();
+            equal(hiragana.val(), 'あいう１２３');
+
+            var katakana = form.findByAttr('data-autoformat', 'katakana').autoformatInput('katakana');
+            katakana.val('あイう１２３').change();
+            equal(katakana.val(), 'アイウ１２３');
+
+            var hankaku = form.findByAttr('data-autoformat', 'hankaku').autoformatInput('hankaku');
+            hankaku.val('あイう１２３').change();
+            equal(hankaku.val(), 'あイう123');
+
+            var zenkaku = form.findByAttr('data-autoformat', 'zenkaku').autoformatInput('zenkaku');
+            zenkaku.val('あイう１２３1456abcDEF').change();
+            equal(zenkaku.val(), 'あイう１２３１４５６ａｂｃＤＥＦ');
+        });
     });
 })(jQuery);

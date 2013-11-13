@@ -184,6 +184,13 @@
             var zenkaku = form.findByAttr('data-autoformat', 'zenkaku').autoformatInput('zenkaku');
             zenkaku.val('あイう１２３1456abcDEF').change();
             equal(zenkaku.val(), 'あイう１２３１４５６ａｂｃＤＥＦ');
+
+        });
+
+        test('$.scrollToTop', function () {
+            location.href='#section01';
+            $.scrollToTop();
+            ok(true);
         });
     });
 })(jQuery);

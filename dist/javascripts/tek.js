@@ -1,10 +1,10 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.22
+ * @version v0.2.25
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-10
+ * @date 2013-11-15
  */
 tek = (function (module) {
     
@@ -713,12 +713,11 @@ tek = (function (module) {
 	    searchWord = searchWord.trim();
 	
 	    var string = tek.string;
-	    return !!pattern.match(searchWord) ||
-	        !!string.toHankaku(pattern).match(searchWord) ||
-	        !!string.toZenkaku(pattern).match(searchWord) ||
-	        !!string.toHiragana(pattern).match(searchWord) ||
-	        !!string.toKatakana(pattern).match(searchWord)
-	        ;
+	    return pattern.match(searchWord) ||
+	        string.toHankaku(pattern).match(searchWord) ||
+	        string.toZenkaku(pattern).match(searchWord) ||
+	        string.toHiragana(pattern).match(searchWord) ||
+	        string.toKatakana(pattern).match(searchWord);
 	};
 	/**
 	 * Created by okunishitaka on 11/5/13.

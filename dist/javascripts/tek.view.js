@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.22
+ * @version v0.2.25
  * @author Taka Okunishi
- * @date 2013-11-10
+ * @date 2013-11-15
  *
  */
 (function (dependencies, window, undefined) {
@@ -166,6 +166,10 @@
 		    hbs = global['hbs'],
 		    $ = global['$'];
 		
+		/**
+		 * form value object
+		 * @type {tek.define|*}
+		 */
 		$.FormValue = tek.define({
 		    init: function (values) {
 		        var s = this;
@@ -329,7 +333,10 @@
 		    hst.pushState(null, null, new_url);
 		};
 		
-		
+		/**
+		 * show sorry page for not supported
+		 * @param data
+		 */
 		$.sorryNoSupport = function (data) {
 		    var body = document.body;
 		    $('#tk-no-support-dialog', body).remove();
@@ -345,6 +352,10 @@
 		    $(html).appendTo(body);
 		};
 		
+		/**
+		 * confirm before page unload
+		 * @param msg
+		 */
 		$.confirmLeave = function (msg) {
 		    if (!$.confirmLeave.initialized) {
 		        $.confirmLeave.initialized = true;
@@ -354,11 +365,23 @@
 		    }
 		    $.confirmLeave.msg = msg;
 		};
+		
+		
+		/**
+		 * scroll page to top
+		 * @param duration
+		 */
+		$.scrollToTop = function (duration) {
+		    $('html,body').animate({
+		        scrollTop: 0
+		    }, duration || 300);
+		};
 	})(dependencies, undefined);
 	/** tek.view for $.fn **/
 	(function (global, undefined) {
 	
-		var $ = global['$'],
+		var tek = global['tek'],
+		    $ = global['$'],
 		    hbs = global['hbs'];
 		
 		/**
@@ -912,12 +935,59 @@
 		        }),
 		        balloon = elm.append(balloonHTML).find('.tk-err-balloon');
 		    balloon.click(function () {
-		        balloon.fadeOut(200, function(){
+		        balloon.fadeOut(200, function () {
 		            balloon.remove();
 		        });
 		    });
 		    return elm;
 		};
+		
+		/**
+		 * input with auto format feature
+		 * @param format
+		 * @returns {*}
+		 *
+		 * available formats
+		 *   hankaku,zenkaku,hiragana,katakana
+		 */
+		$.fn.autoformatInput = function (format) {
+		    var string = tek.string;
+		    var input = $(this);
+		    input.data('autoformat', format);
+		    return input.each(function () {
+		        var input = $(this);
+		        if (input.data('autoformat-input')) return;
+		        input.data('autoformat-input', true);
+		        input.change(function () {
+		            var input = $(this),
+		                format = input.data('autoformat'),
+		                val = input.val();
+		            if (typeof(format) === 'string') {
+		                format = format.split(',');
+		            }
+		            for (var i = 0, len = format.length; i < len; i++) {
+		                switch (format[i]) {
+		                    case 'hankaku':
+		                        val = string.toHankaku(val);
+		                        break;
+		                    case 'zenkaku':
+		                        val = string.toZenkaku(val);
+		                        break;
+		                    case 'hiragana':
+		                        val = string.toHiragana(val);
+		                        break;
+		                    case 'katakana':
+		                        val = string.toKatakana(val);
+		                        break;
+		                    default:
+		                        console.warn('[tek.view.js]', format[i], 'is not supported for autoformat');
+		                        break;
+		                }
+		            }
+		            input.val(val);
+		        });
+		    });
+		}
 	})(dependencies, undefined);
 
 })({

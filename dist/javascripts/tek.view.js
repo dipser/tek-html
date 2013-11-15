@@ -1061,7 +1061,7 @@
 		 * make table sortable by click th in thead
 		 * @returns {*|jQuery|HTMLElement}
 		 */
-		$.fn.sortableTable = function () {
+		$.fn.sortableTable = function (callback) {
 		    var table = $(this),
 		        thead = table.find('thead'),
 		        tbody = table.find('tbody');
@@ -1117,6 +1117,7 @@
 		                })
 		                .appendTo(tbody);
 		            th.attr('data-tk-asc', !asc);
+		            callback && callback(col, asc);
 		        });
 		    return table;
 		}

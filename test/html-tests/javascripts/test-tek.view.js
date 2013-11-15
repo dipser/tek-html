@@ -188,8 +188,15 @@
         });
 
         test('$.scrollToTop', function () {
-            location.href='#section01';
+            location.href = '#section01';
             $.scrollToTop();
+            ok(true);
+        });
+
+        test('$.word-Search', function () {
+            $('#word-Search').textchange(function(){
+                $('#search-table').wordSearch($(this).val())
+            }).val('02').change();
             ok(true);
         });
     });

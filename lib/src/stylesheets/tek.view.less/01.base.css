@@ -361,6 +361,10 @@
 .tk-err-balloon .tk-close-btn:hover {
   color: #ff9090;
 }
-.tek-text-center {
+.tk-text-center {
   text-align: center;
+}
+.tk-hit-word {
+  background-color: #ffff99;
+  color: #583514;
 }

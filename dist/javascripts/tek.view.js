@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.25
+ * @version v0.2.27
  * @author Taka Okunishi
  * @date 2013-11-15
  *
@@ -81,6 +81,17 @@
 		  else { stack1 = depth0.close_label; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
 		  buffer += escapeExpression(stack1)
 		    + "</a>\n    </div>\n</div>";
+		  return buffer;
+		  });
+		templates['tk-hit-word'] = template(function (Handlebars,depth0,helpers,partials,data) {
+		  this.compilerInfo = [4,'>= 1.0.0'];
+		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+		  var buffer = "", functionType="function", escapeExpression=this.escapeExpression;
+		
+		
+		  buffer += "<span class=\"tk-hit-word\">"
+		    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+		    + "</span>";
 		  return buffer;
 		  });
 		templates['tk-no-support-dialog'] = template(function (Handlebars,depth0,helpers,partials,data) {
@@ -375,6 +386,26 @@
 		    $('html,body').animate({
 		        scrollTop: 0
 		    }, duration || 300);
+		};
+		
+		$.wordSearch={};
+		$.wordSearch.restore = function (word) {
+		    if (!word) return;
+		    for (var i = 0, len = word.length; i < len; i++) {
+		        var parent = word[i].parentNode;
+		        var text = document.createTextNode();
+		        text.nodeValue = parent.dataset.origin;
+		        parent.parentNode.replaceChild(text, parent);
+		    }
+		};
+		$.wordSearch.hitElement = function(match){
+		    var tmpl = hbs.templates['tk-hit-word'];
+		    var origin = match.input,
+		        span = document.createElement('span'),
+		        hit = match[0];
+		    span.innerHTML = origin.replace(hit, tmpl(hit));
+		    span.dataset.origin = origin;
+		    return span;
 		};
 	})(dependencies, undefined);
 	/** tek.view for $.fn **/
@@ -987,7 +1018,45 @@
 		            input.val(val);
 		        });
 		    });
-		}
+		};
+		
+		/**
+		 * search by word
+		 * @param word
+		 */
+		$.fn.wordSearch = function (word) {
+		    var ambiguousMatch = tek.string.ambiguousMatch;
+		    var elm = $(this);
+		    if (!elm.length) return false;
+		    if (elm.is('.tk-hit-word')) return false;
+		
+		    $.wordSearch.restore(elm.find('.tk-hit-word'));
+		
+		    var hit = false,
+		        contents = elm.contents(),
+		        inner = $();
+		
+		
+		    for (var i = 0, len = contents.length; i < len; i++) {
+		        var content = contents[i];
+		        switch (content.nodeType) {
+		            case 3:
+		                var match = ambiguousMatch(word, content.nodeValue);
+		                if (match) {
+		                    var span = $.wordSearch.hitElement(match);
+		                    content.parentNode.replaceChild(span, content);
+		                    hit = true;
+		                }
+		                break;
+		            default:
+		                inner = inner.add(content);
+		                break;
+		
+		        }
+		    }
+		    return inner.wordSearch(word) || hit;
+		};
+		
 	})(dependencies, undefined);
 
 })({

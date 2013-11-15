@@ -1,7 +1,7 @@
 /**
- * jquery.spreadsheet.js v0.2.28
+ * jquery.spreadsheet.js v0.2.30
  * - jquery plugin to create spreadsheet -
- * @version v0.2.28
+ * @version v0.2.30
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-15
@@ -164,6 +164,8 @@
 		    });
 		    return html + '</tbody></table>';
 		}
+		ss.createTopFixed = createTopFixed;
+		ss.createLeftFixed = createLeftFixed;
 		$.fn.spreadsheet = function (sheetData, options) {
 		    var doc = $(document),
 		        win = $(window),
@@ -202,7 +204,7 @@
 		    var leftFixedTh = leftFixed.find(p('.body-th'));
 		
 		    root
-		        .on('mouseleave', function(){
+		        .on('mouseleave', function () {
 		            root.find(p('.th-hover')).removeClass(p('th-hover'));
 		        })
 		        .on(p('resize'), function () {

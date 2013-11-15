@@ -368,3 +368,36 @@
   background-color: #ffff99;
   color: #583514;
 }
+.tk-sortable-th label {
+  position: relative;
+  cursor: pointer;
+}
+.tk-sortable-th label:before {
+  content: "";
+  border-style: solid;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  display: none;
+  border-color: transparent;
+  margin: 0 3px;
+  position: absolute;
+  left: -5px;
+  top: 7px;
+}
+.tk-sortable-th[data-tk-asc="false"] label {
+  padding-left: 12px;
+}
+.tk-sortable-th[data-tk-asc="false"] label:before {
+  display: inline-block;
+  border-top-width: 0;
+  border-bottom-color: #666666;
+}
+.tk-sortable-th[data-tk-asc="true"] label {
+  padding-left: 12px;
+}
+.tk-sortable-th[data-tk-asc="true"] label:before {
+  display: inline-block;
+  border-top-color: #666666;
+  border-bottom-width: 0;
+}

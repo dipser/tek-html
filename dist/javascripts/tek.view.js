@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.27
+ * @version v0.2.28
  * @author Taka Okunishi
  * @date 2013-11-15
  *
@@ -1056,6 +1056,70 @@
 		    }
 		    return inner.wordSearch(word) || hit;
 		};
+		
+		/**
+		 * make table sortable by click th in thead
+		 * @returns {*|jQuery|HTMLElement}
+		 */
+		$.fn.sortableTable = function () {
+		    var table = $(this),
+		        thead = table.find('thead'),
+		        tbody = table.find('tbody');
+		
+		    var bodyTr = tbody.find('tr');
+		
+		    bodyTr
+		        .each(function (row) {
+		            var tr = $(this);
+		            tr
+		                .data('tk-row', row)
+		                .find('th,td').each(function (col) {
+		                    $(this).addClass('tk-col-' + col);
+		                });
+		        });
+		    thead
+		        .find('th')
+		        .addClass('tk-sortable-th')
+		        .each(function (col) {
+		            var th = $(this);
+		            th.data('col', col);
+		            if (!th.find('label').size()) {
+		                var msg = '[tek.view.js] Thead th should contain label for sortable table.';
+		                msg += 'tek.view.js complete it, but, consider prepare before rendering, for performance reasons.';
+		                console.warn(msg);
+		                th.wrapInner('<label/>');
+		            }
+		        })
+		        .click(function () {
+		            var th = $(this),
+		                asc = eval(th.attr('data-tk-asc') || 'false'),
+		                col = th.data('col');
+		            th.siblings('[data-tk-asc]').removeAttr('data-tk-asc');
+		            bodyTr
+		                .each(function (i) {
+		                    var tr = $(this),
+		                        td = tr.find('.tk-col-' + col);
+		                    tr
+		                        .data('tk-sort-value', td.text() || '')
+		                        .data('tk-row', i);
+		                })
+		                .sort(function (a, b) {
+		                    var $1 = $(a);
+		                    var $2 = $(b);
+		                    var v1 = $1.data('tk-sort-value'),
+		                        v2 = $2.data('tk-sort-value');
+		                    var sorted = v1.localeCompare(v2) * (asc ? 1 : -1);
+		                    if (sorted) {
+		                        return  sorted;
+		                    } else {
+		                        return ($2.data('tk-row') - $1.data('tk-row')) * (asc ? 1 : -1);
+		                    }
+		                })
+		                .appendTo(tbody);
+		            th.attr('data-tk-asc', !asc);
+		        });
+		    return table;
+		}
 		
 	})(dependencies, undefined);
 

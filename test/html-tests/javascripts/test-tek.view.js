@@ -194,10 +194,17 @@
         });
 
         test('$.word-Search', function () {
-            $('#word-Search').textchange(function(){
+            $('#word-search-input').textchange(function(){
                 $('#search-table').wordSearch($(this).val())
             }).val('02').change();
             ok(true);
         });
+
+        test('$.sortableTable', function(){
+            var table = $('#search-table').sortableTable();
+            var th = table.find('thead th');
+            th.eq(2).click();
+            ok(true);
+        })
     });
 })(jQuery);

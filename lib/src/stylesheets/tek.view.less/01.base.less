@@ -153,3 +153,46 @@
   background-color: lighten(@yellow, 20);
   color:rgb(88, 53, 20);
 }
+
+.tk-sortable-th {
+  @color: @gray;
+  label {
+    position: relative;
+    cursor: pointer;
+  }
+  label:before {
+    content: "";
+    @w: 5px;
+    border-style: solid;
+    .square(0);
+    border-width: @w;
+    display: none;
+    border-color: transparent;
+    margin: 0 3px;
+    position: absolute;
+    left: -5px;
+    top: 7px;
+  }
+  @l: 12px;
+  &[data-tk-asc="false"] {
+    label {
+      padding-left: @l;
+    }
+    label:before {
+
+      display: inline-block;
+      border-top-width: 0;
+      border-bottom-color: @color;
+    }
+  }
+  &[data-tk-asc="true"] {
+    label {
+      padding-left: @l;
+    }
+    label:before {
+      display: inline-block;
+      border-top-color: @color;
+      border-bottom-width: 0;
+    }
+  }
+}

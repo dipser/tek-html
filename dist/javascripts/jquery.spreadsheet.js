@@ -1,7 +1,7 @@
 /**
- * jquery.spreadsheet.js v0.2.30
+ * jquery.spreadsheet.js v0.2.31
  * - jquery plugin to create spreadsheet -
- * @version v0.2.30
+ * @version v0.2.31
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-15
@@ -201,8 +201,6 @@
 		
 		    var cellSelector = [p('.root'), p('.cell')].join(' ');
 		
-		    var leftFixedTh = leftFixed.find(p('.body-th'));
-		
 		    root
 		        .on('mouseleave', function () {
 		            root.find(p('.th-hover')).removeClass(p('th-hover'));
@@ -213,14 +211,14 @@
 		            topFixed.css('left', thead.position().left);
 		
 		
-		            leftFixedTh.width(tbodyTh.width());
+		            leftFixed.find(p('.body-th')).width(tbodyTh.width());
 		            leftFixed.children('thead').eq(0)
 		                .find('th').eq(0).height(theadTh.height() + 1);
 		
 		
 		            tbodyTh.each(function (i) {
 		                var th = $(this);
-		                leftFixedTh.eq(i)
+		                leftFixed.find(p('.body-th')).eq(i)
 		                    .width(th.width())
 		                    .height(th.height());
 		            });
@@ -267,7 +265,7 @@
 		                .eq(row).addClass(p('th-hover'));
 		
 		
-		            leftFixedTh
+		            leftFixed.find(p('.body-th'))
 		                .removeClass(p('th-hover'))
 		                .eq(row).addClass(p('th-hover'));
 		        })

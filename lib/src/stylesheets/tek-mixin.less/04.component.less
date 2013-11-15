@@ -263,3 +263,71 @@
   margin:4px 8px;
   .box-shadow(1px 1px 2px rgba(0,0,0,0.1));
 }
+
+
+
+.checkbox-radio-style(@back:@black;@color:@white;){
+  @margin:5px;
+  @bottom:4.5px;
+  @left:@margin + 2px;
+  [type="checkbox"],
+  [type="radio"]{
+    display: none;
+    & + label{
+      .psude-style(@size, @back){
+        .square(@size * 2);
+        background-color: @back;
+        display: inline-block;
+        content:'';
+      }
+      .abs-style(@bottom, @left){
+        bottom:@bottom;
+        left:@left;
+        position: absolute;
+      }
+      position: relative;
+      padding-left:20px;
+      &:before{
+        .psude-style(5px, @back);
+        .box-shadow(1px 1px 1px;.4;inset);
+        .abs-style(@bottom, @left);
+      }
+      &:after{
+        .psude-style(3px;@color);
+        .abs-style(@bottom + 2px, @left + 2px);
+        display: none;
+      }
+    }
+    &:checked{
+      & + label{
+        &:after{
+          display: inline-block;
+        }
+      }
+    }
+  }
+  [type="radio"]{
+    & + label{
+      &:before,&:after{
+        .border-radius(50%);
+      }
+    }
+  }
+  [type="checkbox"]{
+    & + label{
+      &:before{
+        .border-radius(2px;);
+      }
+      &:after{
+        .rotate(45deg);
+        width:2px;
+        height: 5px;
+        left:@left + 3px;
+        border:2px solid @color;
+        border-top:none;
+        border-left:none;
+        background-color: transparent;
+      }
+    }
+  }
+}

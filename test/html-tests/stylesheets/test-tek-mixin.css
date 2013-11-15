@@ -90,6 +90,9 @@
       </div>
    ```
 */
+body {
+  font-size: 18px;
+}
 section {
   background-color: #AAA;
 }
@@ -121,4 +124,74 @@ section {
 .block-table td {
   display: block;
   width: 100%;
+}
+form [type="checkbox"],
+form [type="radio"] {
+  display: none;
+}
+form [type="checkbox"] + label,
+form [type="radio"] + label {
+  position: relative;
+  padding-left: 20px;
+}
+form [type="checkbox"] + label:before,
+form [type="radio"] + label:before {
+  width: 10px;
+  height: 10px;
+  background-color: #333333;
+  display: inline-block;
+  content: '';
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+  -o-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+  -ms-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+  bottom: 4.5px;
+  left: 7px;
+  position: absolute;
+}
+form [type="checkbox"] + label:after,
+form [type="radio"] + label:after {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  display: inline-block;
+  content: '';
+  bottom: 6.5px;
+  left: 9px;
+  position: absolute;
+  display: none;
+}
+form [type="checkbox"]:checked + label:after,
+form [type="radio"]:checked + label:after {
+  display: inline-block;
+}
+form [type="radio"] + label:before,
+form [type="radio"] + label:after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+form [type="checkbox"] + label:before {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+form [type="checkbox"] + label:after {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 2px;
+  height: 5px;
+  left: 10px;
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-left: none;
+  background-color: transparent;
 }

@@ -168,7 +168,7 @@
         });
 
         test('$.autoformatInput', function () {
-            var form = $('form').first();
+            var form = $('form[name="some-form"]').first();
             var hiragana = form.findByAttr('data-autoformat', 'hiragana').autoformatInput('hiragana');
             hiragana.val('あイう１２３').change();
             equal(hiragana.val(), 'あいう１２３');
@@ -205,6 +205,11 @@
             var th = table.find('thead th');
             th.eq(2).click();
             ok(true);
-        })
+        });
+
+        test('$.fn.uploadForm', function(){
+            $('#upload-form').uploadForm();
+            ok(true);
+        });
     });
 })(jQuery);

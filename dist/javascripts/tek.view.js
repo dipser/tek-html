@@ -23,153 +23,10 @@
 	/** tek.view for hbs.templates **/
 	(function (global, undefined) {
 	
-		var Handlebars = global['hbs'];
-		(function() {
-		  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-		templates['tk-confirm-dialog'] = template(function (Handlebars,depth0,helpers,partials,data) {
-		  this.compilerInfo = [4,'>= 1.0.0'];
-		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+		var Handlebars=global.hbs;!function(){var a=Handlebars.template,t=Handlebars.templates=Handlebars.templates||{};t["tk-confirm-dialog"]=a(function(a,t,e,l,n){this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{};var i,s="",o="function",p=this.escapeExpression;return s+='<div class="tk-confirm-dialog" id="tk-confirm-dialog">\n    <div class="tk-confirm-dialog-inner">\n        <h2 class="tk-confirm-dialog-title">',(i=e.title)?i=i.call(t,{hash:{},data:n}):(i=t.title,i=typeof i===o?i.apply(t):i),s+=p(i)+"</h2>\n        ",(i=e.sub_title)?i=i.call(t,{hash:{},data:n}):(i=t.sub_title,i=typeof i===o?i.apply(t):i),s+=p(i)+'\n        <form>\n            <a href="javascript:void(0)" class="tk-confirm-dialog-close-btn"\n                    >&times;</a>\n\n            <p>\n\n                <input type="checkbox" id="tk-confirm-dialog-check"/>\n                <label for="tk-confirm-dialog-check"><b>',(i=e.check_label)?i=i.call(t,{hash:{},data:n}):(i=t.check_label,i=typeof i===o?i.apply(t):i),s+=p(i)+'</b></label>\n            </p>\n            <input type="submit" class="tk-danger-btn tk-wide-btn"\n                   disabled="disabled" value="',(i=e.btn_label)?i=i.call(t,{hash:{},data:n}):(i=t.btn_label,i=typeof i===o?i.apply(t):i),s+=p(i)+'"/>\n        </form>\n    </div>\n</div>\n'}),t["tk-editable-label"]=a(function(a,t,e,l,n){return this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{},'<label class="tk-editable-label">\n\n</label>'}),t["tk-err-balloon"]=a(function(a,t,e,l,n){function i(a){var t="";return t+="\n            <li>"+r(typeof a===p?a.apply(a):a)+"</li>\n        "}this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{};var s,o="",p="function",r=this.escapeExpression,c=this;return o+='<div class="tk-err-balloon">\n    <ul>\n        ',s=e.each.call(t,t.msg,{hash:{},inverse:c.noop,fn:c.program(1,i,n),data:n}),(s||0===s)&&(o+=s),o+='\n    </ul>\n    <div class="tek-text-center">\n        <a href="javascript:void(0)" class="tk-close-btn">',(s=e.close_label)?s=s.call(t,{hash:{},data:n}):(s=t.close_label,s=typeof s===p?s.apply(t):s),o+=r(s)+"</a>\n    </div>\n</div>"}),t["tk-hit-word"]=a(function(a,t,e,l,n){this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{};var i="",s="function",o=this.escapeExpression;return i+='<span class="tk-hit-word">'+o(typeof t===s?t.apply(t):t)+"</span>"}),t["tk-no-support-dialog"]=a(function(a,t,e,l,n){this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{};var i,s="",o="function",p=this.escapeExpression;return s+='<div class="tk-no-support-dialog" id="tk-no-support-dialog">\n    <div class="tk-no-support-dialog-inner">\n        <h1 class="tk-no-support-dialog-title">',(i=e.title)?i=i.call(t,{hash:{},data:n}):(i=t.title,i=typeof i===o?i.apply(t):i),s+=p(i)+"</h1>\n        <span>",(i=e.sub_title)?i=i.call(t,{hash:{},data:n}):(i=t.sub_title,i=typeof i===o?i.apply(t):i),s+=p(i)+"</span>\n\n        <p>\n            ",(i=e.msg)?i=i.call(t,{hash:{},data:n}):(i=t.msg,i=typeof i===o?i.apply(t):i),s+=p(i)+'\n        <ul>\n            <li><a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">\n                <img class="tk-icon" src="https://www.google.com/images/icons/product/chrome-32.png" alt=""/>\n                Chrome\n            </a>\n            </li>\n            <li><a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">\n                <img class="tk-icon" src="http://mozorg.cdn.mozilla.net/media/img/firefox/favicon.ico?2013-08" alt=""/>\n                Firefox\n            </a></li>\n            <li><a href="http://support.apple.com/downloads/#safari" target="_blank">\n                <img class="tk-icon"\n                     src="http://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM26/en_US/safari-72.png"\n                     alt=""/>\n                Safari</a></li>\n            <li><a href="http://www.opera.com/">\n                <img class="tk-icon" src="http://d2jc9zwbrclgz3.cloudfront.net/static-heap/da/dafd15591b35d4f81ca96cf7de6582d705850ff0/apple-touch-icon-57x57.png" alt=""/>\n                Opera</a></li>\n        </ul>\n        </p>\n\n    </div>\n</div>'}),t["tk-selectable-label"]=a(function(a,t,e,l,n){return this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{},'<label class="tk-selectable-label">\n</label>'}),t["tk-selectable-text-list"]=a(function(a,t,e,l,n){function i(a){var t="";return t+='\n        <li class="tk-selectable-list-item">\n            <a href="javascript:void(0)">'+r(typeof a===p?a.apply(a):a)+"</a>\n        </li>\n    "}this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{};var s,o="",p="function",r=this.escapeExpression,c=this;return o+='<ul class="tk-selectable-text-list">\n    ',s=e.each.call(t,t.candidates,{hash:{},inverse:c.noop,fn:c.program(1,i,n),data:n}),(s||0===s)&&(o+=s),o+="\n</ul>\n"}),t["tk-spin"]=a(function(a,t,e,l,n){this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{};var i,s="",o="function",p=this.escapeExpression;return s+='<div style="width:',(i=e.width)?i=i.call(t,{hash:{},data:n}):(i=t.width,i=typeof i===o?i.apply(t):i),s+=p(i)+"px;height:",(i=e.height)?i=i.call(t,{hash:{},data:n}):(i=t.height,i=typeof i===o?i.apply(t):i),s+=p(i)+"px;\n        position: absolute;left:",(i=e.left)?i=i.call(t,{hash:{},data:n}):(i=t.left,i=typeof i===o?i.apply(t):i),s+=p(i)+"px;top:",(i=e.top)?i=i.call(t,{hash:{},data:n}):(i=t.top,i=typeof i===o?i.apply(t):i),s+=p(i)+'px"></div>'}),t["tk-upload-work-div"]=a(function(a,t,e,l,n){function i(a,t){var l,n="";return n+='\n            <input type="hidden" name="',(l=e.name)?l=l.call(a,{hash:{},data:t}):(l=a.name,l=typeof l===p?l.apply(a):l),n+=r(l)+'" value="',(l=e.value)?l=l.call(a,{hash:{},data:t}):(l=a.value,l=typeof l===p?l.apply(a):l),n+=r(l)+'"/>\n        '}this.compilerInfo=[4,">= 1.0.0"],e=this.merge(e,a.helpers),n=n||{};var s,o="",p="function",r=this.escapeExpression,c=this;return o+='<div class="tk-upload-work-div" style="position:absolute;top:-9999px">\n    <form action="',(s=e.action)?s=s.call(t,{hash:{},data:n}):(s=t.action,s=typeof s===p?s.apply(t):s),o+=r(s)+'" target="',(s=e.work_id)?s=s.call(t,{hash:{},data:n}):(s=t.work_id,s=typeof s===p?s.apply(t):s),o+=r(s)+'" method="post" enctype="multipart/form-data">\n        ',s=e.each.call(t,t.data,{hash:{},inverse:c.noop,fn:c.program(1,i,n),data:n}),(s||0===s)&&(o+=s),o+='\n    </form>\n    <iframe src="" frameborder="0" name="',(s=e.work_id)?s=s.call(t,{hash:{},data:n}):(s=t.work_id,s=typeof s===p?s.apply(t):s),o+=r(s)+'">\n\n    </iframe>\n</div>\n'})}();
 		
-		
-		  buffer += "<div class=\"tk-confirm-dialog\" id=\"tk-confirm-dialog\">\n    <div class=\"tk-confirm-dialog-inner\">\n        <h2 class=\"tk-confirm-dialog-title\">";
-		  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "</h2>\n        ";
-		  if (stack1 = helpers.sub_title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.sub_title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "\n        <form>\n            <a href=\"javascript:void(0)\" class=\"tk-confirm-dialog-close-btn\"\n                    >&times;</a>\n\n            <p>\n\n                <input type=\"checkbox\" id=\"tk-confirm-dialog-check\"/>\n                <label for=\"tk-confirm-dialog-check\"><b>";
-		  if (stack1 = helpers.check_label) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.check_label; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "</b></label>\n            </p>\n            <input type=\"submit\" class=\"tk-danger-btn tk-wide-btn\"\n                   disabled=\"disabled\" value=\"";
-		  if (stack1 = helpers.btn_label) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.btn_label; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "\"/>\n        </form>\n    </div>\n</div>\n";
-		  return buffer;
-		  });
-		templates['tk-editable-label'] = template(function (Handlebars,depth0,helpers,partials,data) {
-		  this.compilerInfo = [4,'>= 1.0.0'];
-		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-		  
-		
-		
-		  return "<label class=\"tk-editable-label\">\n\n</label>";
-		  });
-		templates['tk-err-balloon'] = template(function (Handlebars,depth0,helpers,partials,data) {
-		  this.compilerInfo = [4,'>= 1.0.0'];
-		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-		
-		function program1(depth0,data) {
-		  
-		  var buffer = "";
-		  buffer += "\n            <li>"
-		    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
-		    + "</li>\n        ";
-		  return buffer;
-		  }
-		
-		  buffer += "<div class=\"tk-err-balloon\">\n    <ul>\n        ";
-		  stack1 = helpers.each.call(depth0, depth0.msg, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-		  if(stack1 || stack1 === 0) { buffer += stack1; }
-		  buffer += "\n    </ul>\n    <div class=\"tek-text-center\">\n        <a href=\"javascript:void(0)\" class=\"tk-close-btn\">";
-		  if (stack1 = helpers.close_label) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.close_label; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "</a>\n    </div>\n</div>";
-		  return buffer;
-		  });
-		templates['tk-hit-word'] = template(function (Handlebars,depth0,helpers,partials,data) {
-		  this.compilerInfo = [4,'>= 1.0.0'];
-		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-		  var buffer = "", functionType="function", escapeExpression=this.escapeExpression;
-		
-		
-		  buffer += "<span class=\"tk-hit-word\">"
-		    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
-		    + "</span>";
-		  return buffer;
-		  });
-		templates['tk-no-support-dialog'] = template(function (Handlebars,depth0,helpers,partials,data) {
-		  this.compilerInfo = [4,'>= 1.0.0'];
-		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
-		
-		
-		  buffer += "<div class=\"tk-no-support-dialog\" id=\"tk-no-support-dialog\">\n    <div class=\"tk-no-support-dialog-inner\">\n        <h1 class=\"tk-no-support-dialog-title\">";
-		  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "</h1>\n        <span>";
-		  if (stack1 = helpers.sub_title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.sub_title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "</span>\n\n        <p>\n            ";
-		  if (stack1 = helpers.msg) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.msg; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "\n        <ul>\n            <li><a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">\n                <img class=\"tk-icon\" src=\"https://www.google.com/images/icons/product/chrome-32.png\" alt=\"\"/>\n                Chrome\n            </a>\n            </li>\n            <li><a href=\"http://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\">\n                <img class=\"tk-icon\" src=\"http://mozorg.cdn.mozilla.net/media/img/firefox/favicon.ico?2013-08\" alt=\"\"/>\n                Firefox\n            </a></li>\n            <li><a href=\"http://support.apple.com/downloads/#safari\" target=\"_blank\">\n                <img class=\"tk-icon\"\n                     src=\"http://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM26/en_US/safari-72.png\"\n                     alt=\"\"/>\n                Safari</a></li>\n            <li><a href=\"http://www.opera.com/\">\n                <img class=\"tk-icon\" src=\"http://d2jc9zwbrclgz3.cloudfront.net/static-heap/da/dafd15591b35d4f81ca96cf7de6582d705850ff0/apple-touch-icon-57x57.png\" alt=\"\"/>\n                Opera</a></li>\n        </ul>\n        </p>\n\n    </div>\n</div>";
-		  return buffer;
-		  });
-		templates['tk-selectable-label'] = template(function (Handlebars,depth0,helpers,partials,data) {
-		  this.compilerInfo = [4,'>= 1.0.0'];
-		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-		  
-		
-		
-		  return "<label class=\"tk-selectable-label\">\n</label>";
-		  });
-		templates['tk-selectable-text-list'] = template(function (Handlebars,depth0,helpers,partials,data) {
-		  this.compilerInfo = [4,'>= 1.0.0'];
-		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-		
-		function program1(depth0,data) {
-		  
-		  var buffer = "";
-		  buffer += "\n        <li class=\"tk-selectable-list-item\">\n            <a href=\"javascript:void(0)\">"
-		    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
-		    + "</a>\n        </li>\n    ";
-		  return buffer;
-		  }
-		
-		  buffer += "<ul class=\"tk-selectable-text-list\">\n    ";
-		  stack1 = helpers.each.call(depth0, depth0.candidates, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-		  if(stack1 || stack1 === 0) { buffer += stack1; }
-		  buffer += "\n</ul>\n";
-		  return buffer;
-		  });
-		templates['tk-spin'] = template(function (Handlebars,depth0,helpers,partials,data) {
-		  this.compilerInfo = [4,'>= 1.0.0'];
-		helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-		  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
-		
-		
-		  buffer += "<div style=\"width:";
-		  if (stack1 = helpers.width) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.width; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "px;height:";
-		  if (stack1 = helpers.height) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.height; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "px;\n        position: absolute;left:";
-		  if (stack1 = helpers.left) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.left; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "px;top:";
-		  if (stack1 = helpers.top) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-		  else { stack1 = depth0.top; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-		  buffer += escapeExpression(stack1)
-		    + "px\"></div>";
-		  return buffer;
-		  });
-		})();
 	})(dependencies, undefined);
+	
 	/** tek.view for $ **/
 	(function (global, undefined) {
 	
@@ -388,7 +245,7 @@
 		    }, duration || 300);
 		};
 		
-		$.wordSearch={};
+		$.wordSearch = {};
 		$.wordSearch.restore = function (word) {
 		    if (!word) return;
 		    for (var i = 0, len = word.length; i < len; i++) {
@@ -398,7 +255,7 @@
 		        parent.parentNode.replaceChild(text, parent);
 		    }
 		};
-		$.wordSearch.hitElement = function(match){
+		$.wordSearch.hitElement = function (match) {
 		    var tmpl = hbs.templates['tk-hit-word'];
 		    var origin = match.input,
 		        span = document.createElement('span'),
@@ -407,7 +264,9 @@
 		    span.dataset.origin = origin;
 		    return span;
 		};
+		
 	})(dependencies, undefined);
+	
 	/** tek.view for $.fn **/
 	(function (global, undefined) {
 	
@@ -875,7 +734,7 @@
 		                .blur(function () {
 		                    input.hideTimer = setTimeout(function () {
 		                        ul.hideList();
-		                    }, 500);
+		                    }, 100);
 		                })
 		                .keydown(function (e) {
 		                    clearTimeout(input.hideTimer);
@@ -1120,9 +979,54 @@
 		            callback && callback(col, asc);
 		        });
 		    return table;
-		}
+		};
 		
+		/**
+		 * ajax file upload
+		 * @param url
+		 * @param data (extra data to submit. use format of $.fn.serializeArray)
+		 * @param callback
+		 * @returns {*|jQuery}
+		 */
+		$.fn.uploadFileInput = function (url, data, callback) {
+		    if ($.isFunction(data)) {
+		        callback = data;
+		        data = [];
+		    }
+		    var tmpl = {
+		        workDiv: hbs.templates['tk-upload-work-div']
+		    };
+		    return $(this).change(function () {
+		        var file = $(this);
+		        var work_id = 'tk-upload-work-' + new Date().getTime();
+		        var workDiv = $(tmpl.workDiv({
+		            work_id: work_id,
+		            action: url,
+		            data: [].concat(data).filter(function (data) {
+		                return !!data;
+		            })
+		        })).insertBefore(file);
+		        var form = workDiv.find('form'),
+		            iframe = workDiv.find('iframe');
+		        form.append(file);
+		        iframe.load(function () {
+		            setTimeout(function () {
+		                var data;
+		                try {
+		                    var json = $(iframe.contents()).find('body').html();
+		                    data = JSON.parse(json);
+		                } catch (e) {
+		                    console.error('[tek.view.js]failed to parse upload response.');
+		                }
+		                workDiv.after(file).remove();
+		                callback && callback(data);
+		            }, 1);
+		        });
+		        form.submit();
+		    });
+		};
 	})(dependencies, undefined);
+	
 
 })({
     $: this['$'],

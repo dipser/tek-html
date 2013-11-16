@@ -1,0 +1,10 @@
+<div class="tk-upload-work-div" style="position:absolute;top:-9999px">
+    <form action="{{action}}" target="{{work_id}}" method="post" enctype="multipart/form-data">
+        {{#each data}}
+            <input type="hidden" name="{{name}}" value="{{value}}"/>
+        {{/each}}
+    </form>
+    <iframe src="" frameborder="0" name="{{work_id}}">
+
+    </iframe>
+</div>

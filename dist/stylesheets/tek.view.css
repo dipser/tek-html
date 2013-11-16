@@ -401,3 +401,47 @@
   border-top-color: #666666;
   border-bottom-width: 0;
 }
+.tk-upload-form {
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  text-align: center;
+  color: #666666;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) inset;
+  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) inset;
+  -o-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) inset;
+  -ms-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) inset;
+  font-size: 2em;
+  position: relative;
+  font-weight: bold;
+  padding: 20px 0 0;
+}
+.tk-upload-form:hover {
+  font-style: italic;
+}
+.tk-upload-form.loading {
+  opacity: 0.8;
+}
+.tk-upload-form.tk-drop-ready {
+  color: #ffffff;
+  background-color: #e5e500;
+}
+.tk-upload-form [type="file"] {
+  opacity: 0;
+}
+.tk-upload-form .tk-cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  content: '';
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}

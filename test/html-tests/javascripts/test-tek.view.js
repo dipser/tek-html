@@ -194,21 +194,21 @@
         });
 
         test('$.word-Search', function () {
-            $('#word-search-input').textchange(function(){
+            $('#word-search-input').textchange(function () {
                 $('#search-table').wordSearch($(this).val())
             }).val('02').change();
             ok(true);
         });
 
-        test('$.sortableTable', function(){
+        test('$.sortableTable', function () {
             var table = $('#search-table').sortableTable();
             var th = table.find('thead th');
             th.eq(2).click();
             ok(true);
         });
 
-        test('$.fn.uploadForm', function(){
-            $('#upload-form').uploadForm();
+        test('$.fn.dropUploadInput', function () {
+            $('#drop-upload-input').dropUploadInput('', 'new-file');
             ok(true);
         });
     });

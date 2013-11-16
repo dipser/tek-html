@@ -1,7 +1,7 @@
 /**
- * jquery.spreadsheet.js v0.2.32
+ * jquery.spreadsheet.js v0.2.33
  * - jquery plugin to create spreadsheet -
- * @version v0.2.32
+ * @version v0.2.33
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-16
@@ -240,6 +240,13 @@
 		        });
 		
 		    doc
+		        .on('mouseenter', p('.head-th'), function(){
+		            var th = $(this);
+		            th
+		                .addClass(p('th-hover'))
+		                .siblings(p('.th-hover'))
+		                .removeClass(p('th-hover'));
+		        })
 		        .on('mouseenter', cellSelector, function () {
 		            var cell = $(this),
 		                row = cell.data('row'),

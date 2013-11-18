@@ -1,10 +1,10 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.34
+ * @version v0.2.36
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-16
+ * @date 2013-11-18
  */
 tek = (function (module) {
     
@@ -779,6 +779,12 @@ tek = (function (module) {
 	    if (!ua) return null;
 	    var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
 	    return re.exec(ua) ? parseFloat(RegExp.$1) : -1;
+	};
+	/**
+	 * do nothing
+	 */
+	tek.doNothing = function () {
+	
 	};
     
     return tek;

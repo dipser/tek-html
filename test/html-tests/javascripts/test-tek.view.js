@@ -27,7 +27,7 @@
             strictEqual(values['radio01'], 'radio-value01', 'radio');
             strictEqual(values['select01'], 'select-value02', 'select');
             strictEqual(values['textarea01'], 'text-content', 'textarea');
-            strictEqual(values['text03'], undefined);
+            strictEqual(values['text03'], "");
             strictEqual(values['text04'], "0");
 
             var obj = values.toObj();
@@ -203,6 +203,9 @@
         test('$.sortableTable', function () {
             var table = $('#search-table').sortableTable();
             var th = table.find('thead th');
+            th.eq(2).click();
+            ok(true);
+            table.sortableTable();
             th.eq(2).click();
             ok(true);
         });

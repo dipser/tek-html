@@ -44,13 +44,13 @@
             strictEqual(values['checkbox01'], 'checkbox-value02', 'checkbox');
         });
 
-        test('$.fn.spyFor', function () {
-            var spy = $('#spy');
-            spy.spyFor('#spy-for');
-            ok(spy.is(':hidden'));
-            win.scrollTop(500).scroll();
-            ok(!spy.is(':hidden'));
-        });
+//        test('$.fn.spyFor', function () {
+//            var spy = $('#spy');
+//            spy.spyFor('#spy-for');
+//            ok(spy.is(':hidden'));
+//            win.scrollTop(500).scroll();
+//            ok(!spy.is(':hidden'));
+//        });
 
         asyncTest("$.fn.textchange", function () {
             var form = $('#section01').findByAttr('name', 'some-form'),
@@ -187,11 +187,11 @@
 
         });
 
-        test('$.scrollToTop', function () {
-            location.href = '#section01';
-            $.scrollToTop();
-            ok(true);
-        });
+//        test('$.scrollToTop', function () {
+//            location.href = '#section01';
+//            $.scrollToTop();
+//            ok(true);
+//        });
 
         test('$.word-Search', function () {
             $('#word-search-input').textchange(function () {
@@ -212,6 +212,11 @@
 
         test('$.fn.dropUploadInput', function () {
             $('#drop-upload-input').dropUploadInput('', 'new-file');
+            ok(true);
+        });
+
+        test('$.fn.transferable', function () {
+            $('#transferable-fieldset-0,#transferable-fieldset-1').transferable('.transferable-item');
             ok(true);
         });
     });

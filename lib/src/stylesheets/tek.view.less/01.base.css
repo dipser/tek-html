@@ -445,3 +445,16 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
+.tk-transferable {
+  -webkit-transition: width 1s, height 1s;
+  -moz-transition: width 1s, height 1s;
+  -ms-transition: width 1s, height 1s;
+  -o-transition: width 1s, height 1s;
+  transition: width 1s, height 1s;
+}
+.tk-transferable-item {
+  position: relative;
+}
+.tk-transferable-drop-ready {
+  background-color: #ffff99;
+}

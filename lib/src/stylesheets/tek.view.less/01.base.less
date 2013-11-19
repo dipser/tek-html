@@ -78,7 +78,6 @@
       border-top:1px solid darken(@white, 3);
       text-decoration: none;
       &:hover{
-        text-decoration: none;
         background-color: @highlight;
         color:@white;
         text-decoration: none;
@@ -226,4 +225,15 @@
   .tk-cover{
     .cover(2);
   }
+}
+
+.tk-transferable{
+  @second:1s;
+  .transition(width @second, height @second;);
+}
+.tk-transferable-item{
+  position: relative;
+}
+.tk-transferable-drop-ready{
+  background-color: lighten(@yellow, 20);
 }

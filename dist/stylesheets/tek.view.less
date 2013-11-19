@@ -1,4 +1,4 @@
-//<h1>tek.view.less-0.2.38</h1>
+//<h1>tek.view.less-0.2.39</h1>
 //stylesheet for tek.view
 @import "tek-mixin";
 
@@ -81,7 +81,6 @@
       border-top:1px solid darken(@white, 3);
       text-decoration: none;
       &:hover{
-        text-decoration: none;
         background-color: @highlight;
         color:@white;
         text-decoration: none;
@@ -229,4 +228,15 @@
   .tk-cover{
     .cover(2);
   }
+}
+
+.tk-transferable{
+  @second:1s;
+  .transition(width @second, height @second;);
+}
+.tk-transferable-item{
+  position: relative;
+}
+.tk-transferable-drop-ready{
+  background-color: lighten(@yellow, 20);
 }

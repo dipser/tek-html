@@ -1,4 +1,4 @@
-//<h1>tek-mixin.less-0.2.38</h1>
+//<h1>tek-mixin.less-0.2.39</h1>
 
 /* <h3>color variables</h3>
 
@@ -313,6 +313,14 @@
 .stick-bottom(@px) {
   position: absolute;
   bottom: @px;
+}
+
+.transition(@property) {
+  -webkit-transition: @property;
+  -moz-transition: @property;
+  -ms-transition: @property;
+  -o-transition: @property;
+  transition: @property;
 }
 
 

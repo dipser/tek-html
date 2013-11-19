@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.38
+ * @version v0.2.39
  * @author Taka Okunishi
  * @date 2013-11-19
  *
@@ -1027,7 +1027,14 @@
 		        form.submit();
 		    });
 		};
-		
+		/**
+		 * drop upload file input
+		 * @param url
+		 * @param name
+		 * @param msg
+		 * @param callback
+		 * @returns {*|jQuery}
+		 */
 		$.fn.dropUploadInput = function (url, name, msg, callback) {
 		    var tmpl = hbs.templates['tk-drop-upload-form'];
 		    var data = $.extend({
@@ -1059,6 +1066,31 @@
 		                    callback && callback(data);
 		                });
 		        });
+		};
+		
+		/**
+		 * move a element from one to another by dragging
+		 */
+		$.fn.transferable = function (draggable) {
+		    $(draggable)
+		        .draggable({
+		
+		            revert: "invalid"
+		        })
+		        .addClass('tk-transferable-item');
+		    return $(this)
+		        .droppable({
+		            accept: '.tk-transferable-item',
+		            hoverClass: 'tk-transferable-drop-ready',
+		            drop: function (e, ui) {
+		                var droppable = $(this),
+		                    draggable = $(ui.draggable);
+		                droppable.append(draggable);
+		                draggable.removeAttr('style');
+		                droppable.trigger('tk-transfer', [draggable]);
+		            }
+		        })
+		        .addClass('tk-transferable');
 		};
 	})(dependencies, undefined);
 	

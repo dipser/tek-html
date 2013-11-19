@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.39
+ * @version v0.2.40
  * @author Taka Okunishi
  * @date 2013-11-19
  *
@@ -1079,6 +1079,8 @@
 		        })
 		        .addClass('tk-transferable-item');
 		    return $(this)
+		        .not('.tk-transferable')
+		        .addClass('tk-transferable')
 		        .droppable({
 		            accept: '.tk-transferable-item',
 		            hoverClass: 'tk-transferable-drop-ready',
@@ -1089,8 +1091,7 @@
 		                draggable.removeAttr('style');
 		                droppable.trigger('tk-transfer', [draggable]);
 		            }
-		        })
-		        .addClass('tk-transferable');
+		        });
 		};
 	})(dependencies, undefined);
 	

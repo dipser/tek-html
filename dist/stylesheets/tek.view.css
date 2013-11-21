@@ -271,6 +271,7 @@
   text-decoration: none;
 }
 .tk-no-support-dialog {
+  background: #000000;
   z-index: 999;
   position: fixed;
   left: 0;
@@ -283,6 +284,7 @@
   z-index: 2000;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.8);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
 .tk-no-support-dialog-inner {
   position: relative;

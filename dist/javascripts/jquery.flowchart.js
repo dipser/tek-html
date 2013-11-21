@@ -4,7 +4,7 @@
  * @version v0.2.40
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-19
+ * @date 2013-11-20
  */
 (function (dependencies, undefined) {
 	

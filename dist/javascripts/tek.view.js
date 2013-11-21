@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.40
+ * @version v0.2.42
  * @author Taka Okunishi
- * @date 2013-11-20
+ * @date 2013-11-21
  *
  */
 (function (dependencies, window, undefined) {
@@ -694,7 +694,10 @@
 		    };
 		    ul.hideList = function () {
 		        ul.find('.tk-selected').removeClass('tk-selected');
-		        return ul.hide();
+		        setTimeout(function () {
+		            ul.hide();
+		        }, 100);
+		        return ul;
 		    };
 		    ul.showList = function (style) {
 		        return ul.show()
@@ -702,13 +705,15 @@
 		            .children('li')
 		            .show();
 		    };
-		    ul.find('a').click(function () {
-		        var input = ul.data('tk-selectable-text-active');
-		        clearTimeout(input.hideTimer);
-		        var a = $(this);
-		        input.val(a.text());
-		        ul.hide();
-		    });
+		    setTimeout(function () {
+		        ul.find('a').click(function () {
+		            var input = ul.data('tk-selectable-text-active');
+		            clearTimeout(input.hideTimer);
+		            var a = $(this);
+		            input.val(a.text());
+		            ul.hide();
+		        });
+		    }, 10);
 		
 		    return input
 		        .attr({

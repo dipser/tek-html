@@ -219,5 +219,11 @@
             $('#transferable-fieldset-0,#transferable-fieldset-1').transferable('.transferable-item');
             ok(true);
         });
+
+        test('$.fn.slideMenu', function () {
+            $('#slide-nav').slideMenu();
+            ok($('.tk-slide-menu-close-btn').is(':hidden'));
+            ok($('.tk-slide-menu-open-btn').is(':visible'));
+        });
     });
 })(jQuery);

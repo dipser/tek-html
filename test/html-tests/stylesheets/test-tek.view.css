@@ -460,3 +460,27 @@
 .tk-transferable-drop-ready {
   background-color: #ffff99;
 }
+.tk-slide-menu {
+  overflow-x: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+.tk-slide-menu .tk-slide-menu-content {
+  display: inline-block;
+  white-space: nowrap;
+}
+.tk-slide-menu .tk-slide-menu-inner {
+  position: relative;
+}
+.tk-slide-menu .tk-slide-menu-open-btn {
+  display: inline-block;
+}
+.tk-slide-menu .tk-slide-menu-close-btn {
+  display: none;
+}
+.tk-slide-menu.tk-slide-menu-opened .tk-slide-menu-open-btn {
+  display: none;
+}
+.tk-slide-menu.tk-slide-menu-opened .tk-slide-menu-close-btn {
+  display: inline-block;
+}

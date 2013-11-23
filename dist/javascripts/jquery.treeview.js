@@ -1,10 +1,10 @@
 /**
- * jquery.treeview.js v0.2.42
+ * jquery.treeview.js v0.2.43
  * - jquery plugin to create treeview -
- * @version v0.2.42
+ * @version v0.2.43
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-21
+ * @date 2013-11-23
  */
 (function (dependencies, undefined) {
 	

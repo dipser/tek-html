@@ -123,5 +123,11 @@ exports.ConformValidatorTest = function (test) {
 
 
 exports.validateAllTest = function (test) {
-    test.done();
+    validators.Validator.validateAll([
+        new validators.MaximumValidator(3),
+        new validators.TypeValidator('number')
+    ], 123, function (errors) {
+        errors.should.be.lengthOf(1);
+        test.done();
+    });
 };

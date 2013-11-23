@@ -6,12 +6,8 @@
  * @license MIT
  * @date {{date}}
  */
-{{name}} = (function (module) {
+(function ({{name}}) {
     
-    var {{name}} = module && module.exports || {};
-
 {{modules}}
     
-    return {{name}};
-    
-})(typeof(module) === 'undefined' ? null : module);
+})(typeof(module) === 'undefined' ? this['{{name}}'] = {} : module.exports);

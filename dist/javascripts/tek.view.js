@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.43
+ * @version v0.2.46
  * @author Taka Okunishi
- * @date 2013-11-23
+ * @date 2013-11-24
  *
  */
 (function (dependencies, window, undefined) {

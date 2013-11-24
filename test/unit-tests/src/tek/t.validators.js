@@ -131,3 +131,14 @@ exports.validateAllTest = function (test) {
         test.done();
     });
 };
+
+exports.FormatValidatorTest = function (test) {
+    var validator = new validators.FormatValidator('email');
+    validator.validate('123', function (err) {
+        should.exist(err);
+        validator.validate('a@example.com', function (err) {
+            should.not.exist(err);
+            test.done();
+        });
+    });
+};

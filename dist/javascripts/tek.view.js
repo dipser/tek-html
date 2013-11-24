@@ -474,47 +474,29 @@
 		};
 		
 		
-		/**
-		 * form for ajax
-		 * @param callback
-		 * @param delay
-		 * @returns {*}
-		 */
-		$.fn.ajaxForm = function (callback, delay) {
-		    return $(this).each(function () {
-		            var form = $(this),
-		                action = form.attr('action'),
-		                method = form.attr('method');
-		            form.submit(function (e) {
-		                e.preventDefault();
-		                var timer = form.data('tk-submit-timer');
-		                if (timer) clearTimeout(timer);
-		                var value = form.getFormValue();
-		                form.showSpin(16)
-		                    .addClass('tk-loading');
-		                timer = setTimeout(function () {
-		                    $.ajax({
-		                        type: method,
-		                        url: action,
-		                        data: value.toObj(),
-		                        success: function (data) {
-		                            callback && callback.call(form, data);
-		                        },
-		                        complete: function () {
-		                            form
-		                                .removeClass('tk-loading')
-		                                .removeSpin();
+		$.fn.ajaxSubmit = function (callback) {
+		    var form = $(this),
+		        value = form.getFormValue(),
+		        action = form.attr('action'),
+		        method = form.attr('method');
+		    form.showSpin(16)
+		        .addClass('tk-loading');
+		    $.ajax({
+		        type: method,
+		        url: action,
+		        data: value.toObj(),
+		        success: function (data) {
+		            callback && callback.call(form, data);
+		        },
+		        complete: function () {
+		            form
+		                .removeClass('tk-loading')
+		                .removeSpin();
 		
-		                        }
-		                    });
-		                }, delay || 300);
-		                form.data('tk-submit-timer', timer);
-		            });
 		        }
-		    )
-		        ;
-		}
-		;
+		    });
+		};
+		
 		
 		
 		/**

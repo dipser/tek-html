@@ -128,6 +128,9 @@
 .tk-confirm-dialog .disabled:hover {
   background-image: none;
 }
+.tk-loading {
+  opacity: .5;
+}
 .tk-confirm-dialog-inner {
   position: relative;
   max-width: 400px;

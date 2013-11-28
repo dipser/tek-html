@@ -1,5 +1,0 @@
-//<h1>tek-style-clean.less-{{version}}</h1>
-
-@import "tek-mixin";
-
-{{contents}}

@@ -1,0 +1,99 @@
+@import "../../../../dist/stylesheets/tek-mixin";
+
+/*******************
+ * prefix
+ *******************/
+[class^="inline-"] {
+  display: inline-block;
+}
+
+[class^="block-"] {
+  display: block;
+}
+[class^="wide-"] {
+  width: 100%;
+  .box-sizing(border-box);
+}
+
+/*******************
+ * sizing
+ *******************/
+.border-box {
+  .box-sizing(border-box);
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+/*******************
+ *  mouse events
+ *******************/
+.unselectable {
+  .user-select(none);
+}
+
+.unpointable {
+  .pointer-events(none);
+}
+
+.grabbable {
+  .grabbable();
+}
+/*******************
+ *  positioning
+ *******************/
+.positioned {
+  position: relative;
+}
+
+.stick-left {
+  .stick-left(5px);
+}
+
+.stick-right {
+  .stick-right(5px);
+}
+
+.stick-top {
+  .stick-top(5px);
+}
+
+.stick-bottom {
+  .stick-bottom(5px);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.clear {
+  clear: both;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.cover {
+  .cover(101);
+}
+
+/******************
+ display
+*******************/
+.hidden {
+  display: none;
+}

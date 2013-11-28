@@ -1,0 +1,141 @@
+@import "../../../../dist/stylesheets/tek-mixin";
+@import "../../../../dist/stylesheets/tek-style";
+
+@back: #FEFEFE;
+@color: #555;
+@accent: #28407c;
+
+body {
+  background-color: @back;
+  color: @color;
+}
+
+.full-width {
+  width: 100%;
+  .box-sizing(border-box);
+}
+
+header {
+  position: fixed;
+  .full-width;
+  background-color: fadeout(@back, 10);
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid darken(@back, 10);
+  padding: 5px 10px;
+  z-index: 99;
+  a {
+    color: @color;
+  }
+}
+
+nav {
+}
+
+.nav-item {
+  padding: 0 5px;
+}
+
+.logo {
+
+}
+
+a {
+  .a(@accent);
+}
+
+article {
+  padding: 20px 4px;
+}
+
+.btn {
+  display: inline-block;
+  .text-center;
+  color: @color;
+  .border-radius(4px);
+  padding: 2px 4px;
+  margin: 4px 0;
+  border: 1px solid @color;
+  background-color: @back;
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #EEE;
+  }
+  &:active {
+    background-color: #999;
+    color:@white;
+  }
+}
+
+table {
+  @border: lighten(@color, 10);
+  border-collapse: collapse;
+  th, td {
+    border: 1px solid @border;
+    padding: 5px 10px;
+    &:first-child {
+      border-left: none;
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+  thead {
+    th {
+      border-top: none;
+    }
+  }
+}
+
+section{
+  padding: 5px 10px;
+}
+
+
+/******************
+ btn
+*******************/
+.ion-btn(@content) {
+  &:before {
+    .ion;
+    content: @content;
+    vertical-align: bottom;
+    margin: 0 2px;
+  }
+}
+.edit-btn {
+  .ion-btn("\f12c");
+}
+
+.destroy-btn {
+  .ion-btn("\f252");
+}
+
+.setting-btn {
+  .ion-btn("\f2ba");
+}
+
+.account-btn {
+  .ion-btn("\f213");
+}
+
+.search-btn {
+  .ion-btn("\f21f");
+}
+
+.signin-btn {
+  .ion-btn("\f29e");
+}
+
+.signout-btn {
+  .ion-btn("\f29f");
+}
+
+.email-btn {
+  .ion-btn("\f132");
+}
+
+.archive-btn {
+  .ion-btn("\f102");
+}

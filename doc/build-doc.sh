@@ -40,7 +40,7 @@ function generate_styledocco
 echo
 echo -- build doc start --
 
-generate_styledocco "tek-mixin.less tek-style-clean.less"
+generate_styledocco "tek-mixin.less"
 
 
 echo build-doc done!

@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.2.46
+ * @version v0.2.47
  * @author Taka Okunishi
- * @date 2013-11-24
+ * @date 2013-11-28
  *
  */
 (function (dependencies, window, undefined) {
@@ -498,7 +498,6 @@
 		};
 		
 		
-		
 		/**
 		 * render text input as editable-text
 		 * @param trigger
@@ -909,10 +908,16 @@
 		 * make table sortable by click th in thead
 		 * @returns {*|jQuery|HTMLElement}
 		 */
-		$.fn.sortableTable = function (callback) {
+		$.fn.sortableTable = function (callback, sorter) {
 		    var table = $(this),
 		        thead = table.find('thead'),
 		        tbody = table.find('tbody');
+		
+		    if (!sorter) {
+		        sorter = function (v1, v2, col) {
+		            return v1.localeCompare(v2);
+		        };
+		    }
 		
 		    var bodyTr = tbody.find('tr');
 		
@@ -957,7 +962,7 @@
 		                            var $2 = $(b);
 		                            var v1 = $1.data('tk-sort-value'),
 		                                v2 = $2.data('tk-sort-value');
-		                            var sorted = v1.localeCompare(v2) * (asc ? 1 : -1);
+		                            var sorted = sorter(v1, v2, col) * (asc ? 1 : -1);
 		                            if (sorted) {
 		                                return  sorted;
 		                            } else {

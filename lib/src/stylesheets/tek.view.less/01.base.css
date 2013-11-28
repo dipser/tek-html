@@ -487,3 +487,6 @@
 .tk-slide-menu.tk-slide-menu-opened .tk-slide-menu-close-btn {
   display: inline-block;
 }
+.tk-pre {
+  white-space: pre;
+}

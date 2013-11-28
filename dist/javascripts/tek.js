@@ -1,10 +1,10 @@
 /**
  * tek.js
  * - javascript library for tek -
- * @version v0.2.46
+ * @version v0.2.47
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-24
+ * @date 2013-11-28
  */
 (function (tek) {
     
@@ -825,32 +825,6 @@
 	    });
 	    tek.copy(Validator, Defined);
 	    return  Defined;
-	};
-	
-	/**
-	 * validate all
-	 * @param validators
-	 * @param value
-	 * @param callback
-	 */
-	Validator.validateAll = function (validators, value, callback) {
-	    var validator = validators.pop();
-	    if (validator) {
-	        Validator.validateAll(validators, value, function (errors) {
-	            var isEmpty = Validator.isEmpty(value),
-	                skip = isEmpty && validator.skipIfEmpty;
-	            if (skip) {
-	                callback(errors);
-	                return;
-	            }
-	            validator.validate(value, function (err) {
-	                if (err) errors.push(err);
-	                callback(errors);
-	            });
-	        });
-	    } else {
-	        callback([]);
-	    }
 	};
 	
 	/**

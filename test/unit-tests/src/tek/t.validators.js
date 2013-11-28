@@ -122,16 +122,6 @@ exports.ConformValidatorTest = function (test) {
 };
 
 
-exports.validateAllTest = function (test) {
-    validators.Validator.validateAll([
-        new validators.MaximumValidator(3),
-        new validators.TypeValidator('number')
-    ], 123, function (errors) {
-        errors.should.be.lengthOf(1);
-        test.done();
-    });
-};
-
 exports.FormatValidatorTest = function (test) {
     var validator = new validators.FormatValidator('email');
     validator.validate('123', function (err) {

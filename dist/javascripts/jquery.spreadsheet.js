@@ -1,10 +1,10 @@
 /**
- * jquery.spreadsheet.js v0.2.48
+ * jquery.spreadsheet.js v0.3.0
  * - jquery plugin to create spreadsheet -
- * @version v0.2.48
+ * @version v0.3.0
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-11-28
+ * @date 2013-11-29
  */
 (function (dependencies, undefined) {
 	

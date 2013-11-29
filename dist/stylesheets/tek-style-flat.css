@@ -442,7 +442,7 @@ section {
   border-bottom: none;
   display: inline-block;
   padding: 2px 8px;
-  margin: 0 0 -0.5px -1px;
+  margin: 0 0 -0.5px;
   position: relative;
   z-index: 1;
   opacity: .5;
@@ -461,9 +461,7 @@ section {
 }
 .tab-content {
   position: relative;
-  border-width: 1px 0;
-  border-style: solid;
-  border-color: #888888 transparent;
+  border-top: 1px solid #888888;
   padding: 4px 8px;
   z-index: 2;
   background-color: #fefefe;

@@ -31,21 +31,43 @@
             <br class="clear"/>
 
             <div class="field">
+                <label for="">username</label>
                 <input type="text"/>
             </div>
             <div class="field">
+                <label for="">password</label>
                 <input type="text"/>
             </div>
             <a class="wide-btn btn">save</a>
         </form>
     </section>
     <section>
-        <ul class="block-list">
-            <li>list-item 01</li>
-            <li>list-item 02</li>
-            <li>list-item 03</li>
-            <li>list-item 04</li>
+        <ul class="editable-list">
+            <li class="hoverable">
+                <span>editable list item</span>
+                <span class="stick-right stick-top hoverable-child">
+                    <a class="edit-btn" href="#"></a>
+                    <a class="destroy-btn" href="#"></a>
+                </span>
+            </li>
+            <li class="hoverable">
+                <form class="inline-form"><input type="text" placeholder="editable"/></form>
+                <span class="stick-right stick-top hoverable-child">
+                    <a class="edit-btn" href="#"></a>
+                    <a class="destroy-btn" href="#"></a>
+                </span>
+            </li>
+            <li class="hoverable">
+                <a href="#" class="cover">
+                </a>
+                    <span>editable list item with link</span>
+                <span class="stick-right stick-top hoverable-child">
+                    <a class="edit-btn" href="#"></a>
+                    <a class="destroy-btn" href="#"></a>
+                </span>
+            </li>
         </ul>
+        <a class="wide-btn btn" href="#">new</a>
     </section>
     <section>
         <table>
@@ -71,6 +93,15 @@
             </tr>
             </tbody>
         </table>
+    </section>
+    <section>
+        <label class="tab" for="tab-content0">tab0</label>
+        <label class="tab tab-active" for="tab-content1">tab1</label>
+
+        <div id="tab-content0" class="tab-content">
+            content01
+        </div>
+        <div id="tab-content1" class="tab-content"></div>
     </section>
 </article>
 <footer>

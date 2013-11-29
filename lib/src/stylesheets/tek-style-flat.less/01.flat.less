@@ -4,10 +4,12 @@
 @back: #FEFEFE;
 @color: #555;
 @accent: #28407c;
+@border: lighten(@color, 20);
 
 body {
   background-color: @back;
   color: @color;
+  padding-top: 8px;
 }
 
 .full-width {
@@ -22,7 +24,7 @@ header {
   left: 0;
   top: 0;
   border-bottom: 1px solid darken(@back, 10);
-  padding: 5px 10px;
+  padding: 4px 8px;
   z-index: 99;
   a {
     color: @color;
@@ -64,12 +66,11 @@ article {
   }
   &:active {
     background-color: #999;
-    color:@white;
+    color: @white;
   }
 }
 
 table {
-  @border: lighten(@color, 10);
   border-collapse: collapse;
   th, td {
     border: 1px solid @border;
@@ -88,10 +89,60 @@ table {
   }
 }
 
-section{
+section {
   padding: 5px 10px;
 }
 
+.editable-list {
+  border-top: 1px solid @border;
+  li {
+    list-style: none;
+    border-top: 1px solid @border;
+    position: relative;
+    padding: 4px 8px;
+    .stick-top {
+      top: 4px;
+    }
+    .cover{
+      width:80%;
+    }
+  }
+  border-bottom: 1px solid @border;
+  padding: 0;
+}
+
+.tab {
+  background-color: @back;
+  border: 1px solid @border;
+  border-bottom: none;
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 0 0 -.5px;
+  position: relative;
+  z-index: 1;
+  opacity: .5;
+  &:first-child {
+    margin-left: 8px;
+  }
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.tab-active,
+.tab-active:hover,
+.tab-active:active {
+  z-index: 3;
+  opacity: 1;
+}
+
+.tab-content {
+  position: relative;
+  border-top: 1px solid @border;
+  padding: 4px 8px;
+  z-index: 2;
+  background-color: @back;
+}
 
 /******************
  btn
@@ -104,6 +155,7 @@ section{
     margin: 0 2px;
   }
 }
+
 .edit-btn {
   .ion-btn("\f12c");
 }

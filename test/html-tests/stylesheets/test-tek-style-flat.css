@@ -190,19 +190,19 @@
 }
 .stick-left {
   position: absolute;
-  left: 5px;
+  left: 0;
 }
 .stick-right {
   position: absolute;
-  right: 5px;
+  right: 0;
 }
 .stick-top {
   position: absolute;
-  top: 5px;
+  top: 0;
 }
 .stick-bottom {
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
 }
 .text-right {
   text-align: right;
@@ -243,9 +243,16 @@
 .hidden {
   display: none;
 }
+.hoverable .hoverable-child {
+  opacity: .5;
+}
+.hoverable:hover .hoverable-child {
+  opacity: 1;
+}
 body {
   background-color: #fefefe;
   color: #555555;
+  padding-top: 8px;
 }
 .full-width {
   width: 100%;
@@ -267,7 +274,7 @@ header {
   left: 0;
   top: 0;
   border-bottom: 1px solid #e5e5e5;
-  padding: 5px 10px;
+  padding: 4px 8px;
   z-index: 99;
 }
 header a {
@@ -314,7 +321,7 @@ table {
 }
 table th,
 table td {
-  border: 1px solid #6f6f6f;
+  border: 1px solid #888888;
   padding: 5px 10px;
 }
 table th:first-child,
@@ -330,6 +337,53 @@ table thead th {
 }
 section {
   padding: 5px 10px;
+}
+.editable-list {
+  border-top: 1px solid #888888;
+  border-bottom: 1px solid #888888;
+  padding: 0;
+}
+.editable-list li {
+  list-style: none;
+  border-top: 1px solid #888888;
+  position: relative;
+  padding: 4px 8px;
+}
+.editable-list li .stick-top {
+  top: 4px;
+}
+.editable-list li .cover {
+  width: 80%;
+}
+.tab {
+  background-color: #fefefe;
+  border: 1px solid #888888;
+  border-bottom: none;
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 0 0 -0.5px;
+  position: relative;
+  z-index: 1;
+  opacity: .5;
+}
+.tab:first-child {
+  margin-left: 8px;
+}
+.tab:hover {
+  opacity: .8;
+}
+.tab-active,
+.tab-active:hover,
+.tab-active:active {
+  z-index: 3;
+  opacity: 1;
+}
+.tab-content {
+  position: relative;
+  border-top: 1px solid #888888;
+  padding: 4px 8px;
+  z-index: 2;
+  background-color: #fefefe;
 }
 /******************
  btn

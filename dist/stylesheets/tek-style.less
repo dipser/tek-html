@@ -71,20 +71,21 @@
   position: relative;
 }
 
+@stick:0;
 .stick-left {
-  .stick-left(5px);
+  .stick-left(@stick);
 }
 
 .stick-right {
-  .stick-right(5px);
+  .stick-right(@stick);
 }
 
 .stick-top {
-  .stick-top(5px);
+  .stick-top(@stick);
 }
 
 .stick-bottom {
-  .stick-bottom(5px);
+  .stick-bottom(@stick);
 }
 
 .text-right {
@@ -120,4 +121,15 @@
 *******************/
 .hidden {
   display: none;
+}
+
+.hoverable{
+  .hoverable-child{
+    opacity: .5;
+  }
+  &:hover{
+    .hoverable-child{
+      opacity: 1;
+    }
+  }
 }

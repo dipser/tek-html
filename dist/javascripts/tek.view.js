@@ -3,7 +3,7 @@
  * - javascript library for tek -
  * @version v0.3.5
  * @author Taka Okunishi
- * @date 2013-11-29
+ * @date 2013-11-30
  *
  */
 (function (dependencies, window, undefined) {

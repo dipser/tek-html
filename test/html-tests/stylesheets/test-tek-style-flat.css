@@ -371,7 +371,7 @@ header a {
   padding: 0 5px;
 }
 a {
-  color: #28407c;
+  color: #294c95;
   text-decoration: none;
 }
 a:hover {
@@ -496,7 +496,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f12c";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .destroy-btn:before {
@@ -512,7 +512,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f252";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .setting-btn:before {
@@ -528,7 +528,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f2ba";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .account-btn:before {
@@ -544,7 +544,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f213";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .search-btn:before {
@@ -560,7 +560,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f21f";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .signin-btn:before {
@@ -576,7 +576,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f29e";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .signout-btn:before {
@@ -592,7 +592,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f29f";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .email-btn:before {
@@ -608,7 +608,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f132";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .archive-btn:before {
@@ -624,7 +624,7 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f102";
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0 2px;
 }
 .refresh-btn:before {
@@ -640,7 +640,23 @@ section {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f21c";
-  vertical-align: bottom;
+  vertical-align: baseline;
+  margin: 0 2px;
+}
+.close-btn:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f129";
+  vertical-align: baseline;
   margin: 0 2px;
 }
 /******************
@@ -652,6 +668,7 @@ section {
 .err-input[type='tel'],
 .err-input[type='password'] {
   border: 1px solid #eb7171;
+  outline-color: #eb7171;
 }
 .err-msg {
   color: #eb7171;
@@ -660,7 +677,7 @@ section {
  alert
 *******************/
 .err-alert {
-  padding: 5px 10px;
+  padding: 4px 8px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -675,7 +692,7 @@ section {
   color: #e54444;
   opacity: .25;
   position: relative;
-  padding: 0 2px;
+  padding: 1px 0;
   font-weight: bolder;
 }
 .err-alert .close-btn:hover {
@@ -683,7 +700,7 @@ section {
   opacity: 1;
 }
 .warn-alert {
-  padding: 5px 10px;
+  padding: 4px 8px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -698,7 +715,7 @@ section {
   color: #e4cc56;
   opacity: .25;
   position: relative;
-  padding: 0 2px;
+  padding: 1px 0;
   font-weight: bolder;
 }
 .warn-alert .close-btn:hover {
@@ -706,7 +723,7 @@ section {
   opacity: 1;
 }
 .info-alert {
-  padding: 5px 10px;
+  padding: 4px 8px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -721,7 +738,7 @@ section {
   color: #844ee4;
   opacity: .25;
   position: relative;
-  padding: 0 2px;
+  padding: 1px 0;
   font-weight: bolder;
 }
 .info-alert .close-btn:hover {

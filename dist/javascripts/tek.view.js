@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.3.4
+ * @version v0.3.5
  * @author Taka Okunishi
  * @date 2013-11-29
  *
@@ -1136,7 +1136,9 @@
 		        closeBtn.click(function () {
 		            menu.close(options.duration);
 		        });
-		        menu.close(0);
+		        setTimeout(function () {
+		            menu.close(0);
+		        }, 2);
 		    });
 		};
 	})(dependencies, undefined);

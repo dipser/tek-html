@@ -358,6 +358,12 @@ header {
   padding: 4px 20px;
   z-index: 99;
 }
+header .logo {
+  opacity: .75;
+}
+header .logo:hover {
+  text-decoration: none;
+}
 header a {
   color: #555555;
 }
@@ -397,6 +403,11 @@ article {
 .btn:active {
   background-color: #999;
   color: #ffffff;
+}
+input,
+select,
+a {
+  outline-color: #a0f0ff;
 }
 table {
   border-collapse: collapse;

@@ -8,6 +8,7 @@
 @err: #EB7171;
 @info: #a37aeb;
 @warn: #ebd982;
+@outline:#A0F0FF;
 
 body {
   background-color: @back;
@@ -86,6 +87,10 @@ article {
     background-color: #999;
     color: @white;
   }
+}
+
+input,select,a{
+  outline-color: @outline;
 }
 
 table {
@@ -265,3 +270,5 @@ section {
 .info-alert {
   .alert(@info);
 }
+
+

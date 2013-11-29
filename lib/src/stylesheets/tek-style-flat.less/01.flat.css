@@ -404,6 +404,11 @@ article {
   background-color: #999;
   color: #ffffff;
 }
+input,
+select,
+a {
+  outline-color: #a0f0ff;
+}
 table {
   border-collapse: collapse;
 }

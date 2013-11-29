@@ -1,4 +1,4 @@
-//<h1>tek-style-flat-0.3.3</h1>
+//<h1>tek-style-flat-0.3.4</h1>
 @import "tek-mixin";
 @import "tek-style.less";
 
@@ -10,6 +10,7 @@
 @err: #EB7171;
 @info: #a37aeb;
 @warn: #ebd982;
+@outline:#A0F0FF;
 
 body {
   background-color: @back;
@@ -39,6 +40,12 @@ header {
   border-bottom: 1px solid darken(@back, 10);
   padding: 4px 20px;
   z-index: 99;
+  .logo{
+    opacity: .75;
+    &:hover{
+      text-decoration: none;
+    }
+  }
   a {
     color: @color;
   }
@@ -82,6 +89,10 @@ article {
     background-color: #999;
     color: @white;
   }
+}
+
+input,select,a{
+  outline-color: @outline;
 }
 
 table {
@@ -261,3 +272,5 @@ section {
 .info-alert {
   .alert(@info);
 }
+
+

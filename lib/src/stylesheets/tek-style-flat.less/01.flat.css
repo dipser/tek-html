@@ -376,6 +376,7 @@ article {
 }
 .btn {
   display: inline-block;
+  font-family: inherit;
   text-align: center;
   color: #555555;
   -webkit-border-radius: 4px;
@@ -461,8 +462,10 @@ section {
 }
 .tab-content {
   position: relative;
-  border-top: 1px solid #888888;
-  padding: 4px 8px;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #888888 transparent;
+  padding: 10px 8px;
   z-index: 2;
   background-color: #fefefe;
 }
@@ -613,6 +616,22 @@ section {
   vertical-align: bottom;
   margin: 0 2px;
 }
+.refresh-btn:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f21c";
+  vertical-align: bottom;
+  margin: 0 2px;
+}
 /******************
  err
 *******************/
@@ -638,7 +657,7 @@ section {
   border-radius: 4px;
   border: 1px solid #eb7171;
   color: #e54444;
-  margin: 4px 8px;
+  margin: 4px 0;
   background-color: #ffffff;
 }
 .err-alert .close-btn {
@@ -661,7 +680,7 @@ section {
   border-radius: 4px;
   border: 1px solid #ebd982;
   color: #e4cc56;
-  margin: 4px 8px;
+  margin: 4px 0;
   background-color: #ffffff;
 }
 .warn-alert .close-btn {
@@ -684,7 +703,7 @@ section {
   border-radius: 4px;
   border: 1px solid #a37aeb;
   color: #844ee4;
-  margin: 4px 8px;
+  margin: 4px 0;
   background-color: #ffffff;
 }
 .info-alert .close-btn {

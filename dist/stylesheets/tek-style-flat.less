@@ -65,6 +65,7 @@ article {
 
 .btn {
   display: inline-block;
+  font-family: inherit;
   .text-center;
   color: @color;
   .border-radius(4px);
@@ -151,8 +152,10 @@ section {
 
 .tab-content {
   position: relative;
-  border-top: 1px solid @border;
-  padding: 4px 8px;
+  border-width:1px 0;
+  border-style: solid;
+  border-color:@border transparent;
+  padding: 10px 8px;
   z-index: 2;
   background-color: @back;
 }
@@ -204,7 +207,9 @@ section {
 .archive-btn {
   .ion-btn("\f102");
 }
-
+.refresh-btn{
+  .ion-btn("\f21c");
+}
 /******************
  err
 *******************/
@@ -230,7 +235,7 @@ section {
   .border-radius(4px);
   border: 1px solid @color;
   color: darken(@color, 10);
-  margin: 4px 8px;
+  margin: 4px 0;
   background-color: @white;
   .close-btn{
     color:darken(@color, 10);

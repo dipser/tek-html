@@ -355,8 +355,14 @@ header {
   left: 0;
   top: 0;
   border-bottom: 1px solid #e5e5e5;
-  padding: 4px 8px;
+  padding: 4px 20px;
   z-index: 99;
+}
+header .logo {
+  opacity: .75;
+}
+header .logo:hover {
+  text-decoration: none;
 }
 header a {
   color: #555555;

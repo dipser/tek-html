@@ -130,7 +130,7 @@ section {
   border-bottom: none;
   display: inline-block;
   padding: 2px 8px;
-  margin: 0 0 -.5px;
+  margin: 0 0 -.5px -1px;
   position: relative;
   z-index: 1;
   opacity: .5;
@@ -151,7 +151,9 @@ section {
 
 .tab-content {
   position: relative;
-  border-top: 1px solid @border;
+  border-width:1px 0;
+  border-style: solid;
+  border-color:@border transparent;
   padding: 4px 8px;
   z-index: 2;
   background-color: @back;

@@ -16,6 +16,20 @@
 </header>
 <article>
     <section>
+        <div class="err-alert">
+            something wrong happened
+            <a class="close-btn float-right" href="">&times;</a>
+        </div>
+        <div class="info-alert">
+            operation success
+            <a class="close-btn float-right" href="">&times;</a>
+        </div>
+        <div class="warn-alert">
+            have to do something
+            <a class="close-btn float-right" href="">&times;</a>
+        </div>
+    </section>
+    <section>
         <a class="signin-btn" href="#">signin</a>
         <a class="signout-btn" href="#">signout</a>
         <a class="email-btn" href="#">email</a>
@@ -81,7 +95,10 @@
             <tbody>
             <tr>
                 <th><label for="">input label1</label></th>
-                <td><input type="text"/></td>
+                <td>
+                    <div class="err-msg">name is required</div>
+                    <input type="text" class="err-input"/>
+                </td>
             </tr>
             <tr>
                 <th><label for="">input label2</label></th>
@@ -90,6 +107,24 @@
             <tr>
                 <th><label for="">input label2</label></th>
                 <td><input type="text"/></td>
+            </tr>
+            <tr>
+                <th><label for="">radio</label></th>
+                <td>
+                    <input type="radio" id="radio0" name="radio"/>
+                    <label for="radio0">radio0</label>
+                    <input type="radio" checked id="radio2" name="radio"/>
+                    <label for="radio2">radio2</label>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="">checkbox</label></th>
+                <td>
+                    <input type="checkbox" id="checkbox0"/>
+                    <label for="checkbox0">checkbox0</label>
+                    <input type="checkbox" checked id="checkbox2"/>
+                    <label for="checkbox2">checkbox2</label>
+                </td>
             </tr>
             </tbody>
         </table>

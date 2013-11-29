@@ -1,4 +1,4 @@
-//<h1>tek-style.less-0.3.0</h1>
+//<h1>tek-style.less-0.3.1</h1>
 @import "tek-mixin";
 @font-face {
   font-family: "Ionicons";
@@ -8,6 +8,28 @@
   font-style: normal;
 }
 
+//<h1>tek-style.less-0.2.48</h1>
+
+@font-face {
+  font-family: "Ionicons";
+  src: url("../fonts/ionicons.eot?v=1.3.6#iefix") format("embedded-opentype"), url("../fonts/ionicons.woff?v=1.3.6") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ion {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /*******************
  * prefix
@@ -19,6 +41,7 @@
 [class^="block-"] {
   display: block;
 }
+
 [class^="wide-"] {
   width: 100%;
   .box-sizing(border-box);
@@ -49,6 +72,7 @@
 .grabbable {
   .grabbable();
 }
+
 /*******************
  *  positioning
  *******************/
@@ -56,20 +80,21 @@
   position: relative;
 }
 
+@stick:0;
 .stick-left {
-  .stick-left(5px);
+  .stick-left(@stick);
 }
 
 .stick-right {
-  .stick-right(5px);
+  .stick-right(@stick);
 }
 
 .stick-top {
-  .stick-top(5px);
+  .stick-top(@stick);
 }
 
 .stick-bottom {
-  .stick-bottom(5px);
+  .stick-bottom(@stick);
 }
 
 .text-right {
@@ -105,4 +130,15 @@
 *******************/
 .hidden {
   display: none;
+}
+
+.hoverable{
+  .hoverable-child{
+    opacity: .5;
+  }
+  &:hover{
+    .hoverable-child{
+      opacity: 1;
+    }
+  }
 }

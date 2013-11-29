@@ -5,11 +5,22 @@
 @color: #555;
 @accent: #28407c;
 @border: lighten(@color, 20);
+@err: #EB7171;
+@info: #a37aeb;
+@warn: #ebd982;
 
 body {
   background-color: @back;
   color: @color;
   padding-top: 8px;
+  .checkbox-radio-style(darken(@back,5), @color);
+  [type="radio"], [type="checkbox"]{
+    label{
+      &:before{
+        border:1px solid darken(@back, 20);
+      }
+    }
+  }
 }
 
 .full-width {
@@ -103,8 +114,8 @@ section {
     .stick-top {
       top: 4px;
     }
-    .cover{
-      width:80%;
+    .cover {
+      width: 80%;
     }
   }
   border-bottom: 1px solid @border;
@@ -190,4 +201,56 @@ section {
 
 .archive-btn {
   .ion-btn("\f102");
+}
+
+/******************
+ err
+*******************/
+.err-input {
+  &[type='text'],
+  &[type='url'],
+  &[type='search'],
+  &[type='tel'],
+  &[type='password'] {
+    border: 1px solid @err;
+  }
+}
+
+.err-msg {
+  color: @err;
+}
+
+/******************
+ alert
+*******************/
+.alert(@color) {
+  padding: 5px 10px;
+  .border-radius(4px);
+  border: 1px solid @color;
+  color: darken(@color, 10);
+  margin: 4px 8px;
+  background-color: @white;
+  .close-btn{
+    color:darken(@color, 10);
+    opacity: .25;
+    position: relative;
+    padding: 0 2px;
+    font-weight: bolder;
+    &:hover{
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
+}
+
+.err-alert {
+  .alert(@err);
+}
+
+.warn-alert {
+  .alert(@warn);
+}
+
+.info-alert {
+  .alert(@info);
 }

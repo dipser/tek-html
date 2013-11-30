@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.3.8
+ * @version v0.3.9
  * @author Taka Okunishi
  * @date 2013-11-30
  *
@@ -346,7 +346,10 @@
 		 * @param namespace
 		 */
 		$.fn.setFormValue = function (values, namespace) {
-		    var form = $(this);
+		    var form = $(this).each(function () {
+		        var form = $(this)[0];
+		        form.reset && form.reset();
+		    });
 		    for (var name in values) {
 		        if (!values.hasOwnProperty(name)) continue;
 		        if (namespace) name = [namespace, name].join('.');

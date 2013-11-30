@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.3.9
+ * @version v0.3.10
  * @author Taka Okunishi
  * @date 2013-11-30
  *
@@ -596,7 +596,7 @@
 		/**
 		 * add open-up animation
 		 */
-		$.fn.openUp = function () {
+		$.fn.openUp = function (duration, callback) {
 		    var elm = $(this),
 		        height = elm.height();
 		    elm
@@ -604,8 +604,9 @@
 		        .height(0)
 		        .animate({
 		            height: height
-		        }, function () {
+		        }, duration, function () {
 		            elm.removeAttr('style');
+		            callback && callback();
 		        });
 		};
 		
@@ -613,16 +614,17 @@
 		/**
 		 * add close-down animation
 		 */
-		$.fn.closeDown = function () {
+		$.fn.closeDown = function (duration, callback) {
 		    var elm = $(this);
 		    elm.animate({
 		        height: 0,
 		        paddingTop: 0,
 		        paddingBottom: 0
-		    }, function () {
+		    }, duration, function () {
 		        elm
 		            .removeAttr('style')
 		            .hide();
+		        callback && callback();
 		    });
 		};
 		
@@ -778,19 +780,19 @@
 		    if (spy.data('tk-spy')) return spy;
 		    spy
 		        .addClass('tk-spy')
-		        .hide();
+		        .addClass('tk-spy-hidden');
 		    spy.on = function () {
 		        spy
-		            .show()
+		            .removeClass('tk-spy-hidden')
 		            .data('tk-spy-active', true);
 		    };
 		    spy.off = function () {
 		        spy
-		            .hide()
+		            .addClass('tk-spy-hidden')
 		            .data('tk-spy-active', false);
 		    };
 		    win.scroll(function () {
-		        var showSpy = elm.height() + elm.offset().top < win.scrollTop();
+		        var showSpy = elm.outerHeight() + elm.offset().top < win.scrollTop();
 		        var active = spy.data('tk-spy-active');
 		        if (active) {
 		            (!showSpy) && spy.off();

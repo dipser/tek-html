@@ -1,7 +1,7 @@
 /**
- * jquery.spreadsheet.js v0.3.6
+ * jquery.spreadsheet.js v0.3.7
  * - jquery plugin to create spreadsheet -
- * @version v0.3.6
+ * @version v0.3.7
  * @author Taka Okunishi
  * @license MIT
  * @date 2013-11-30

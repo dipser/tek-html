@@ -225,5 +225,10 @@
             ok($('.tk-slide-menu-close-btn').is(':hidden'));
             ok($('.tk-slide-menu-open-btn').is(':visible'));
         });
+
+        test('$.fn.dialog', function(){
+            $('#section02').dialog();
+            ok(true);
+        })
     });
 })(jQuery);

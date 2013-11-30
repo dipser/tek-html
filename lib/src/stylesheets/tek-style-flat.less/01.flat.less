@@ -75,7 +75,7 @@ article {
   color: @color;
   .border-radius(4px);
   padding: 2px 4px;
-  margin: 4px 0;
+  margin: 8px 0;
   border: 1px solid @color;
   background-color: @back;
   &:hover {
@@ -221,6 +221,7 @@ section {
 }
 .close-btn{
   .ion-btn("\f129");
+  color:darken(@back, 30);
 }
 
 /******************
@@ -274,6 +275,14 @@ section {
 
 .info-alert {
   .alert(@info);
+}
+
+
+/****************
+  dialog
+ ****************/
+.dialog{
+  background-color: rgba(228, 228, 228, 0.9);
 }
 
 

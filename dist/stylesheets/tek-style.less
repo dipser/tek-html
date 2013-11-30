@@ -1,4 +1,4 @@
-//<h1>tek-style.less-0.3.6</h1>
+//<h1>tek-style.less-0.3.7</h1>
 @import "tek-mixin";
 @font-face {
   font-family: "Ionicons";
@@ -140,5 +140,23 @@
     .hoverable-child{
       opacity: 1;
     }
+  }
+}
+
+
+.dialog{
+  .cover();
+  .box-sizing(border-box);
+  background-color: fadeout(gray, 50);
+}
+.dialog-inner{
+  margin: 10% auto;
+  padding: 10px;
+  display: inline-block;
+  background-color: white;
+  position: relative;
+  .close-btn{
+    top:4px;
+    right:8px;
   }
 }

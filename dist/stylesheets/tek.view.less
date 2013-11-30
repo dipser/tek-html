@@ -1,4 +1,4 @@
-//<h1>tek.view.less-0.3.6</h1>
+//<h1>tek.view.less-0.3.7</h1>
 //stylesheet for tek.view
 @import "tek-mixin";
 
@@ -7,6 +7,8 @@
 @highlight: lighten(@blue, 5);
 @color: #666666;
 @err: #FE5454;
+
+.tk-dialog,
 .tk-confirm-dialog {
   .black-cover();
   color: @color;
@@ -21,9 +23,11 @@
     }
   }
 }
-.tk-loading{
+
+.tk-loading {
   opacity: .5;
 }
+
 .tk-dialog-inner() {
   position: relative;
   max-width: 400px;
@@ -34,7 +38,7 @@
   .box-shadow(4px 4px 8px, 0.5);
   padding: 15px 20px;
 }
-
+.tk-dialog-inner,
 .tk-confirm-dialog-inner {
   .tk-dialog-inner();
 }
@@ -53,7 +57,7 @@
     background-image: none;
   }
 }
-
+.tk-dialog-close-btn,
 .tk-confirm-dialog-close-btn {
   .remove-btn();
 }
@@ -263,11 +267,11 @@
   overflow-x: hidden;
   display: inline-block;
   white-space: nowrap;
-  .tk-slide-menu-content{
+  .tk-slide-menu-content {
     display: inline-block;
     white-space: nowrap;
   }
-  .tk-slide-menu-inner{
+  .tk-slide-menu-inner {
     position: relative;
   }
   .tk-slide-menu-open-btn {
@@ -286,6 +290,7 @@
   }
 }
 
-.tk-pre{
+.tk-pre {
   white-space: pre;
 }
+

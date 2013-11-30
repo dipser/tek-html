@@ -455,9 +455,6 @@ table td:last-child {
 table thead th {
   border-top: none;
 }
-section {
-  padding: 5px 10px;
-}
 .editable-list {
   border-top: 1px solid #888888;
   border-bottom: 1px solid #888888;

@@ -229,6 +229,7 @@
   position: absolute;
   right: 5px;
   text-decoration: none;
+  line-height: 1em;
 }
 .tk-dialog-close-btn:hover,
 .tk-confirm-dialog-close-btn:hover {

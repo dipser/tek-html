@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.3.12
+ * @version v0.3.13
  * @author Taka Okunishi
  * @date 2013-12-01
  *
@@ -537,24 +537,23 @@
 		                }
 		            })
 		            .on('tk-editable-text-edit', function () {
-		                input.show();
+		                input.removeClass('tk-hidden');
 		                setTimeout(function () {
 		                    var focused = $('.tk-editable-text').filter(':focus').size();
 		                    if (!focused) {
 		                        input.last().focus().select();
 		                    }
 		                }, 20);
-		                label.hide();
+		                label.addClass('tk-hidden');
 		            })
 		            .on('tk-editable-text-fix', function () {
 		                var val = input.val();
-		                input.hide();
-		                label.text(val).show();
+		                input.addClass('tk-hidden');
+		                label.text(val).removeClass('tk-hidden');
 		            })
 		            .change(function () {
 		                input.trigger('tk-editable-text-fix');
 		            });
-		        if (input.val()) input.change();
 		    });
 		};
 		

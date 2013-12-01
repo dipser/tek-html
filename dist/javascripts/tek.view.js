@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.3.15
+ * @version v0.3.17
  * @author Taka Okunishi
  * @date 2013-12-01
  *
@@ -370,6 +370,7 @@
 		        }
 		
 		    }
+		    return form;
 		};
 		
 		
@@ -516,7 +517,7 @@
 		        input.data('tk-editable-text', true);
 		        input.addClass('tk-editable-text');
 		        var label = input.next('.tk-editable-label');
-		        if (label.length) {
+		        if (!label.length) {
 		            label = input.after(tmpl({})).next('.tk-editable-label');
 		        }
 		        label

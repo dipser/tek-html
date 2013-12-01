@@ -3,7 +3,7 @@
  * - javascript library for tek -
  * @version v0.3.10
  * @author Taka Okunishi
- * @date 2013-11-30
+ * @date 2013-12-01
  *
  */
 (function (dependencies, window, undefined) {
@@ -784,12 +784,14 @@
 		    spy.on = function () {
 		        spy
 		            .removeClass('tk-spy-hidden')
-		            .data('tk-spy-active', true);
+		            .data('tk-spy-active', true)
+		            .trigger('tk-spy-on');
 		    };
 		    spy.off = function () {
 		        spy
 		            .addClass('tk-spy-hidden')
-		            .data('tk-spy-active', false);
+		            .data('tk-spy-active', false)
+		            .trigger('tk-spy-off');
 		    };
 		    win.scroll(function () {
 		        var showSpy = elm.outerHeight() + elm.offset().top < win.scrollTop();

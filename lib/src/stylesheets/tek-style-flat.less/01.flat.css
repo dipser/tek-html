@@ -285,7 +285,7 @@
 }
 body {
   background-color: #fefefe;
-  color: #555555;
+  color: #606060;
   padding-top: 8px;
 }
 body [type="checkbox"],
@@ -317,7 +317,7 @@ body [type="checkbox"] + label:after,
 body [type="radio"] + label:after {
   width: 6px;
   height: 6px;
-  background-color: #555555;
+  background-color: #606060;
   display: inline-block;
   content: '';
   bottom: 6.5px;
@@ -353,7 +353,7 @@ body [type="checkbox"] + label:after {
   width: 2px;
   height: 5px;
   left: 10px;
-  border: 2px solid #555555;
+  border: 2px solid #606060;
   border-top: none;
   border-left: none;
   background-color: transparent;
@@ -392,7 +392,7 @@ header .logo:hover {
   text-decoration: none;
 }
 header a {
-  color: #555555;
+  color: #606060;
 }
 .nav-item {
   padding: 0 5px;
@@ -411,7 +411,7 @@ article {
   display: inline-block;
   font-family: inherit;
   text-align: center;
-  color: #555555;
+  color: #606060;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -419,7 +419,7 @@ article {
   border-radius: 4px;
   padding: 2px 4px;
   margin: 8px 0;
-  border: 1px solid #555555;
+  border: 1px solid #606060;
   background-color: #fefefe;
 }
 .btn:hover {
@@ -441,7 +441,7 @@ table {
 }
 table th,
 table td {
-  border: 1px solid #888888;
+  border: 1px solid #b9b9b9;
   padding: 5px 10px;
 }
 table th:first-child,
@@ -456,13 +456,13 @@ table thead th {
   border-top: none;
 }
 .editable-list {
-  border-top: 1px solid #888888;
-  border-bottom: 1px solid #888888;
+  border-top: 1px solid #b9b9b9;
+  border-bottom: 1px solid #b9b9b9;
   padding: 0;
 }
 .editable-list li {
   list-style: none;
-  border-top: 1px solid #888888;
+  border-top: 1px solid #b9b9b9;
   position: relative;
   padding: 4px 8px;
 }
@@ -474,7 +474,7 @@ table thead th {
 }
 .tab {
   background-color: #fefefe;
-  border: 1px solid #888888;
+  border: 1px solid #b9b9b9;
   border-bottom: none;
   display: inline-block;
   padding: 2px 8px;
@@ -499,7 +499,7 @@ table thead th {
   position: relative;
   border-width: 1px 0;
   border-style: solid;
-  border-color: #888888 transparent;
+  border-color: #b9b9b9 transparent;
   padding: 10px 8px;
   z-index: 2;
   background-color: #fefefe;

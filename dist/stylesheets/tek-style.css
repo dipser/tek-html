@@ -133,13 +133,16 @@
 /*******************
  * prefix
  *******************/
-[class^="inline-"] {
+[class^="inline-"],
+[class*=" inline-"] {
   display: inline-block;
 }
-[class^="block-"] {
+[class^="block-"],
+[class*=" block-"] {
   display: block;
 }
-[class^="wide-"] {
+[class^="wide-"],
+[class*=" wide-"] {
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

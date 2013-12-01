@@ -1,7 +1,7 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.3.13
+ * @version v0.3.15
  * @author Taka Okunishi
  * @date 2013-12-01
  *
@@ -515,7 +515,11 @@
 		        if (input.data('tk-editable-text')) return;
 		        input.data('tk-editable-text', true);
 		        input.addClass('tk-editable-text');
-		        var label = $(tmpl({})).insertAfter(input)
+		        var label = input.next('.tk-editable-label');
+		        if (label.length) {
+		            label = input.after(tmpl({})).next('.tk-editable-label');
+		        }
+		        label
 		            .on(trigger, function () {
 		                input.trigger('tk-editable-text-edit');
 		            });
@@ -536,7 +540,7 @@
 		                        break;
 		                }
 		            })
-		            .on('tk-editable-text-edit', function () {
+		            .on('tk-editable-text-edit', function (e) {
 		                input.removeClass('tk-hidden');
 		                setTimeout(function () {
 		                    var focused = $('.tk-editable-text').filter(':focus').size();
@@ -545,11 +549,13 @@
 		                    }
 		                }, 20);
 		                label.addClass('tk-hidden');
+		                e.stopPropagation();
 		            })
-		            .on('tk-editable-text-fix', function () {
+		            .on('tk-editable-text-fix', function (e) {
 		                var val = input.val();
 		                input.addClass('tk-hidden');
 		                label.text(val).removeClass('tk-hidden');
+		                e.stopPropagation();
 		            })
 		            .change(function () {
 		                input.trigger('tk-editable-text-fix');

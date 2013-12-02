@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.3.17
+ * @version v0.3.19
  * @author Taka Okunishi
- * @date 2013-12-02
+ * @date 2013-12-03
  *
  */
 (function (dependencies, window, undefined) {
@@ -611,7 +611,7 @@
 		            height: height
 		        }, duration, function () {
 		            elm.removeAttr('style');
-		            callback && callback();
+		            callback && callback.call(this);
 		        });
 		};
 		
@@ -629,7 +629,7 @@
 		        elm
 		            .removeAttr('style')
 		            .hide();
-		        callback && callback();
+		        callback && callback.call(this);
 		    });
 		};
 		

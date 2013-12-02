@@ -169,6 +169,7 @@ table {
  btn
 *******************/
 .ion-btn(@content) {
+  white-space: nowrap;
   &:before {
     .ion;
     content: @content;
@@ -231,7 +232,21 @@ table {
 .setting-btn{
   .ion-btn("\f13d");
 }
-
+.img-btn{
+  .ion-btn("\f147");
+}
+.view-btn{
+  .ion-btn("\f133");
+}
+.undo-btn{
+  .ion-btn("\f21e");
+}
+.redo-btn{
+  .ion-btn("\f13a");
+}
+.anchor-btn{
+  .ion-btn("\f1fe");
+}
 /******************
  err
 *******************/

@@ -510,6 +510,9 @@ table thead th {
 /******************
  btn
 *******************/
+.edit-btn {
+  white-space: nowrap;
+}
 .edit-btn:before {
   display: inline-block;
   font-family: "Ionicons";
@@ -525,6 +528,9 @@ table thead th {
   content: "\f12c";
   vertical-align: baseline;
   margin: 0 2px;
+}
+.destroy-btn {
+  white-space: nowrap;
 }
 .destroy-btn:before {
   display: inline-block;
@@ -542,6 +548,9 @@ table thead th {
   vertical-align: baseline;
   margin: 0 2px;
 }
+.setting-btn {
+  white-space: nowrap;
+}
 .setting-btn:before {
   display: inline-block;
   font-family: "Ionicons";
@@ -557,6 +566,9 @@ table thead th {
   content: "\f2ba";
   vertical-align: baseline;
   margin: 0 2px;
+}
+.account-btn {
+  white-space: nowrap;
 }
 .account-btn:before {
   display: inline-block;
@@ -574,6 +586,9 @@ table thead th {
   vertical-align: baseline;
   margin: 0 2px;
 }
+.search-btn {
+  white-space: nowrap;
+}
 .search-btn:before {
   display: inline-block;
   font-family: "Ionicons";
@@ -589,6 +604,9 @@ table thead th {
   content: "\f21f";
   vertical-align: baseline;
   margin: 0 2px;
+}
+.signin-btn {
+  white-space: nowrap;
 }
 .signin-btn:before {
   display: inline-block;
@@ -606,6 +624,9 @@ table thead th {
   vertical-align: baseline;
   margin: 0 2px;
 }
+.signout-btn {
+  white-space: nowrap;
+}
 .signout-btn:before {
   display: inline-block;
   font-family: "Ionicons";
@@ -621,6 +642,9 @@ table thead th {
   content: "\f29f";
   vertical-align: baseline;
   margin: 0 2px;
+}
+.email-btn {
+  white-space: nowrap;
 }
 .email-btn:before {
   display: inline-block;
@@ -638,6 +662,9 @@ table thead th {
   vertical-align: baseline;
   margin: 0 2px;
 }
+.archive-btn {
+  white-space: nowrap;
+}
 .archive-btn:before {
   display: inline-block;
   font-family: "Ionicons";
@@ -653,6 +680,9 @@ table thead th {
   content: "\f102";
   vertical-align: baseline;
   margin: 0 2px;
+}
+.refresh-btn {
+  white-space: nowrap;
 }
 .refresh-btn:before {
   display: inline-block;
@@ -671,6 +701,7 @@ table thead th {
   margin: 0 2px;
 }
 .close-btn {
+  white-space: nowrap;
   color: #b2b2b2;
 }
 .close-btn:before {
@@ -689,6 +720,9 @@ table thead th {
   vertical-align: baseline;
   margin: 0 2px;
 }
+.mypage-btn {
+  white-space: nowrap;
+}
 .mypage-btn:before {
   display: inline-block;
   font-family: "Ionicons";
@@ -704,6 +738,9 @@ table thead th {
   content: "\f127";
   vertical-align: baseline;
   margin: 0 2px;
+}
+.star-btn {
+  white-space: nowrap;
 }
 .star-btn:before {
   display: inline-block;
@@ -721,6 +758,9 @@ table thead th {
   vertical-align: baseline;
   margin: 0 2px;
 }
+.admin-btn {
+  white-space: nowrap;
+}
 .admin-btn:before {
   display: inline-block;
   font-family: "Ionicons";
@@ -737,6 +777,9 @@ table thead th {
   vertical-align: baseline;
   margin: 0 2px;
 }
+.setting-btn {
+  white-space: nowrap;
+}
 .setting-btn:before {
   display: inline-block;
   font-family: "Ionicons";
@@ -750,6 +793,101 @@ table thead th {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f13d";
+  vertical-align: baseline;
+  margin: 0 2px;
+}
+.img-btn {
+  white-space: nowrap;
+}
+.img-btn:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f147";
+  vertical-align: baseline;
+  margin: 0 2px;
+}
+.view-btn {
+  white-space: nowrap;
+}
+.view-btn:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f133";
+  vertical-align: baseline;
+  margin: 0 2px;
+}
+.undo-btn {
+  white-space: nowrap;
+}
+.undo-btn:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f21e";
+  vertical-align: baseline;
+  margin: 0 2px;
+}
+.redo-btn {
+  white-space: nowrap;
+}
+.redo-btn:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f13a";
+  vertical-align: baseline;
+  margin: 0 2px;
+}
+.anchor-btn {
+  white-space: nowrap;
+}
+.anchor-btn:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f1fe";
   vertical-align: baseline;
   margin: 0 2px;
 }

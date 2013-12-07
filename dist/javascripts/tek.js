@@ -4,7 +4,7 @@
  * @version v0.3.19
  * @author Taka Okunishi
  * @license MIT
- * @date 2013-12-03
+ * @date 2013-12-07
  */
 (function (tek) {
     

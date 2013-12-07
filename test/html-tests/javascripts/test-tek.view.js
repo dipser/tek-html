@@ -31,7 +31,6 @@
             strictEqual(values['text04'], "0");
 
             var obj = values.toObj();
-            console.log(obj);
 
             ok(!values['undefined']);
         });
@@ -226,9 +225,29 @@
             ok($('.tk-slide-menu-open-btn').is(':visible'));
         });
 
-        test('$.fn.dialog', function(){
-            $('#section02').dialog();
-            ok(true);
-        })
+//        test('$.fn.dialog', function () {
+//            var section = $('#section02').dialog(),
+//                dialog = section.parents('.tk-dialog');
+//            var closeBtn = dialog.find('tk-dialog-close-btn');
+//            ok(closeBtn.size() == 1);
+//            closeBtn.click();
+//        });
+
+        test('$.fn.dropdownBtn', function () {
+            var btn = $('#dropdown-btn').dropdownBtn({
+                data: [
+                    {
+                        label: 'apple',
+                        value: 'apple_value'
+                    },
+                    'peach'
+                ]
+            }, function () {
+
+            });
+
+            ok(btn.find('li').size() == 2);
+            location.href = "#dropdown-btn";
+        });
     });
 })(jQuery);

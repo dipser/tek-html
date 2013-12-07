@@ -35,6 +35,7 @@
   .box-shadow(4px 4px 8px, 0.5);
   padding: 15px 20px;
 }
+
 .tk-dialog-inner,
 .tk-confirm-dialog-inner {
   .tk-dialog-inner();
@@ -54,6 +55,7 @@
     background-image: none;
   }
 }
+
 .tk-dialog-close-btn,
 .tk-confirm-dialog-close-btn {
   .remove-btn();
@@ -142,7 +144,8 @@
   position: fixed;
   top: 0;
 }
-.tk-spy-hidden{
+
+.tk-spy-hidden {
   display: none !important;
 }
 
@@ -294,6 +297,38 @@
   white-space: pre;
 }
 
-.tk-hidden{
+.tk-hidden {
   display: none !important;
+}
+
+.tk-dropdown-btn{
+  position: relative;
+}
+.tk-dropdown-list {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  .box-sizing(border-box);
+  .box-shadow(1px 1px 2px, .25);
+}
+
+.tk-dropdown-list-item {
+  padding: 0;
+  list-style: none;
+  border:1px solid darken(@white, 4);
+  margin-bottom:-1px;
+  a {
+    padding: 4px 8px;
+    display: block;
+    background-color: darken(@white, 0);
+    text-decoration: none;
+    color:@color;
+    &:hover {
+      background-color: darken(@white, 4);
+    }
+    &:active {
+      background-color: darken(@white, 10);
+    }
+  }
 }

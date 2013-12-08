@@ -1,4 +1,4 @@
-//<h1>tek-mixin.less-0.3.19</h1>
+//<h1>tek-mixin.less-0.3.20</h1>
 
 /* <h3>color variables</h3>
 
@@ -211,6 +211,15 @@
   -ms-transform: rotate(@deg);
   transform: rotate(@deg);
 }
+
+//noinspection CssUnknownProperty
+.transform-origin(@origin;){
+  transform-origin:@origin;
+  -ms-transform-origin:@origin;
+  -webkit-transform-origin:@origin;
+  -moz-transform-origin:@origin;
+}
+
 
 //noinspection CssUnknownProperty
 .scale(@scale) {

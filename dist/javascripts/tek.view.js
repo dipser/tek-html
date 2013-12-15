@@ -3,7 +3,7 @@
  * - javascript library for tek -
  * @version v0.3.20
  * @author Taka Okunishi
- * @date 2013-12-08
+ * @date 2013-12-16
  *
  */
 (function (dependencies, window, undefined) {
@@ -504,11 +504,14 @@
 		
 		/**
 		 * render text input as editable-text
-		 * @param trigger
+		 * @param options
 		 * @returns {*}
 		 */
-		$.fn.editableText = function (trigger) {
-		    if (!trigger) trigger = 'click';
+		$.fn.editableText = function (options) {
+		    options = $.extend({
+		        editTrigger: 'click',
+		        fixTrigger: 'change'
+		    }, options);
 		    var KEY_CODE = $.ui.keyCode;
 		    var tmpl = hbs.templates['tk-editable-label'];
 		    return $(this).each(function () {
@@ -521,7 +524,7 @@
 		            label = input.after(tmpl({})).next('.tk-editable-label');
 		        }
 		        label
-		            .on(trigger, function () {
+		            .on(options.editTrigger, function () {
 		                input.trigger('tk-editable-text-edit');
 		            });
 		        input
@@ -558,7 +561,7 @@
 		                label.text(val).removeClass('tk-hidden');
 		                e.stopPropagation();
 		            })
-		            .change(function () {
+		            .on(options.fixTrigger, function (e) {
 		                input.trigger('tk-editable-text-fix');
 		            });
 		    });
@@ -1208,7 +1211,7 @@
 		    var ul =
 		        $(this).append(options.listTmpl(data)).find('.tk-dropdown-list');
 		    ul.on('click', '.tk-dropdown-list-item', function (e) {
-		            e.stopPropagation();
+		        e.stopPropagation();
 		        var li = $(this),
 		            value = li.data('value');
 		        callback && callback.call(li, value);

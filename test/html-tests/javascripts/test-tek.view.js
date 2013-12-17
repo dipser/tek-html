@@ -249,5 +249,10 @@
             ok(btn.find('li').size() == 2);
             location.href = "#dropdown-btn";
         });
+
+        test('$.fn.rememberableForm', function(){
+           $('#rememberable-form').rememberableForm();
+            ok(true);
+        });
     });
 })(jQuery);

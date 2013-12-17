@@ -1,9 +1,9 @@
 /**
  * tek.view.js
  * - javascript library for tek -
- * @version v0.3.20
+ * @version v0.3.21
  * @author Taka Okunishi
- * @date 2013-12-16
+ * @date 2013-12-17
  *
  */
 (function (dependencies, window, undefined) {
@@ -1228,6 +1228,34 @@
 		
 		        });
 		
+		};
+		
+		/**
+		 * remember form data to local storage
+		 * @param command
+		 */
+		$.fn.rememberableForm = function (command) {
+		    var storageKey = 'tek-web-rememberable-form';
+		    return this.each(function () {
+		        var form = $(this),
+		            id = form.attr('id');
+		        if (!id) {
+		            id = form.find('input,select').toArray().map(function (elm) {
+		                return $(elm).attr('name');
+		            }).join('-');
+		        }
+		        var data = (tek.fromStorage(storageKey) || {});
+		        if (data[id]) form.setFormValue(data[id]);
+		        form.submit(function () {
+		            data[id] = form.getFormValue().toObj();
+		            switch (command) {
+		                case 'disable':
+		                    data[id] = {};
+		                    break;
+		            }
+		            tek.toStorage(storageKey, data);
+		        });
+		    });
 		};
 	})(dependencies, undefined);
 	

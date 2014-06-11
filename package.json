@@ -22,7 +22,7 @@
     "dependencies": {
         "tek": "*",
         "html": "*",
-        "ent": "*",
+        "he": "*",
         "dateformat": "*",
         "uglify-js": "*",
         "commander": "*",
